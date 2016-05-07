@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/textInputColor"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/activity_horizontal_margin"
+    tools:context="com.ryanst.app.MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <Button
+                android:id="@+id/login"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/main_button_height"
+                android:onClick="onClick"
+                android:text="登录页面" />
+
+            <Button
+                android:id="@+id/glide"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/main_button_height"
+                android:onClick="onClick"
+                android:text="Glide Test" />
+
+
+            <Button
+                android:id="@+id/permission"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/main_button_height"
+                android:onClick="onClick"
+                android:text="权限Test" />
+
+            <Button
+                android:id="@+id/webview_error"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/main_button_height"
+                android:onClick="onClick"
+                android:text="WebView错误" />
+
+            <Button
+                android:id="@+id/test_map_to_list"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/main_button_height"
+                android:onClick="onClick"
+                android:text="MapTiList" />
+
+            <Button
+                android:id="@+id/test_handler"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/main_button_height"
+                android:onClick="onClick"
+                android:text="Handler Test" />
+
+            <Button
+                android:id="@+id/test_data_binding"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/main_button_height"
+                android:onClick="onClick"
+                android:text="DataBinding Test" />
+
+            <Button
+                android:id="@+id/test_handlerthread"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/main_button_height"
+                android:onClick="onClick"
+                android:text="HandlerThread Test" />
+
+            <Button
+                android:id="@+id/test_tablayout_viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/main_button_height"
+                android:onClick="onClick"
+                android:text="TabLayout ViewPager Test" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

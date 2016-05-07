@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="dataObject"
+            type="com.ryanst.app.demo.DataBindingObject" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_change_text_to_object"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/detail_button_height"
+            android:text="通过改变TEXT改变Object"
+            android:textSize="@dimen/large_text_size" />
+
+        <Button
+            android:id="@+id/btn_change_object_to_text"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/detail_button_height"
+            android:text="通过改变Object改变TEXT"
+            android:textSize="@dimen/large_text_size" />
+
+        <TextView
+            android:id="@+id/tv_text1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/detail_button_height"
+            android:gravity="center_horizontal"
+            android:text="@{dataObject.data1}"
+            android:textSize="@dimen/large_text_size" />
+
+        <TextView
+            android:id="@+id/tv_text2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/detail_button_height"
+            android:gravity="center_horizontal"
+            android:text="@{dataObject.data2}"
+            android:textSize="@dimen/large_text_size" />
+    </LinearLayout>
+</layout>

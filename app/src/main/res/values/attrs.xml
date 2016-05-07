@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="textShorter"  parent="@android:style/TextAppearance">
+        <item name="android:textColor">#808080</item>
+    </style>
+
+    <style name="textError"  parent="@android:style/TextAppearance">
+        <item name="android:textColor">#FF0000</item>
+    </style>
+
+    <style name="textOk"  parent="@android:style/TextAppearance">
+        <item name="android:textColor">#00aa54</item>
+    </style>
+
+</resources>

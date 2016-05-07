@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_request_read_file_permission"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:onClick="onClick"
+        android:text="请求读取权限" />
+
+    <Button
+        android:id="@+id/btn_request_contact_permission"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:onClick="onClick"
+        android:text="请求联系人权限" />
+
+    <Button
+        android:id="@+id/btn_to_permission_setting"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:onClick="onClick"
+        android:text="跳转权限设置" />
+
+    <Button
+        android:id="@+id/btn_sdcard_test"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:onClick="onClick"
+        android:text="SD卡权限测试" />
+
+</LinearLayout>
