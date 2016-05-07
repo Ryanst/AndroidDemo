@@ -1,11 +1,14 @@
 package com.ryanst.app.fragment;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.orhanobut.logger.Logger;
 import com.ryanst.app.BaseFragment;
 import com.ryanst.app.activity.R;
 
@@ -17,8 +20,10 @@ import butterknife.ButterKnife;
  */
 public class PagerFragment extends BaseFragment {
 
-
     public static final String COLORS_RES = "colorsRes";
+    private static final int LAZY_LOAD = 1;
+    public static final int DELAY_MILLIS = 1000;
+    public static final String LAZY_LOAD_COLORS = "lazy_load_colors";
     @BindView(R.id.view1)
     View view1;
     @BindView(R.id.view2)
@@ -29,6 +34,19 @@ public class PagerFragment extends BaseFragment {
     private static int[] colors;
 
     private boolean isViewCreated = false;
+
+    private Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what) {
+                case LAZY_LOAD:
+                    toast("lazyLoad success");
+                    int lazyColors[] = msg.getData().getIntArray(LAZY_LOAD_COLORS);
+                    setViewBackgroundColor(lazyColors);
+            }
+        }
+    };
 
     @Nullable
     @Override
@@ -70,23 +88,29 @@ public class PagerFragment extends BaseFragment {
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
+        Logger.d(isVisibleToUser ? "visiable" : "invisiable");
         if (isVisibleToUser && isViewCreated) {
             lazyLoad();
         }
     }
 
+    @Override
+    public void onStop() {
+        super.onStop();
+        handler.removeMessages(LAZY_LOAD);
+    }
+
     private void lazyLoad() {
         //模拟加载操作
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        toast("lazyLoad success");
         int lazyColors[] = new int[]{
                 getResources().getColor(R.color.Aqua)
         };
-        setViewBackgroundColor(lazyColors);
+        Bundle bundle = new Bundle();
+        bundle.putIntArray(LAZY_LOAD_COLORS, lazyColors);
+        Message message = new Message();
+        message.setData(bundle);
+        message.what = LAZY_LOAD;
+        handler.sendMessageDelayed(message, DELAY_MILLIS);
     }
 
     @Override
