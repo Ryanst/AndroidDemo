@@ -56,12 +56,14 @@ public class TabLayoutViewPagerActivity extends BaseActivity {
 
     private void initTab() {
         for (int i = 0; i < TAB_NUM; i++) {
-            adapter.addTab(new PagerFragment(), "标题" + i);
+            int color = getResources().getColor(R.color.Pink);
+            adapter.addTab(PagerFragment.createPagerFragment(color), "标题" + i);
 //            View view = createTabView(i);
 //            tlTest.getTabAt(i).setCustomView(view);
         }
     }
 
+    //可以手动添加tabLayout,也可以用系统自带的,用系统自带的可以用系统的tabLayout属性
     private View createTabView(int i) {
         View tabView = LayoutInflater.from(this).inflate(R.layout.view_tab, null);
         TextView textView = (TextView) tabView.findViewById(R.id.tv_tab_title);
