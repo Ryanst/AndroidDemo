@@ -14,7 +14,7 @@ import com.ryanst.app.activity.HandlerActivity;
 import com.ryanst.app.activity.HandlerThreadActivity;
 import com.ryanst.app.activity.LoginActivity;
 import com.ryanst.app.activity.PermissionActivity;
-import com.ryanst.app.activity.PhotoTestActivity;
+import com.ryanst.app.activity.PhotoCameraActivity;
 import com.ryanst.app.activity.R;
 import com.ryanst.app.activity.TabLayoutViewPagerActivity;
 import com.ryanst.app.activity.WebviewErrorActivity;
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(this, TabLayoutViewPagerActivity.class));
                 break;
             case R.id.btn_photo_test:
-                startActivity(new Intent(this, PhotoTestActivity.class));
+                startActivity(new Intent(this, PhotoCameraActivity.class));
                 break;
 
         }

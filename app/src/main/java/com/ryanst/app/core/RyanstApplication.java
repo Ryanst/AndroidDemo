@@ -23,4 +23,7 @@ public class RyanstApplication extends Application {
         LeakCanary.install(this);
     }
 
+    public static Context getApplication(){
+        return application;
+    }
 }

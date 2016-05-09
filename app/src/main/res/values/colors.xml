@@ -148,4 +148,7 @@
 
     <color name="red_text_color">#EF3A3A</color>
     <color name="eva_text">#423D3C</color>
+
+    <color name="white_shit">#f1f1f1</color>
+
 </resources>
