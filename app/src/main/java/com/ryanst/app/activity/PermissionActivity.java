@@ -19,7 +19,7 @@ import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.widget.Toast;
 
-import com.ryanst.app.BaseActivity;
+import com.ryanst.app.core.BaseActivity;
 
 import java.io.File;
 import java.util.ArrayList;

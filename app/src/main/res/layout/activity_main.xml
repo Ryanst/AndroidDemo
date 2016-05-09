@@ -20,6 +20,13 @@
 
 
             <Button
+                android:id="@+id/btn_photo_test"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/main_button_height"
+                android:onClick="onClick"
+                android:text="相机相册" />
+
+            <Button
                 android:id="@+id/login"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/main_button_height"

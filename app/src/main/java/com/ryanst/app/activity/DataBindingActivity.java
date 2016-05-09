@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import com.ryanst.app.BaseActivity;
+import com.ryanst.app.core.BaseActivity;
 import com.ryanst.app.activity.databinding.ActivityDataBindingBinding;
 import com.ryanst.app.demo.DataBindingObject;
 

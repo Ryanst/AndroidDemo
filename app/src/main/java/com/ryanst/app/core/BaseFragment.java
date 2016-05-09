@@ -1,4 +1,4 @@
-package com.ryanst.app;
+package com.ryanst.app.core;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

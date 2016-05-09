@@ -8,7 +8,7 @@ import android.text.Html;
 import android.util.Log;
 import android.widget.TextView;
 
-import com.ryanst.app.BaseActivity;
+import com.ryanst.app.core.BaseActivity;
 import com.ryanst.app.Utils;
 
 /**

@@ -11,7 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 
-import com.ryanst.app.BaseActivity;
+import com.ryanst.app.core.BaseActivity;
 import com.ryanst.app.fragment.PagerFragment;
 
 
