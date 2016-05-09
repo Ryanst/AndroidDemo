@@ -1,4 +1,4 @@
-package com.ryanst.app.core;
+package com.ryanst.app;
 
 import android.app.Application;
 import android.content.Context;

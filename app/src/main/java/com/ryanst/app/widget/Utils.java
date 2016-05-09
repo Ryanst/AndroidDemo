@@ -1,4 +1,4 @@
-package com.ryanst.app;
+package com.ryanst.app.widget;
 
 import android.util.Log;
 

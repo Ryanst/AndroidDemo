@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.ryanst.app.activity">
+    package="com.ryanst.app">
 
     <application
-        android:name="com.ryanst.app.core.RyanstApplication"
+        android:name="com.ryanst.app.RyanstApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -79,7 +79,8 @@
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-feature android:name="android.hardware.camera"
+    <uses-feature
+        android:name="android.hardware.camera"
         android:required="true" />
 
 </manifest>

@@ -7,7 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 
 import com.ryanst.app.activity.R;
-import com.ryanst.app.core.RyanstApplication;
+import com.ryanst.app.RyanstApplication;
 
 /**
  * Created by kevin on 16/5/9.

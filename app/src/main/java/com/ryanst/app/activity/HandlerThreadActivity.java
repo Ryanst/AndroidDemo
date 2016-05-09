@@ -9,7 +9,7 @@ import android.util.Log;
 import android.widget.TextView;
 
 import com.ryanst.app.core.BaseActivity;
-import com.ryanst.app.Utils;
+import com.ryanst.app.widget.Utils;
 
 /**
  * Created by kevin on 16/5/5.
