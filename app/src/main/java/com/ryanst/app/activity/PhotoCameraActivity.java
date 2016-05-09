@@ -72,12 +72,13 @@ public class PhotoCameraActivity extends BaseActivity {
     private void toAlbum() {
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
         intent.setType("image/*");
-        startActivityForResult(intent, PHOTO_REQUEST_GALLERY);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivityForResult(intent, PHOTO_REQUEST_GALLERY);
+        }
     }
 
     private void toCamera() {
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);// 调用系统相机
-        new DateFormat();
         photoName = DateFormat.format("yyyyMMdd_hhmmss",
                 Calendar.getInstance(Locale.CHINA))
                 + ".jpg";
@@ -86,7 +87,9 @@ public class PhotoCameraActivity extends BaseActivity {
 
         intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);//把照片保存在sd卡中指定位置。
 
-        startActivityForResult(intent, PHOTO_REQUEST_CAREMA);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivityForResult(intent, PHOTO_REQUEST_CAREMA);
+        }
     }
 
     private void crop(Uri uri) {
