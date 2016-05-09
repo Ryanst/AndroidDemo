@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
+import com.orhanobut.logger.LogLevel;
 import com.orhanobut.logger.Logger;
 import com.ryanst.app.activity.DataBindingActivity;
 import com.ryanst.app.activity.GlideActivity;
@@ -31,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Logger.init(RYANST_LOG);
+        Logger.init(RYANST_LOG).logLevel(LogLevel.FULL);
     }
 
     public void onClick(View view) {
