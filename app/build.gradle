@@ -10,15 +10,41 @@ android {
         versionCode 1
         versionName "1.0"
     }
+
+    signingConfigs {
+        ryanstConfig {
+            storeFile file("ryanst-release.jks")
+            storePassword "buaa123"
+            keyAlias "ryanst"
+            keyPassword "buaa321"
+        }
+    }
+
     buildTypes {
         release {
-            minifyEnabled false
+            signingConfig signingConfigs.ryanstConfig
+            zipAlignEnabled true
+            shrinkResources true
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            applicationVariants.all { variant ->
+                variant.outputs.each { output ->
+                    def outputFile = output.outputFile
+                    if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                        // 输出apk名称为ryanst_v1.0_2016-05-10_wandoujia.apk
+                        def fileName = "ryanst_v${defaultConfig.versionName}_${releaseTime()}_${variant.productFlavors[0].name}.apk"
+                        output.outputFile = new File(outputFile.parent, fileName)
+                    }
+                }
+            }
         }
 
         debug {
-            testCoverageEnabled = true
-
+            zipAlignEnabled false
+            shrinkResources false
+            minifyEnabled false
+//            testCoverageEnabled = true
         }
     }
     dataBinding {
@@ -27,8 +53,10 @@ android {
     productFlavors {
         wandoujia {}
         baidu {}
-        c360 {}
+        _360 {}
         uc {}
+        xiaomi {}
+        tencent {}
 
         productFlavors.all { flavor ->
             flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
@@ -85,4 +113,8 @@ dependencies {
     compile 'org.greenrobot:eventbus:3.0.0'
     //友盟统计
     compile 'com.umeng.analytics:analytics:latest.integration'
+}
+
+def releaseTime() {
+    return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC"))
 }
