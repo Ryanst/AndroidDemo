@@ -38,7 +38,6 @@ public class BaseFragment extends Fragment {
     public void onResume() {
         super.onResume();
         MobclickAgent.onPageStart(this.getClass().getSimpleName());
-        MobclickAgent.onResume(this.getContext());
         Log.d("BaseFragment", getClass().getName());
     }
 
@@ -46,6 +45,5 @@ public class BaseFragment extends Fragment {
     public void onPause() {
         super.onPause();
         MobclickAgent.onPageEnd(this.getClass().getSimpleName());
-        MobclickAgent.onPause(this.getContext());
     }
 }
