@@ -3,6 +3,7 @@ package com.ryanst.app.widget;
 import android.content.Context;
 import android.content.Intent;
 
+import com.ryanst.app.MainActivity;
 import com.ryanst.app.activity.DataBindingActivity;
 import com.ryanst.app.activity.GlideActivity;
 import com.ryanst.app.activity.HandlerActivity;
@@ -10,6 +11,7 @@ import com.ryanst.app.activity.HandlerThreadActivity;
 import com.ryanst.app.activity.LoginActivity;
 import com.ryanst.app.activity.PermissionActivity;
 import com.ryanst.app.activity.PhotoCameraActivity;
+import com.ryanst.app.activity.TabFragmentActivity;
 import com.ryanst.app.activity.TabLayoutViewPagerActivity;
 import com.ryanst.app.activity.WebviewErrorActivity;
 
@@ -55,5 +57,9 @@ public class ActivityHandler {
 
     public static void toLoginActivity(Context context) {
         context.startActivity(new Intent(context, LoginActivity.class));
+    }
+
+    public static void toTabFragmentActivity(Context context) {
+        context.startActivity(new Intent(context, TabFragmentActivity.class));
     }
 }

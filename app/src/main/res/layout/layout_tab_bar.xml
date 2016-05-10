@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <merge xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:showIn="@layout/activity_tab">
-    
-    <ImageView
-        android:id="@+id/iv_line"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/split_line" />
+    tools:showIn="@layout/activity_tab_fragment">
+
+    <View style="@style/splitLine" />
 
     <FrameLayout
         android:layout_width="match_parent"

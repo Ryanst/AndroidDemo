@@ -19,6 +19,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="573140f1e0f55ac68f003d46" />
+
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="${UMENG_CHANNEL_VALUE}" />
 
         <activity
             android:name="com.ryanst.app.MainActivity"
@@ -93,13 +100,12 @@
 
         </activity>
 
-        <meta-data
-            android:name="UMENG_APPKEY"
-            android:value="573140f1e0f55ac68f003d46" />
+        <activity
+            android:name="com.ryanst.app.activity.TabFragmentActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/AppTheme.NoActionBar">
 
-        <meta-data
-            android:name="UMENG_CHANNEL"
-            android:value="${UMENG_CHANNEL_VALUE}" />
+        </activity>
 
     </application>
 </manifest>

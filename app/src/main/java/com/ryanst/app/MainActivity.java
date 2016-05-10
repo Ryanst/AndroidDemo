@@ -7,6 +7,7 @@ import android.view.View;
 
 import com.orhanobut.logger.LogLevel;
 import com.orhanobut.logger.Logger;
+import com.ryanst.app.activity.TabFragmentActivity;
 import com.ryanst.app.widget.ActivityHandler;
 
 import java.util.ArrayList;
@@ -28,6 +29,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClick(View view) {
         switch (view.getId()) {
+            case R.id.btn_tab_fragment:
+                ActivityHandler.toTabFragmentActivity(MainActivity.this);
+                break;
             case R.id.login:
                 ActivityHandler.toLoginActivity(MainActivity.this);
                 break;
