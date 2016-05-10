@@ -2,6 +2,7 @@ package com.ryanst.app.activity;
 
 import android.content.Context;
 import android.graphics.BitmapFactory;
+import android.graphics.BitmapFactory.Options;
 import android.graphics.Point;
 import android.net.Uri;
 import android.os.Bundle;
@@ -32,8 +33,6 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Locale;
-
-import android.graphics.BitmapFactory.Options;
 
 /**
  * Created by kevin on 16/4/26.

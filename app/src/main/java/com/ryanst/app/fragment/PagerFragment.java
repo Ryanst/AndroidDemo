@@ -9,8 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.orhanobut.logger.Logger;
-import com.ryanst.app.core.BaseFragment;
 import com.ryanst.app.R;
+import com.ryanst.app.core.BaseFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

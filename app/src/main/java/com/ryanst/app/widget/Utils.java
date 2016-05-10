@@ -1,7 +1,5 @@
 package com.ryanst.app.widget;
 
-import android.util.Log;
-
 /**
  * Created by kevin on 16/5/5.
  */

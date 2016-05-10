@@ -3,7 +3,6 @@ package com.ryanst.app;
 import android.app.Application;
 import android.content.Context;
 
-import com.ryanst.app.BuildConfig;
 import com.squareup.leakcanary.LeakCanary;
 
 import butterknife.ButterKnife;

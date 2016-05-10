@@ -5,6 +5,6 @@
 
     <string name="mainMenu0">发现</string>
     <string name="mainMenu1">收藏</string>
-    <string name="mainMenu2">自选股</string>
+    <string name="mainMenu2">列表</string>
     <string name="mainMenu3">我</string>
 </resources>

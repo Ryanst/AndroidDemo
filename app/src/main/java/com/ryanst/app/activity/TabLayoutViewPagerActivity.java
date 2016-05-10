@@ -15,7 +15,6 @@ import com.ryanst.app.R;
 import com.ryanst.app.core.BaseActivity;
 import com.ryanst.app.fragment.PagerFragment;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
