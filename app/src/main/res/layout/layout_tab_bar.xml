@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="@layout/activity_tab">
+    
+    <ImageView
+        android:id="@+id/iv_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/split_line" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioGroup
+            android:id="@+id/rg_tab_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <RadioButton
+                style="@style/tab_rbtn_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/tab_knowledge_bg"
+                android:text="@string/mainMenu0"
+                android:textColor="@color/tab_text_color"
+                android:textSize="@dimen/font_extra_small" />
+
+            <RadioButton
+                style="@style/tab_rbtn_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/tab_forum_follow_bg"
+                android:text="@string/mainMenu1"
+                android:textColor="@color/tab_text_color"
+                android:textSize="@dimen/font_extra_small" />
+
+            <RadioButton
+                style="@style/tab_rbtn_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/tab_favorite_bg"
+                android:text="@string/mainMenu2"
+                android:textColor="@color/tab_text_color"
+                android:textSize="@dimen/font_extra_small" />
+
+            <RadioButton
+                style="@style/tab_rbtn_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/tab_my_bg"
+                android:text="@string/mainMenu3"
+                android:textColor="@color/tab_text_color"
+                android:textSize="@dimen/font_extra_small" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/ll_dot_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/empty"
+                android:paddingLeft="35dp"
+                android:src="@drawable/dot"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/empty"
+                android:paddingLeft="30dp"
+                android:src="@drawable/dot"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/empty"
+                android:paddingLeft="30dp"
+                android:src="@drawable/dot"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/empty"
+                android:paddingLeft="25dp"
+                android:src="@drawable/dot"
+                android:visibility="invisible" />
+        </LinearLayout>
+    </FrameLayout>
+</merge>

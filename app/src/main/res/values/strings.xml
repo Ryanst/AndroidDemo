@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">RyanstDemo</string>
     <string name="action_settings">Settings</string>
+    <string name="empty"></string>
+
+    <string name="mainMenu0">发现</string>
+    <string name="mainMenu1">收藏</string>
+    <string name="mainMenu2">自选股</string>
+    <string name="mainMenu3">我</string>
 </resources>

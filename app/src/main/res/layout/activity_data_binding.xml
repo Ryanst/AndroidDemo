@@ -18,14 +18,14 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/detail_button_height"
             android:text="通过改变TEXT改变Object"
-            android:textSize="@dimen/large_text_size" />
+            android:textSize="@dimen/font_large" />
 
         <Button
             android:id="@+id/btn_change_object_to_text"
             android:layout_width="match_parent"
             android:layout_height="@dimen/detail_button_height"
             android:text="通过改变Object改变TEXT"
-            android:textSize="@dimen/large_text_size" />
+            android:textSize="@dimen/font_large" />
 
         <TextView
             android:id="@+id/tv_text1"
@@ -33,7 +33,7 @@
             android:layout_height="@dimen/detail_button_height"
             android:gravity="center_horizontal"
             android:text="@{dataObject.data1}"
-            android:textSize="@dimen/large_text_size" />
+            android:textSize="@dimen/font_large" />
 
         <TextView
             android:id="@+id/tv_text2"
@@ -41,6 +41,6 @@
             android:layout_height="@dimen/detail_button_height"
             android:gravity="center_horizontal"
             android:text="@{dataObject.data2}"
-            android:textSize="@dimen/large_text_size" />
+            android:textSize="@dimen/font_large" />
     </LinearLayout>
 </layout>

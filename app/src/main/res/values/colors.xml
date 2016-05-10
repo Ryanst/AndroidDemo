@@ -150,5 +150,32 @@
     <color name="eva_text">#423D3C</color>
 
     <color name="white_shit">#f1f1f1</color>
+    <color name="split_line">@color/white_shit</color>
+
+    <!-- 旧颜色 -->
+    <color name="shit_orange">#e97f18</color>
+    <color name="shit_blue">#2f75be</color>
+    <color name="shit_red">#BB2222</color>
+    <color name="shit_green">#00aa54</color>
+    <color name="shit_dark_gray">#9B9B9B</color>
+    <color name="shit_black">#000000</color>
+    <color name="shit_background">#f1f1f1</color>
+    <color name="shit_foreground_color">@color/white</color>
+    <color name="shit_bar_color">#FAFAFA</color>
+    <color name="transparent_70_percent_orange">#4cfb812c</color>
+
+    <!-- 新颜色 -->
+    <color name="shit_new_white">#ffffff</color>
+    <color name="shit_new_blue">#0088f3</color>
+    <color name="shit_new_light_blue">#006bbb</color>
+    <color name="shit_new_gray">#e0e0e0</color>
+    <color name="shit_light_blue">#f2f9fe</color>
+    <color name="shit_light_orange">#fffbf2</color>
+    <color name="shit_light_wine">#fff2f7</color>
+    <color name="shit_light_green">#fafffa</color>
+    <color name="shit_light_red">#fff2f2</color>
+    <color name="shit_new_orange">#f2700d</color>
+    <color name="shit_new_wine">#ff0060</color>
+    <color name="shit_split_gray">#f1f1f1</color>
 
 </resources>
