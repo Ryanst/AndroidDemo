@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.github.johnpersano.supertoasts.SuperToast;
+import com.umeng.analytics.MobclickAgent;
 
 /**
  * Created by kevin on 16/5/6.
@@ -21,7 +22,6 @@ public class BaseFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        Log.d("BaseFragment", getClass().getName());
         return super.onCreateView(inflater, container, savedInstanceState);
     }
 
@@ -32,5 +32,20 @@ public class BaseFragment extends Fragment {
         }
         superToast.setText(message);
         superToast.show();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        MobclickAgent.onPageStart(this.getClass().getSimpleName());
+        MobclickAgent.onResume(this.getContext());
+        Log.d("BaseFragment", getClass().getName());
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        MobclickAgent.onPageEnd(this.getClass().getSimpleName());
+        MobclickAgent.onPause(this.getContext());
     }
 }

@@ -3,6 +3,8 @@ package com.ryanst.app.demo;
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
 
+import com.ryanst.app.BR;
+
 /**
  * Created by kevin on 16/5/4.
  */
@@ -23,7 +25,7 @@ public class DataBindingObject extends BaseObservable {
 
     public void setData1(String data1) {
         this.data1 = data1;
-        notifyPropertyChanged(com.ryanst.app.activity.BR.data1);
+        notifyPropertyChanged(BR.data1);
     }
 
     @Bindable
@@ -33,6 +35,6 @@ public class DataBindingObject extends BaseObservable {
 
     public void setData2(String data2) {
         this.data2 = data2;
-        notifyPropertyChanged(com.ryanst.app.activity.BR.data2);
+        notifyPropertyChanged(BR.data2);
     }
 }

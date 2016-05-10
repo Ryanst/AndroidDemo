@@ -15,7 +15,7 @@ import com.ryanst.app.activity.HandlerThreadActivity;
 import com.ryanst.app.activity.LoginActivity;
 import com.ryanst.app.activity.PermissionActivity;
 import com.ryanst.app.activity.PhotoCameraActivity;
-import com.ryanst.app.activity.R;
+import com.ryanst.app.R;
 import com.ryanst.app.activity.TabLayoutViewPagerActivity;
 import com.ryanst.app.activity.WebviewErrorActivity;
 

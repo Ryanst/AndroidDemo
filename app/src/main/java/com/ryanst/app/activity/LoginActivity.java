@@ -6,6 +6,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.EditText;
 
+import com.ryanst.app.R;
 import com.ryanst.app.core.BaseActivity;
 
 /**

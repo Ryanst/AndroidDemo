@@ -6,7 +6,7 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 
-import com.ryanst.app.activity.R;
+import com.ryanst.app.R;
 import com.ryanst.app.RyanstApplication;
 
 /**

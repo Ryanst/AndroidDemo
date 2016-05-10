@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 
 import com.orhanobut.logger.Logger;
 import com.ryanst.app.core.BaseFragment;
-import com.ryanst.app.activity.R;
+import com.ryanst.app.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

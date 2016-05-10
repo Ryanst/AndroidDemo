@@ -19,6 +19,7 @@ import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.widget.Toast;
 
+import com.ryanst.app.R;
 import com.ryanst.app.core.BaseActivity;
 
 import java.io.File;

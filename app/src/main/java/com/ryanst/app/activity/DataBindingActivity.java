@@ -5,8 +5,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.ryanst.app.R;
 import com.ryanst.app.core.BaseActivity;
-import com.ryanst.app.activity.databinding.ActivityDataBindingBinding;
+import com.ryanst.app.databinding.ActivityDataBindingBinding;
 import com.ryanst.app.demo.DataBindingObject;
 
 /**
@@ -21,7 +22,7 @@ public class DataBindingActivity extends BaseActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = DataBindingUtil.setContentView(this, com.ryanst.app.activity.R.layout.activity_data_binding);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_data_binding);
         dataObject = new DataBindingObject("data1", "data2");
         binding.setDataObject(dataObject);
         binding.btnChangeTextToObject.setOnClickListener(new View.OnClickListener() {

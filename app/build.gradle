@@ -25,6 +25,15 @@ android {
         enabled = true
     }
     productFlavors {
+        wandoujia {}
+        baidu {}
+        c360 {}
+        uc {}
+
+        productFlavors.all { flavor ->
+            flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
+
+        }
     }
 
     testOptions {
@@ -74,4 +83,6 @@ dependencies {
     testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2'
     //eventbus
     compile 'org.greenrobot:eventbus:3.0.0'
+    //友盟统计
+    compile 'com.umeng.analytics:analytics:latest.integration'
 }

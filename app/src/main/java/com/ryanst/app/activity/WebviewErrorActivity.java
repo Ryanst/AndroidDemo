@@ -10,6 +10,7 @@ import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import com.ryanst.app.R;
 import com.ryanst.app.core.BaseActivity;
 import com.ryanst.app.widget.MyWebView;
 

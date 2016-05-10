@@ -10,6 +10,7 @@ import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.widget.Toast;
 
+import com.ryanst.app.R;
 import com.ryanst.app.core.BaseActivity;
 
 /**

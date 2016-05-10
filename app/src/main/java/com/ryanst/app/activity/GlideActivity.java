@@ -25,6 +25,7 @@ import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.target.Target;
+import com.ryanst.app.R;
 import com.ryanst.app.core.BaseActivity;
 
 import java.io.File;

@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.ryanst.app.R;
 import com.ryanst.app.core.BaseActivity;
 import com.ryanst.app.widget.DialogUtil;
 
@@ -146,7 +147,9 @@ public class PhotoCameraActivity extends BaseActivity {
             }
             try {
                 // 将临时文件删除
-                tempFile.delete();
+                if (tempFile != null) {
+                    tempFile.delete();
+                }
             } catch (Exception e) {
                 e.printStackTrace();
             }
