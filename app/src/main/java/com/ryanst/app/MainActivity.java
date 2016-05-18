@@ -7,13 +7,14 @@ import android.view.View;
 
 import com.orhanobut.logger.LogLevel;
 import com.orhanobut.logger.Logger;
-import com.ryanst.app.activity.TabFragmentActivity;
 import com.ryanst.app.widget.ActivityHandler;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import hugo.weaving.DebugLog;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -27,8 +28,12 @@ public class MainActivity extends AppCompatActivity {
         Logger.init(RYANST_LOG).logLevel(LogLevel.FULL);
     }
 
+    @DebugLog
     public void onClick(View view) {
         switch (view.getId()) {
+            case R.id.btn_navigation_drawer:
+                ActivityHandler.toNavigationDrawerActivity(MainActivity.this);
+                break;
             case R.id.btn_tab_fragment:
                 ActivityHandler.toTabFragmentActivity(MainActivity.this);
                 break;
@@ -61,6 +66,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.test_map_to_list:
                 TestMapToList();
+                break;
+            case R.id.btn_spinner_test:
+                ActivityHandler.toSpinnerActivity(MainActivity.this);
                 break;
         }
     }

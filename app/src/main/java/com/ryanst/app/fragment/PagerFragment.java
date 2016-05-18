@@ -64,7 +64,7 @@ public class PagerFragment extends BaseFragment {
         setViewBackgroundColor(colors);
     }
 
-    public static PagerFragment createPagerFragment(int... bgColor) {
+    public static PagerFragment getInstance(int... bgColor) {
         Bundle bundle = new Bundle();
         bundle.putIntArray(COLORS_RES, bgColor);
         PagerFragment fragment = new PagerFragment();

@@ -57,7 +57,7 @@ public class TabLayoutViewPagerActivity extends BaseActivity {
     private void initTab() {
         for (int i = 0; i < TAB_NUM; i++) {
             int color = getResources().getColor(R.color.Pink);
-            adapter.addTab(PagerFragment.createPagerFragment(color), "标题" + i);
+            adapter.addTab(PagerFragment.getInstance(color), "标题" + i);
 //            View view = createTabView(i);
 //            tlTest.getTabAt(i).setCustomView(view);
         }

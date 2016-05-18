@@ -10,10 +10,12 @@ import android.widget.Toast;
 import com.ryanst.app.R;
 import com.ryanst.app.core.BaseActivity;
 
+import hugo.weaving.DebugLog;
+
 /**
  * Created by kevin on 16/5/4.
  */
-public class HandlerActivity extends BaseActivity {
+public class HandlerTestActivity extends BaseActivity {
 
 
     private Handler handler;
@@ -21,13 +23,14 @@ public class HandlerActivity extends BaseActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_handler);
+        setContentView(R.layout.activity_handler_test);
     }
 
+    @DebugLog
     public void onClick(View view) {
         handler = new Handler();
 
-        Log.d("HandlerActivity", Thread.currentThread().getId() + "");// 1
+        Log.d("HandlerTestActivity", Thread.currentThread().getId() + "");// 1
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -36,7 +39,7 @@ public class HandlerActivity extends BaseActivity {
                     @Override
                     public void run() {
                         Log.d("handler.post run", Thread.currentThread().getId() + ""); // 1
-                        Toast.makeText(HandlerActivity.this, "子线程Id:" + Thread.currentThread().getId(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(HandlerTestActivity.this, "子线程Id:" + Thread.currentThread().getId(), Toast.LENGTH_SHORT).show();
                     }
                 });
             }

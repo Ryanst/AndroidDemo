@@ -58,10 +58,8 @@ public class TabFragmentActivity extends BaseActivity {
 
     private void setDefaultFragment(int index) {
         RadioButton radioButton = (RadioButton) rgTabParent.getChildAt(index);
-        if (radioButton.isChecked()) {
-            switchTab(index);
-        }
         radioButton.setChecked(true);
+        switchTab(index);
     }
 
     private void setRadioGroupTabEvent() {

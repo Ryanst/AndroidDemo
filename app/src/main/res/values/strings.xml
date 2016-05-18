@@ -7,4 +7,8 @@
     <string name="mainMenu1">收藏</string>
     <string name="mainMenu2">列表</string>
     <string name="mainMenu3">我</string>
+    <string name="title_activity_navigation_drawer">NavigationDrawerActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>

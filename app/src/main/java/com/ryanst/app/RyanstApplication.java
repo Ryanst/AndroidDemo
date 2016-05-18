@@ -10,6 +10,7 @@ import butterknife.ButterKnife;
 /**
  * Created by kevin on 16/5/9.
  */
+
 public class RyanstApplication extends Application {
 
     private static Context application;

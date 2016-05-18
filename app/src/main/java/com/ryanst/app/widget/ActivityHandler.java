@@ -3,14 +3,15 @@ package com.ryanst.app.widget;
 import android.content.Context;
 import android.content.Intent;
 
-import com.ryanst.app.MainActivity;
 import com.ryanst.app.activity.DataBindingActivity;
 import com.ryanst.app.activity.GlideActivity;
-import com.ryanst.app.activity.HandlerActivity;
+import com.ryanst.app.activity.HandlerTestActivity;
 import com.ryanst.app.activity.HandlerThreadActivity;
 import com.ryanst.app.activity.LoginActivity;
+import com.ryanst.app.activity.NavigationDrawerActivity;
 import com.ryanst.app.activity.PermissionActivity;
 import com.ryanst.app.activity.PhotoCameraActivity;
+import com.ryanst.app.activity.SpinnerActivity;
 import com.ryanst.app.activity.TabFragmentActivity;
 import com.ryanst.app.activity.TabLayoutViewPagerActivity;
 import com.ryanst.app.activity.WebviewErrorActivity;
@@ -23,6 +24,9 @@ public class ActivityHandler {
         context.startActivity(intent);
     }
 
+    public static void toSpinnerActivity(Context context) {
+        context.startActivity(new Intent(context, SpinnerActivity.class));
+    }
     public static void toPhotoCameraActivity(Context context) {
         context.startActivity(new Intent(context, PhotoCameraActivity.class));
     }
@@ -40,7 +44,7 @@ public class ActivityHandler {
     }
 
     public static void toHandlerActivity(Context context) {
-        context.startActivity(new Intent(context, HandlerActivity.class));
+        context.startActivity(new Intent(context, HandlerTestActivity.class));
     }
 
     public static void toWebviewErrorActivity(Context context) {
@@ -61,5 +65,9 @@ public class ActivityHandler {
 
     public static void toTabFragmentActivity(Context context) {
         context.startActivity(new Intent(context, TabFragmentActivity.class));
+    }
+
+    public static void toNavigationDrawerActivity(Context context) {
+        context.startActivity(new Intent(context, NavigationDrawerActivity.class));
     }
 }

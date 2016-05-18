@@ -11,7 +11,7 @@
         android:layout_height="@dimen/mid_view_height"
         app:tabBackground="@color/White"
         app:tabIndicatorColor="@color/Yellow"
-        app:tabMinWidth="160dp"
+        app:tabMinWidth="100dp"
         app:tabMode="scrollable"
         app:tabSelectedTextColor="@color/Green"
         app:tabTextColor="@color/Black">

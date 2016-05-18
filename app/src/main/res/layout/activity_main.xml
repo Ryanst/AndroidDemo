@@ -19,6 +19,20 @@
             android:orientation="vertical">
 
             <Button
+                android:id="@+id/btn_navigation_drawer"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/main_button_height"
+                android:onClick="onClick"
+                android:text="NavigationDrawerActivity Test" />
+
+            <Button
+                android:id="@+id/btn_spinner_test"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/main_button_height"
+                android:onClick="onClick"
+                android:text="Spinner 下拉框" />
+
+            <Button
                 android:id="@+id/btn_tab_fragment"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/main_button_height"
@@ -59,7 +73,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/main_button_height"
                 android:onClick="onClick"
-                android:text="WebView错误" />
+                android:text="WebView进度条" />
 
             <Button
                 android:id="@+id/test_map_to_list"
