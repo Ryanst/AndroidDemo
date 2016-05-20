@@ -50,8 +50,6 @@ public class DataBindingActivity extends BaseActivity {
         binding.tvText2.setText("text2->data2");
         String data1 = dataObject.getData1();
         String data2 = dataObject.getData2();
-        Toast.makeText(this, data1 + "  " + data2, Toast.LENGTH_LONG);
+        Toast.makeText(this, "1:" + data1 + "2:" + data2, Toast.LENGTH_LONG).show();
     }
-
-
 }
