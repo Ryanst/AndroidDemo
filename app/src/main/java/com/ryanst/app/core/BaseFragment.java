@@ -1,5 +1,7 @@
 package com.ryanst.app.core;
 
+import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -19,6 +21,8 @@ public class BaseFragment extends Fragment {
 
     private SuperToast superToast;
 
+    protected Context context;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -32,6 +36,12 @@ public class BaseFragment extends Fragment {
         }
         superToast.setText(message);
         superToast.show();
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        this.context = context;
     }
 
     @Override
