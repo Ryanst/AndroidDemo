@@ -46,6 +46,12 @@
         <item name="android:layout_height">1px</item>
     </style>
 
+    <style name="splitLineBlack">
+        <item name="android:background">@color/black</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1px</item>
+    </style>
+
     <style name="tab_rbtn_style">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">35dp</item>

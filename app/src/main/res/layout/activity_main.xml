@@ -19,6 +19,27 @@
             android:orientation="vertical">
 
             <Button
+                android:id="@+id/btn_textview_spacing"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/main_button_height"
+                android:onClick="onClick"
+                android:text="TextView Spacing" />
+
+            <Button
+                android:id="@+id/btn_schedule_task"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/main_button_height"
+                android:onClick="onClick"
+                android:text="定时任务与线程同步" />
+
+            <Button
+                android:id="@+id/btn_net_change"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/main_button_height"
+                android:onClick="onClick"
+                android:text="检测网络变化广播" />
+
+            <Button
                 android:id="@+id/btn_navigation_drawer"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/main_button_height"

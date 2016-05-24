@@ -1,4 +1,4 @@
-package com.ryanst.app.Class;
+package com.ryanst.app.widget;
 
 /**
  * Created by kevin on 16/5/11.

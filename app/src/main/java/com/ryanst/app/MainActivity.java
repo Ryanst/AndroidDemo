@@ -1,5 +1,6 @@
 package com.ryanst.app;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -7,6 +8,9 @@ import android.view.View;
 
 import com.orhanobut.logger.LogLevel;
 import com.orhanobut.logger.Logger;
+import com.ryanst.app.activity.NetChangeBroadcastReceiverActivity;
+import com.ryanst.app.activity.ScheduleTaskActivity;
+import com.ryanst.app.activity.TextViewLetterSpacingActivity;
 import com.ryanst.app.widget.ActivityHandler;
 
 import java.util.ArrayList;
@@ -31,6 +35,15 @@ public class MainActivity extends AppCompatActivity {
     @DebugLog
     public void onClick(View view) {
         switch (view.getId()) {
+            case R.id.btn_textview_spacing:
+                startActivity(new Intent(this, TextViewLetterSpacingActivity.class));
+                break;
+            case R.id.btn_schedule_task:
+                startActivity(new Intent(this, ScheduleTaskActivity.class));
+                break;
+            case R.id.btn_net_change:
+                startActivity(new Intent(this, NetChangeBroadcastReceiverActivity.class));
+                break;
             case R.id.btn_navigation_drawer:
                 ActivityHandler.toNavigationDrawerActivity(MainActivity.this);
                 break;

@@ -11,4 +11,7 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="test_space">测试 测试 测试 测试 test test test test test</string>
+
+    <string name="html_string"><b><u>bold, underline </u></b></string>
 </resources>

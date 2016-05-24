@@ -12,7 +12,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.ryanst.app.Class.Person;
+import com.ryanst.app.widget.Person;
 import com.ryanst.app.R;
 import com.ryanst.app.core.BaseActivity;
 
