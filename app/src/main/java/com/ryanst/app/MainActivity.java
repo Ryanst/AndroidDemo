@@ -8,10 +8,21 @@ import android.view.View;
 
 import com.orhanobut.logger.LogLevel;
 import com.orhanobut.logger.Logger;
+import com.ryanst.app.activity.DataBindingActivity;
+import com.ryanst.app.activity.GlideActivity;
+import com.ryanst.app.activity.HandlerTestActivity;
+import com.ryanst.app.activity.HandlerThreadActivity;
+import com.ryanst.app.activity.LoginActivity;
+import com.ryanst.app.activity.NavigationDrawerActivity;
 import com.ryanst.app.activity.NetChangeBroadcastReceiverActivity;
+import com.ryanst.app.activity.PermissionActivity;
+import com.ryanst.app.activity.PhotoCameraActivity;
 import com.ryanst.app.activity.ScheduleTaskActivity;
+import com.ryanst.app.activity.SpinnerActivity;
+import com.ryanst.app.activity.TabFragmentActivity;
+import com.ryanst.app.activity.TabLayoutViewPagerActivity;
 import com.ryanst.app.activity.TextViewLetterSpacingActivity;
-import com.ryanst.app.widget.ActivityHandler;
+import com.ryanst.app.activity.WebviewErrorActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -45,43 +56,43 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(this, NetChangeBroadcastReceiverActivity.class));
                 break;
             case R.id.btn_navigation_drawer:
-                ActivityHandler.toNavigationDrawerActivity(MainActivity.this);
+                startActivity(new Intent(this, NavigationDrawerActivity.class));
                 break;
             case R.id.btn_tab_fragment:
-                ActivityHandler.toTabFragmentActivity(MainActivity.this);
+                startActivity(new Intent(this, TabFragmentActivity.class));
                 break;
             case R.id.login:
-                ActivityHandler.toLoginActivity(MainActivity.this);
+                startActivity(new Intent(this, LoginActivity.class));
                 break;
             case R.id.glide:
-                ActivityHandler.toGlideActivity(MainActivity.this);
+                startActivity(new Intent(this, GlideActivity.class));
                 break;
             case R.id.permission:
-                ActivityHandler.toPermissionActivity(MainActivity.this);
+                startActivity(new Intent(this, PermissionActivity.class));
                 break;
             case R.id.webview_error:
-                ActivityHandler.toWebviewErrorActivity(MainActivity.this);
+                startActivity(new Intent(this, WebviewErrorActivity.class));
                 break;
             case R.id.test_handler:
-                ActivityHandler.toHandlerActivity(MainActivity.this);
+                startActivity(new Intent(this, HandlerTestActivity.class));
                 break;
             case R.id.test_data_binding:
-                ActivityHandler.toDataBindingActivity(MainActivity.this);
+                startActivity(new Intent(this, DataBindingActivity.class));
                 break;
             case R.id.test_handlerthread:
-                ActivityHandler.toHandlerThreadActivity(MainActivity.this);
+                startActivity(new Intent(this, HandlerThreadActivity.class));
                 break;
             case R.id.test_tablayout_viewpager:
-                ActivityHandler.toTabLayoutViewPagerActivity(MainActivity.this);
+                startActivity(new Intent(this, TabLayoutViewPagerActivity.class));
                 break;
             case R.id.btn_photo_test:
-                ActivityHandler.toPhotoCameraActivity(MainActivity.this);
+                startActivity(new Intent(this, PhotoCameraActivity.class));
                 break;
             case R.id.test_map_to_list:
                 TestMapToList();
                 break;
             case R.id.btn_spinner_test:
-                ActivityHandler.toSpinnerActivity(MainActivity.this);
+                startActivity(new Intent(this, SpinnerActivity.class));
                 break;
         }
     }
