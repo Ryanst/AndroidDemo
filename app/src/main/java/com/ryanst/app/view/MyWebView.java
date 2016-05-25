@@ -1,4 +1,4 @@
-package com.ryanst.app.widget;
+package com.ryanst.app.view;
 
 import android.content.Context;
 import android.util.AttributeSet;

@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="textShorter"  parent="@android:style/TextAppearance">
+    <style name="textShorter" parent="@android:style/TextAppearance">
         <item name="android:textColor">#808080</item>
     </style>
 
-    <style name="textError"  parent="@android:style/TextAppearance">
+    <style name="textError" parent="@android:style/TextAppearance">
         <item name="android:textColor">#FF0000</item>
     </style>
 
-    <style name="textOk"  parent="@android:style/TextAppearance">
+    <style name="textOk" parent="@android:style/TextAppearance">
         <item name="android:textColor">#00aa54</item>
     </style>
 
+    <declare-styleable name="CombinationViewStyleable">
+        <attr name="btnColor" format="color"></attr>
+        <attr name="size" format="dimension"></attr>
+        <attr name="ivBg" format="reference"></attr>
+        <attr name="text" format="string"></attr>
+    </declare-styleable>
 </resources>

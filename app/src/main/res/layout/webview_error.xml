@@ -5,10 +5,10 @@
     android:orientation="vertical">
 
 
-    <com.ryanst.app.widget.MyWebView
+    <com.ryanst.app.view.MyWebView
         android:id="@+id/wb_test_error"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></com.ryanst.app.widget.MyWebView>
+        android:layout_height="match_parent"></com.ryanst.app.view.MyWebView>
 
 
     <Button

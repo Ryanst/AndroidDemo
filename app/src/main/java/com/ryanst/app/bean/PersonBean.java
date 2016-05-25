@@ -1,13 +1,13 @@
-package com.ryanst.app.widget;
+package com.ryanst.app.bean;
 
 /**
  * Created by kevin on 16/5/11.
  */
-public class Person {
+public class PersonBean {
     private String personName;
     private String personAddress;
 
-    public Person(String personName, String personAddress) {
+    public PersonBean(String personName, String personAddress) {
         super();
         this.personName = personName;
         this.personAddress = personAddress;

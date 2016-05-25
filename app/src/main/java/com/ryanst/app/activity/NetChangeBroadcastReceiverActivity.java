@@ -10,7 +10,7 @@ import android.view.View;
 
 import com.ryanst.app.R;
 import com.ryanst.app.core.BaseActivity;
-import com.ryanst.app.widget.NetUtil;
+import com.ryanst.app.util.NetUtil;
 
 /**
  * Created by zhengjuntong on 16/5/21.

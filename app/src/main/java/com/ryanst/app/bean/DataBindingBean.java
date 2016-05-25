@@ -1,4 +1,4 @@
-package com.ryanst.app.demo;
+package com.ryanst.app.bean;
 
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
@@ -8,9 +8,9 @@ import com.ryanst.app.BR;
 /**
  * Created by kevin on 16/5/4.
  */
-public class DataBindingObject extends BaseObservable {
+public class DataBindingBean extends BaseObservable {
 
-    public DataBindingObject(String data1, String data2) {
+    public DataBindingBean(String data1, String data2) {
         this.data1 = data1;
         this.data2 = data2;
     }

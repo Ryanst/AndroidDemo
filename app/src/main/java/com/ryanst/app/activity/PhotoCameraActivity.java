@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 import com.ryanst.app.R;
 import com.ryanst.app.core.BaseActivity;
-import com.ryanst.app.widget.DialogUtil;
+import com.ryanst.app.util.DialogUtil;
 
 import java.io.File;
 import java.util.Calendar;

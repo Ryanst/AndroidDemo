@@ -8,6 +8,8 @@
     <dimen name="main_text_height">40dp</dimen>
     <dimen name="mid_view_height">40dp</dimen>
 
+    <dimen name="font_huge">60sp</dimen>
+    <dimen name="font_extra_large">24sp</dimen>
     <dimen name="font_large">18sp</dimen>
     <dimen name="font_normal">14sp</dimen>
     <dimen name="font_small">12sp</dimen>

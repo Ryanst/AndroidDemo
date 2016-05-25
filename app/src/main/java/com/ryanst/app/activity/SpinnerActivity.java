@@ -12,7 +12,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.ryanst.app.widget.Person;
+import com.ryanst.app.bean.PersonBean;
 import com.ryanst.app.R;
 import com.ryanst.app.core.BaseActivity;
 
@@ -38,12 +38,12 @@ public class SpinnerActivity extends BaseActivity {
     }
 
     private void initSpinner() {
-        List<Person> persons = new ArrayList<Person>();
-        persons.add(new Person("张三", "上海 "));
-        persons.add(new Person("李四", "上海 "));
-        persons.add(new Person("王五", "北京"));
-        persons.add(new Person("赵六", "广州 "));
-        MyAdapter _MyAdapter = new MyAdapter(this, persons);
+        List<PersonBean> personBeen = new ArrayList<PersonBean>();
+        personBeen.add(new PersonBean("张三", "上海 "));
+        personBeen.add(new PersonBean("李四", "上海 "));
+        personBeen.add(new PersonBean("王五", "北京"));
+        personBeen.add(new PersonBean("赵六", "广州 "));
+        MyAdapter _MyAdapter = new MyAdapter(this, personBeen);
         spSpinner.setAdapter(_MyAdapter);
         initSpinnerItemOnClick();
     }
@@ -65,10 +65,10 @@ public class SpinnerActivity extends BaseActivity {
 
 
     public class MyAdapter extends BaseAdapter {
-        private List<Person> mList;
+        private List<PersonBean> mList;
         private Context mContext;
 
-        public MyAdapter(Context pContext, List<Person> pList) {
+        public MyAdapter(Context pContext, List<PersonBean> pList) {
             this.mContext = pContext;
             this.mList = pList;
         }

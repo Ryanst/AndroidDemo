@@ -1,4 +1,4 @@
-package com.ryanst.app.widget;
+package com.ryanst.app.util;
 
 import android.app.Dialog;
 import android.content.Context;

@@ -27,7 +27,6 @@ android {
             shrinkResources true
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-
             applicationVariants.all { variant ->
                 variant.outputs.each { output ->
                     def outputFile = output.outputFile
@@ -39,17 +38,20 @@ android {
                 }
             }
         }
-
         debug {
             zipAlignEnabled false
             shrinkResources false
             minifyEnabled false
 //            testCoverageEnabled = true
+            debuggable true
+            signingConfig signingConfigs.ryanstConfig
         }
     }
+
     dataBinding {
         enabled = true
     }
+
     productFlavors {
         wandoujia {}
         baidu {}
@@ -87,16 +89,15 @@ apply plugin: 'com.jakewharton.hugo'
 repositories {
     mavenCentral()
     maven { url "https://jitpack.io" }
+    maven { url "http://repo1.maven.org/maven2" }
 }
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile project(':ryanstlib')
-
     compile 'com.android.support:support-v4:23.2.0'
     compile 'com.android.support:appcompat-v7:23.2.0'
     compile 'com.android.support:design:23.2.0'
-
     //junit
     testCompile 'junit:junit:4.12'
     //glide

@@ -24,49 +24,6 @@ public class ActivityHandler {
         context.startActivity(intent);
     }
 
-    public static void toSpinnerActivity(Context context) {
-        context.startActivity(new Intent(context, SpinnerActivity.class));
-    }
-    public static void toPhotoCameraActivity(Context context) {
-        context.startActivity(new Intent(context, PhotoCameraActivity.class));
-    }
-
-    public static void toTabLayoutViewPagerActivity(Context context) {
-        context.startActivity(new Intent(context, TabLayoutViewPagerActivity.class));
-    }
-
-    public static void toHandlerThreadActivity(Context context) {
-        context.startActivity(new Intent(context, HandlerThreadActivity.class));
-    }
-
-    public static void toDataBindingActivity(Context context) {
-        context.startActivity(new Intent(context, DataBindingActivity.class));
-    }
-
-    public static void toHandlerActivity(Context context) {
-        context.startActivity(new Intent(context, HandlerTestActivity.class));
-    }
-
-    public static void toWebviewErrorActivity(Context context) {
-        context.startActivity(new Intent(context, WebviewErrorActivity.class));
-    }
-
-    public static void toPermissionActivity(Context context) {
-        context.startActivity(new Intent(context, PermissionActivity.class));
-    }
-
-    public static void toGlideActivity(Context context) {
-        context.startActivity(new Intent(context, GlideActivity.class));
-    }
-
-    public static void toLoginActivity(Context context) {
-        context.startActivity(new Intent(context, LoginActivity.class));
-    }
-
-    public static void toTabFragmentActivity(Context context) {
-        context.startActivity(new Intent(context, TabFragmentActivity.class));
-    }
-
     public static void toNavigationDrawerActivity(Context context) {
         context.startActivity(new Intent(context, NavigationDrawerActivity.class));
     }

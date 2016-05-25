@@ -1,4 +1,4 @@
-package com.ryanst.app.widget;
+package com.ryanst.app.util;
 
 import android.content.Context;
 import android.net.ConnectivityManager;

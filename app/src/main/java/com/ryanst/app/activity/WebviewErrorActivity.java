@@ -12,7 +12,7 @@ import android.webkit.WebViewClient;
 
 import com.ryanst.app.R;
 import com.ryanst.app.core.BaseActivity;
-import com.ryanst.app.widget.MyWebView;
+import com.ryanst.app.view.MyWebView;
 
 /**
  * Created by kevin on 16/4/28.

@@ -8,7 +8,7 @@ import android.widget.Toast;
 import com.ryanst.app.R;
 import com.ryanst.app.core.BaseActivity;
 import com.ryanst.app.databinding.ActivityDataBindingBinding;
-import com.ryanst.app.demo.DataBindingObject;
+import com.ryanst.app.bean.DataBindingBean;
 
 /**
  * Created by kevin on 16/5/4.
@@ -17,13 +17,13 @@ public class DataBindingActivity extends BaseActivity {
 
     //ActivityDataBindingBinding的命名来自于activity_data_binding 大写,去除_,然后在末尾加上Binding
     ActivityDataBindingBinding binding;
-    DataBindingObject dataObject;
+    DataBindingBean dataObject;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_data_binding);
-        dataObject = new DataBindingObject("data1", "data2");
+        dataObject = new DataBindingBean("data1", "data2");
         binding.setDataObject(dataObject);
         binding.btnChangeTextToObject.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -5,7 +5,7 @@
 
         <variable
             name="dataObject"
-            type="com.ryanst.app.demo.DataBindingObject" />
+            type="com.ryanst.app.bean.DataBindingBean" />
     </data>
 
     <LinearLayout
