@@ -19,10 +19,11 @@
             android:orientation="vertical">
 
             <Button
+                android:id="@+id/btn_to_custom_view"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/main_button_height"
                 android:onClick="onClick"
-                android:text="TextView Spacing" />
+                android:text="自定义View" />
 
             <Button
                 android:id="@+id/btn_textview_spacing"

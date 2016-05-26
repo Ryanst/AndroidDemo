@@ -19,11 +19,8 @@ import butterknife.BindView;
  */
 public class CombinationView extends FrameLayout {
 
-    @BindView(R.id.btn_change_color)
     Button btnChangeColor;
-    @BindView(R.id.tv_text1)
     TextView tvText1;
-    @BindView(R.id.ll_main)
     LinearLayout llMain;
 
     private int btnColor;
@@ -39,10 +36,12 @@ public class CombinationView extends FrameLayout {
         btnColor = array.getColor(R.styleable.CombinationViewStyleable_btnColor, 0);
         ivBg = array.getResourceId(R.styleable.CombinationViewStyleable_ivBg, R.drawable.ic_explore);
         text = array.getString(R.styleable.CombinationViewStyleable_text);
-        initView();
+        tvText1 = (TextView) findViewById(R.id.id_textview);
+        btnChangeColor = (Button) findViewById(R.id.btn_change_color);
+        llMain = (LinearLayout) findViewById(R.id.ll_main);
     }
 
-    private void initView() {
+    public void initView() {
         tvText1.setText(text);
         tvText1.setTextSize(size);
         btnChangeColor.setBackgroundColor(btnColor);

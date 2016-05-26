@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
+import android.util.AttributeSet;
 import android.view.View;
 
 /**
@@ -18,8 +19,8 @@ public class CustomView extends View implements View.OnClickListener {
 
     private int mCount;
 
-    public CustomView(Context context) {
-        super(context);
+    public CustomView(Context context, AttributeSet attrs) {
+        super(context, attrs);
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mBounds = new Rect();
         setOnClickListener(this);

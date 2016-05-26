@@ -12,12 +12,12 @@
 
 
     <com.ryanst.app.activity.CombinationView
-        android:id="@+id/com"
+        android:id="@+id/combinationView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:btnColor="@color/Green"
         app:ivBg="@drawable/bg_home"
-        app:size="20dp"
+        app:size="30dp"
         app:text="测试text" />
 
 </LinearLayout>

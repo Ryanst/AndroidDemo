@@ -8,6 +8,7 @@ import android.view.View;
 
 import com.orhanobut.logger.LogLevel;
 import com.orhanobut.logger.Logger;
+import com.ryanst.app.activity.CustomViewActivity;
 import com.ryanst.app.activity.DataBindingActivity;
 import com.ryanst.app.activity.GlideActivity;
 import com.ryanst.app.activity.HandlerTestActivity;
@@ -46,6 +47,9 @@ public class MainActivity extends AppCompatActivity {
     @DebugLog
     public void onClick(View view) {
         switch (view.getId()) {
+            case R.id.btn_to_custom_view:
+                startActivity(new Intent(this, CustomViewActivity.class));
+                break;
             case R.id.btn_textview_spacing:
                 startActivity(new Intent(this, TextViewLetterSpacingActivity.class));
                 break;
