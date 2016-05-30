@@ -37,7 +37,6 @@ captures/
 
 # Keystore files
 *.jks
-
 .DS_Store
 .idea
 .svn
