@@ -38,68 +38,68 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.LoginActivityBase"
+            android:name=".activity.LoginActivity"
             android:theme="@style/AppTheme"></activity>
         <activity
-            android:name=".activity.GlideActivityBase"
+            android:name=".activity.GlideActivity"
             android:configChanges="orientation|keyboardHidden"
             android:theme="@style/AppTheme"></activity>
         <activity
-            android:name=".activity.PermissionActivityBase"
+            android:name=".activity.PermissionActivity"
             android:configChanges="orientation|keyboardHidden"
             android:theme="@style/AppTheme"></activity>
         <activity
-            android:name=".activity.WebviewErrorActivityBase"
+            android:name=".activity.WebviewErrorActivity"
             android:configChanges="orientation|keyboardHidden"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".activity.HandlerTestActivityBase"
+            android:name=".activity.HandlerTestActivity"
             android:configChanges="orientation|keyboardHidden"
             android:theme="@style/AppTheme"></activity>
         <activity
-            android:name=".activity.DataBindingActivityBase"
+            android:name=".activity.DataBindingActivity"
             android:configChanges="orientation|keyboardHidden"
             android:theme="@style/AppTheme"></activity>
         <activity
-            android:name=".activity.HandlerThreadActivityBase"
+            android:name=".activity.HandlerThreadActivity"
             android:configChanges="orientation|keyboardHidden"
             android:theme="@style/AppTheme"></activity>
         <activity
-            android:name=".activity.TabLayoutViewPagerActivityBase"
+            android:name=".activity.TabLayoutViewPagerActivity"
             android:configChanges="orientation|keyboardHidden"
             android:theme="@style/AppTheme"></activity>
         <activity
-            android:name=".activity.PhotoCameraActivityBase"
+            android:name=".activity.PhotoCameraActivity"
             android:configChanges="orientation|keyboardHidden"
             android:theme="@style/AppTheme"></activity>
         <activity
-            android:name=".activity.TabFragmentActivityBase"
+            android:name=".activity.TabFragmentActivity"
             android:configChanges="orientation|keyboardHidden"
             android:theme="@style/AppTheme"></activity>
         <activity
-            android:name=".activity.SpinnerActivityBase"
+            android:name=".activity.SpinnerActivity"
             android:configChanges="orientation|keyboardHidden"
             android:theme="@style/AppTheme"></activity>
         <activity
-            android:name=".activity.NavigationDrawerActivityBase"
+            android:name=".activity.NavigationDrawerActivity"
             android:label="@string/title_activity_navigation_drawer"
             android:theme="@style/AppTheme"></activity>
 
         <activity
-            android:name=".activity.NetChangeBroadcastReceiverActivityBase"
+            android:name=".activity.NetChangeBroadcastReceiverActivity"
             android:label="@string/title_activity_navigation_drawer"
             android:theme="@style/AppTheme"></activity>
         <activity
-            android:name=".activity.ScheduleTaskActivityBase"
+            android:name=".activity.ScheduleTaskActivity"
             android:label="@string/title_activity_navigation_drawer"
             android:theme="@style/AppTheme"></activity>
         <activity
-            android:name=".activity.TextViewLetterSpacingActivityBase"
+            android:name=".activity.TextViewLetterSpacingActivity"
             android:label="@string/title_activity_navigation_drawer"
             android:theme="@style/AppTheme"></activity>
 
         <activity
-            android:name=".activity.CustomViewActivityBase"
+            android:name=".activity.CustomViewActivity"
             android:label="@string/title_activity_navigation_drawer"
             android:theme="@style/AppTheme"></activity>
 
