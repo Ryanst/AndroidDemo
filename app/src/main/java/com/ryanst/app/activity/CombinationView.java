@@ -39,6 +39,7 @@ public class CombinationView extends FrameLayout {
         tvText1 = (TextView) findViewById(R.id.tv_text1);
         btnChangeColor = (Button) findViewById(R.id.btn_change_color);
         llMain = (LinearLayout) findViewById(R.id.ll_main);
+        llMain = (LinearLayout) findViewById(R.id.ll_main);
     }
 
     public void initView() {
@@ -53,6 +54,4 @@ public class CombinationView extends FrameLayout {
             }
         });
     }
-
-
 }
