@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 import com.ryanst.app.bean.PersonBean;
 import com.ryanst.app.R;
-import com.ryanst.app.core.BaseActivity;
+import com.ryanst.app.core.BaseSlideActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +25,7 @@ import butterknife.ButterKnife;
 /**
  * Created by kevin on 16/5/11.
  */
-public class SpinnerActivity extends BaseActivity {
+public class SpinnerActivityBase extends BaseSlideActivity {
     @BindView(R.id.sp_spinner)
     Spinner spSpinner;
 
@@ -53,7 +53,7 @@ public class SpinnerActivity extends BaseActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String str = parent.getItemAtPosition(position).toString();
-                Toast.makeText(SpinnerActivity.this, "你点击的是:" + str, Toast.LENGTH_LONG).show();
+                Toast.makeText(SpinnerActivityBase.this, "你点击的是:" + str, Toast.LENGTH_LONG).show();
             }
 
             @Override

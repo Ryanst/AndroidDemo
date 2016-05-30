@@ -20,7 +20,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.ryanst.app.R;
-import com.ryanst.app.core.BaseActivity;
+import com.ryanst.app.core.BaseSlideActivity;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -29,7 +29,7 @@ import java.util.LinkedHashMap;
 /**
  * Created by kevin on 16/4/27.
  */
-public class PermissionActivity extends BaseActivity {
+public class PermissionActivityBase extends BaseSlideActivity {
 
     final int REQUEST_WRITE_STORAGE = 112;
 
@@ -58,7 +58,7 @@ public class PermissionActivity extends BaseActivity {
                     boolean isPer = ContextCompat.checkSelfPermission(getApplicationContext(), "Manifest.permission.READ_EXTERNAL_STORAGE") ==
                             PackageManager.PERMISSION_GRANTED;
 
-                    folderMap = getImageFolderList(PermissionActivity.this);
+                    folderMap = getImageFolderList(PermissionActivityBase.this);
                 } catch (SecurityException se) {
                     se.printStackTrace();
                 } finally {

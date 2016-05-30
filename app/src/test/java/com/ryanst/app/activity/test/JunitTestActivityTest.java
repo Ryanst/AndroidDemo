@@ -2,17 +2,17 @@ package com.ryanst.app.activity.test;
 
 import android.test.ActivityInstrumentationTestCase2;
 
-import com.ryanst.app.activity.JunitTestActivity;
+import com.ryanst.app.activity.JunitTestActivityBase;
 
 /**
  * Created by kevin on 16/5/5.
  */
-public class JunitTestActivityTest extends ActivityInstrumentationTestCase2<JunitTestActivity> {
+public class JunitTestActivityTest extends ActivityInstrumentationTestCase2<JunitTestActivityBase> {
 
-    private JunitTestActivity activity;
+    private JunitTestActivityBase activity;
 
     public JunitTestActivityTest() {
-        super(JunitTestActivity.class);
+        super(JunitTestActivityBase.class);
     }
 
     @Override

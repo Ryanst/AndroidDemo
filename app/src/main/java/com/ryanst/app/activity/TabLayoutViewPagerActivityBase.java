@@ -12,7 +12,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.ryanst.app.R;
-import com.ryanst.app.core.BaseActivity;
+import com.ryanst.app.core.BaseSlideActivity;
 import com.ryanst.app.fragment.PagerFragment;
 
 import java.util.ArrayList;
@@ -24,7 +24,7 @@ import butterknife.ButterKnife;
 /**
  * Created by kevin on 16/5/6.
  */
-public class TabLayoutViewPagerActivity extends BaseActivity {
+public class TabLayoutViewPagerActivityBase extends BaseSlideActivity {
 
     public static final int TAB_NUM = 5;
 

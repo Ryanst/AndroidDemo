@@ -3,12 +3,12 @@ package com.ryanst.app.activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
-import com.ryanst.app.core.BaseActivity;
+import com.ryanst.app.core.BaseSlideActivity;
 
 /**
  * Created by kevin on 16/5/5.
  */
-public class JunitTestActivity extends BaseActivity {
+public class JunitTestActivityBase extends BaseSlideActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

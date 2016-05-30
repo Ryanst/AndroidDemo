@@ -1,4 +1,4 @@
-package com.ryanst.app.activity;
+package com.ryanst.app.view;
 
 import android.content.Context;
 import android.content.res.TypedArray;

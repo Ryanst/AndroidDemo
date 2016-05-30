@@ -9,14 +9,14 @@ import android.util.Log;
 import android.widget.TextView;
 
 import com.ryanst.app.R;
-import com.ryanst.app.core.BaseActivity;
+import com.ryanst.app.core.BaseSlideActivity;
 import com.ryanst.app.util.Utils;
 
 /**
  * Created by kevin on 16/5/5.
  */
 
-public class HandlerThreadActivity extends BaseActivity {
+public class HandlerThreadActivityBase extends BaseSlideActivity {
 
     private TextView mTvServiceInfo;
 

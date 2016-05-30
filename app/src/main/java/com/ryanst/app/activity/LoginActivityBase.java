@@ -7,12 +7,12 @@ import android.text.TextWatcher;
 import android.widget.EditText;
 
 import com.ryanst.app.R;
-import com.ryanst.app.core.BaseActivity;
+import com.ryanst.app.core.BaseSlideActivity;
 
 /**
  * Created by kevin on 16/4/27.
  */
-public class LoginActivity extends BaseActivity {
+public class LoginActivityBase extends BaseSlideActivity {
 
     public static final int PASSWORD_MIN_LENGTH = 6;
     public static final int USERNAME_LENGTH = 11;

@@ -4,7 +4,8 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 
 import com.ryanst.app.R;
-import com.ryanst.app.core.BaseActivity;
+import com.ryanst.app.core.BaseSlideActivity;
+import com.ryanst.app.view.CombinationView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -12,7 +13,7 @@ import butterknife.ButterKnife;
 /**
  * Created by zhengjuntong on 16/5/21.
  */
-public class CustomViewActivity extends BaseActivity {
+public class CustomViewActivityBase extends BaseSlideActivity {
     @BindView(R.id.combinationView)
     CombinationView combinationView;
 

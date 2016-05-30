@@ -8,7 +8,7 @@
     android:background="@color/white"
     android:orientation="vertical"
     android:padding="@dimen/activity_horizontal_margin"
-    tools:context="com.ryanst.app.MainActivity">
+    tools:context=".core.MainActivity">
 
     <ScrollView
         android:layout_width="match_parent"

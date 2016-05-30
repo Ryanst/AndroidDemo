@@ -27,7 +27,7 @@ import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.target.Target;
 import com.ryanst.app.R;
-import com.ryanst.app.core.BaseActivity;
+import com.ryanst.app.core.BaseSlideActivity;
 
 import java.io.File;
 import java.io.IOException;
@@ -37,7 +37,7 @@ import java.util.Locale;
 /**
  * Created by kevin on 16/4/26.
  */
-public class GlideActivity extends BaseActivity {
+public class GlideActivityBase extends BaseSlideActivity {
 
     public static final int RATE = 2;
     ImageView ivGlide;
@@ -47,7 +47,6 @@ public class GlideActivity extends BaseActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.glide);
 
         ivGlide = (ImageView) findViewById(R.id.iv_glide);
@@ -106,9 +105,6 @@ public class GlideActivity extends BaseActivity {
                         Log.wtf("SIZE", String.format(Locale.ROOT, "%dx%d", resource.outWidth, resource.outHeight));
                     }
                 });
-
-
-
 
 
         // normal load to display

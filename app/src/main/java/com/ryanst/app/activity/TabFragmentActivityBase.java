@@ -11,7 +11,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.ryanst.app.R;
-import com.ryanst.app.core.BaseActivity;
+import com.ryanst.app.core.BaseSlideActivity;
 import com.ryanst.app.fragment.TabFragment;
 
 import java.util.List;
@@ -22,7 +22,7 @@ import butterknife.ButterKnife;
 /**
  * Created by kevin on 16/5/10.
  */
-public class TabFragmentActivity extends BaseActivity {
+public class TabFragmentActivityBase extends BaseSlideActivity {
 
     public static final int TAB_ONE = 0;
     public static final String TAB_ONE_TAG = "tab_one";

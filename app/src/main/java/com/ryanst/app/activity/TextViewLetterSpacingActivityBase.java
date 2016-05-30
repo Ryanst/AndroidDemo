@@ -6,7 +6,7 @@ import android.support.annotation.Nullable;
 import android.widget.TextView;
 
 import com.ryanst.app.R;
-import com.ryanst.app.core.BaseActivity;
+import com.ryanst.app.core.BaseSlideActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -14,7 +14,7 @@ import butterknife.ButterKnife;
 /**
  * Created by zhengjuntong on 16/5/24.
  */
-public class TextViewLetterSpacingActivity extends BaseActivity {
+public class TextViewLetterSpacingActivityBase extends BaseSlideActivity {
 
     @BindView(R.id.tv_text1)
     TextView tvText1;

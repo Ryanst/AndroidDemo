@@ -11,12 +11,12 @@ import android.text.TextUtils;
 import android.widget.Toast;
 
 import com.ryanst.app.R;
-import com.ryanst.app.core.BaseActivity;
+import com.ryanst.app.core.BaseSlideActivity;
 
 /**
  * Created by kevin on 16/4/27.
  */
-public class ManufacturerJudgementActivity extends BaseActivity {
+public class ManufacturerJudgementActivityBase extends BaseSlideActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

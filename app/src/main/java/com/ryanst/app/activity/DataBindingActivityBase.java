@@ -6,14 +6,14 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.ryanst.app.R;
-import com.ryanst.app.core.BaseActivity;
+import com.ryanst.app.core.BaseSlideActivity;
 import com.ryanst.app.databinding.ActivityDataBindingBinding;
 import com.ryanst.app.bean.DataBindingBean;
 
 /**
  * Created by kevin on 16/5/4.
  */
-public class DataBindingActivity extends BaseActivity {
+public class DataBindingActivityBase extends BaseSlideActivity {
 
     //ActivityDataBindingBinding的命名来自于activity_data_binding 大写,去除_,然后在末尾加上Binding
     ActivityDataBindingBinding binding;

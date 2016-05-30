@@ -18,7 +18,7 @@ import org.greenrobot.eventbus.ThreadMode;
 /**
  * Created by kevin on 16/5/6.
  */
-public class BaseActivity extends SlideFinishActivity {
+public class BaseActivity extends AppCompatActivity {
 
     private SuperToast toast;
 

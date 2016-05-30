@@ -20,7 +20,7 @@ import java.lang.reflect.Field;
 /**
  * Created by Jim on 15/9/14.
  */
-public abstract class SlideFinishActivity extends AppCompatActivity {
+public abstract class BaseSlideActivity extends BaseActivity {
 
     private RelativeLayout mLeftView;
     private ImageView mShadow;

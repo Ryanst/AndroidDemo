@@ -4,12 +4,12 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 
 import com.ryanst.app.R;
-import com.ryanst.app.core.BaseActivity;
+import com.ryanst.app.core.BaseSlideActivity;
 
 /**
  * Created by zhengjuntong on 16/5/21.
  */
-public class ScheduleTaskActivity extends BaseActivity {
+public class ScheduleTaskActivityBase extends BaseSlideActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

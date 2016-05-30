@@ -14,7 +14,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.ryanst.app.R;
-import com.ryanst.app.core.BaseActivity;
+import com.ryanst.app.core.BaseSlideActivity;
 import com.ryanst.app.util.DialogUtil;
 
 import java.io.File;
@@ -27,7 +27,7 @@ import butterknife.ButterKnife;
 /**
  * Created by kevin on 16/5/9.
  */
-public class PhotoCameraActivity extends BaseActivity {
+public class PhotoCameraActivityBase extends BaseSlideActivity {
 
 
     private static final String PATH = Environment.getExternalStorageDirectory() + "/DCIM";

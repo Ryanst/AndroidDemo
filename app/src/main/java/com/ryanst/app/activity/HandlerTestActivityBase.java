@@ -8,14 +8,14 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.ryanst.app.R;
-import com.ryanst.app.core.BaseActivity;
+import com.ryanst.app.core.BaseSlideActivity;
 
 import hugo.weaving.DebugLog;
 
 /**
  * Created by kevin on 16/5/4.
  */
-public class HandlerTestActivity extends BaseActivity {
+public class HandlerTestActivityBase extends BaseSlideActivity {
 
 
     private Handler handler;
@@ -30,7 +30,7 @@ public class HandlerTestActivity extends BaseActivity {
     public void onClick(View view) {
         handler = new Handler();
 
-        Log.d("HandlerTestActivity", Thread.currentThread().getId() + "");// 1
+        Log.d("HandlerTestActivityBase", Thread.currentThread().getId() + "");// 1
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -39,7 +39,7 @@ public class HandlerTestActivity extends BaseActivity {
                     @Override
                     public void run() {
                         Log.d("handler.post run", Thread.currentThread().getId() + ""); // 1
-                        Toast.makeText(HandlerTestActivity.this, "子线程Id:" + Thread.currentThread().getId(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(HandlerTestActivityBase.this, "子线程Id:" + Thread.currentThread().getId(), Toast.LENGTH_SHORT).show();
                     }
                 });
             }

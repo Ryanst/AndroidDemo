@@ -3,7 +3,7 @@ package com.ryanst.app.activity;
 import android.test.ActivityInstrumentationTestCase2;
 
 import com.robotium.solo.Solo;
-import com.ryanst.app.MainActivity;
+import com.ryanst.app.core.MainActivity;
 
 /**
  * Created by kevin on 16/5/6.

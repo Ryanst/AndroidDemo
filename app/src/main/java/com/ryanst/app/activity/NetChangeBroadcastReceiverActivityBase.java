@@ -9,13 +9,13 @@ import android.support.annotation.Nullable;
 import android.view.View;
 
 import com.ryanst.app.R;
-import com.ryanst.app.core.BaseActivity;
+import com.ryanst.app.core.BaseSlideActivity;
 import com.ryanst.app.util.NetUtil;
 
 /**
  * Created by zhengjuntong on 16/5/21.
  */
-public class NetChangeBroadcastReceiverActivity extends BaseActivity {
+public class NetChangeBroadcastReceiverActivityBase extends BaseSlideActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
