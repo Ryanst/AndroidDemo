@@ -1,4 +1,4 @@
-package com.rlib.net.response;
+package com.ryanst.app.net.response;
 
 /**
  * Created by kevin on 16/5/7.

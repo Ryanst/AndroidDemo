@@ -7,7 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 
 import com.ryanst.app.R;
-import com.ryanst.app.RyanstApplication;
+import com.ryanst.app.core.RyanstApp;
 
 /**
  * Created by kevin on 16/5/9.
@@ -15,7 +15,7 @@ import com.ryanst.app.RyanstApplication;
 public class DialogUtil {
 
     public static void createAlbumCameraDialog(Context context, final View.OnClickListener listener) {
-        LayoutInflater inflater = LayoutInflater.from(RyanstApplication.getApplication());
+        LayoutInflater inflater = LayoutInflater.from(RyanstApp.getApplication());
         View view = inflater.inflate(R.layout.dialog_album_camera, null);
         final Dialog dialog = new Dialog(context, R.style.CustomDialogStyle);//.Builder(context).create();
         dialog.show();

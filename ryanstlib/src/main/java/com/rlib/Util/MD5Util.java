@@ -1,4 +1,4 @@
-package Util;
+package com.rlib.util;
 
 import android.text.TextUtils;
 

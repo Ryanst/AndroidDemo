@@ -12,7 +12,7 @@
         android:required="true" />
 
     <application
-        android:name=".RyanstApplication"
+        android:name=".core.RyanstApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"

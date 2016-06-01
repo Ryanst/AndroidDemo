@@ -1,8 +1,9 @@
-package com.ryanst.app;
+package com.ryanst.app.core;
 
 import android.app.Application;
 import android.content.Context;
 
+import com.ryanst.app.BuildConfig;
 import com.squareup.leakcanary.LeakCanary;
 
 import butterknife.ButterKnife;
@@ -11,7 +12,7 @@ import butterknife.ButterKnife;
  * Created by kevin on 16/5/9.
  */
 
-public class RyanstApplication extends Application {
+public class RyanstApp extends Application {
 
     private static Context application;
 
