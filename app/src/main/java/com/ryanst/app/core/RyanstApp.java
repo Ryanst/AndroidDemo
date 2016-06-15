@@ -22,9 +22,17 @@ public class RyanstApp extends Application {
         application = this;
         ButterKnife.setDebug(BuildConfig.DEBUG);
         LeakCanary.install(this);
+        initUncaughtException();
     }
 
-    public static Context getApplication(){
+    public static Context getApplication() {
         return application;
+    }
+
+
+    public void initUncaughtException() {
+        //设置该CrashHandler为程序的默认处理器
+        UCEHandler uceHandler = new UCEHandler(this);
+        Thread.setDefaultUncaughtExceptionHandler(uceHandler);
     }
 }
