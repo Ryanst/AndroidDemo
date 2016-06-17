@@ -44,6 +44,32 @@ public class WheelView extends ScrollView {
     private int flingSpeed = DEFAULT_FLING_SPEED;
     private int defaultIndex = DEFAULT_INDEX;
 
+    public void setTextSize(int textSize) {
+        this.textSize = textSize;
+        selectedTextSize = textSize;
+    }
+
+    public void setTextColor(int textColor) {
+        this.textColor = textColor;
+    }
+
+    public void setTextPadding(int textPadding) {
+        this.textPadding = textPadding;
+    }
+
+    public void setSelectTextColor(int selectTextColor) {
+        this.selectTextColor = selectTextColor;
+    }
+
+    public void setFlingSpeed(int flingSpeed) {
+        this.flingSpeed = flingSpeed;
+    }
+
+    public void setDefaultIndex(int defaultIndex) {
+        this.defaultIndex = defaultIndex;
+        selectedIndex = defaultIndex + offset;
+    }
+
     private int initialY;
     private Runnable scrollerTask;
     private int newCheck = 50;
@@ -64,18 +90,20 @@ public class WheelView extends ScrollView {
 
     public WheelView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-
-        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.wheel_view);
-        textSize = (int) typedArray.getDimension(R.styleable.wheel_view_text_size, DEFAULT_TEXT_SIZE);
-        selectedTextSize = textSize;
-        textColor = typedArray.getColor(R.styleable.wheel_view_un_select_color, DEFAULT_UN_SELECT_TEXT_COLOR);
-        selectTextColor = typedArray.getColor(R.styleable.wheel_view_select_color, DEFAULT_SELECT_TEXT_COLOR);
-        offset = typedArray.getInteger(R.styleable.wheel_view_offset, DEFAULT_OFF_SET);
-        defaultIndex = typedArray.getInteger(R.styleable.wheel_view_default_index, DEFAULT_INDEX);
-        flingSpeed = typedArray.getInteger(R.styleable.wheel_view_fling_speed, DEFAULT_FLING_SPEED);
-        selectedIndex = defaultIndex + offset;
-        typedArray.recycle();
+        initStaticData(context, attrs);
         init(context);
+    }
+
+    private void initStaticData(Context context, AttributeSet attrs) {
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.wheel_view);
+        setTextSize((int) typedArray.getDimension(R.styleable.wheel_view_text_size, DEFAULT_TEXT_SIZE));
+        setTextColor(typedArray.getColor(R.styleable.wheel_view_un_select_color, DEFAULT_UN_SELECT_TEXT_COLOR));
+        setSelectTextColor(typedArray.getColor(R.styleable.wheel_view_select_color, DEFAULT_SELECT_TEXT_COLOR));
+        setOffset(typedArray.getInteger(R.styleable.wheel_view_offset, DEFAULT_OFF_SET));
+        setDefaultIndex(typedArray.getInteger(R.styleable.wheel_view_default_index, DEFAULT_INDEX));
+        setFlingSpeed(typedArray.getInteger(R.styleable.wheel_view_fling_speed, DEFAULT_FLING_SPEED));
+        setTextPadding((int) typedArray.getDimension(R.styleable.wheel_view_text_padding, DEFAULT_TEXT_PADDING));
+        typedArray.recycle();
     }
 
     private void init(Context context) {
@@ -87,51 +115,13 @@ public class WheelView extends ScrollView {
         initScrollTask();
     }
 
-    private void initScrollTask() {
-        scrollerTask = new Runnable() {
-            public void run() {
-                int newY = getScrollY();
-                if (initialY - newY == 0) { // stopped
-                    final int overDistance = initialY % itemHeight;
-                    final int itemIndex = initialY / itemHeight;
-
-                    if (overDistance == 0) {
-                        selectedIndex = itemIndex + offset;
-                        onSeletedCallBack();
-                    } else if (overDistance > itemHeight / 2) {
-                        WheelView.this.post(new Runnable() {
-                            @Override
-                            public void run() {
-                                WheelView.this.smoothScrollTo(0, initialY - overDistance + itemHeight);
-                                selectedIndex = itemIndex + offset + 1;
-                                onSeletedCallBack();
-                            }
-                        });
-                    } else {
-                        WheelView.this.post(new Runnable() {
-                            @Override
-                            public void run() {
-                                WheelView.this.smoothScrollTo(0, initialY - overDistance);
-                                selectedIndex = itemIndex + offset;
-                                onSeletedCallBack();
-                            }
-                        });
-                    }
-                } else {
-                    initialY = getScrollY();
-                    WheelView.this.postDelayed(scrollerTask, newCheck);
-                }
-            }
-        };
-    }
-
     public List<String> getItems() {
         return items;
     }
 
     public void setItems(List<String> list) {
         if (null == items) {
-            items = new ArrayList<String>();
+            items = new ArrayList<>();
         }
         items.clear();
         items.addAll(list);
@@ -141,7 +131,6 @@ public class WheelView extends ScrollView {
             items.add(0, "");
             items.add("");
         }
-        initData();
     }
 
     public int getOffset() {
@@ -152,7 +141,8 @@ public class WheelView extends ScrollView {
         this.offset = offset;
     }
 
-    private void initData() {
+    public void refreshView() {
+        rootView.removeAllViews();
         for (String item : items) {
             rootView.addView(createTextView(item));
         }
@@ -263,6 +253,44 @@ public class WheelView extends ScrollView {
     public static class OnWheelViewListener {
         public void onSelected(int selectedIndex, String item) {
         }
+    }
+
+    private void initScrollTask() {
+        scrollerTask = new Runnable() {
+            public void run() {
+                int newY = getScrollY();
+                if (initialY - newY == 0) { // stopped
+                    final int overDistance = initialY % itemHeight;
+                    final int itemIndex = initialY / itemHeight;
+
+                    if (overDistance == 0) {
+                        selectedIndex = itemIndex + offset;
+                        onSeletedCallBack();
+                    } else if (overDistance > itemHeight / 2) {
+                        WheelView.this.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                WheelView.this.smoothScrollTo(0, initialY - overDistance + itemHeight);
+                                selectedIndex = itemIndex + offset + 1;
+                                onSeletedCallBack();
+                            }
+                        });
+                    } else {
+                        WheelView.this.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                WheelView.this.smoothScrollTo(0, initialY - overDistance);
+                                selectedIndex = itemIndex + offset;
+                                onSeletedCallBack();
+                            }
+                        });
+                    }
+                } else {
+                    initialY = getScrollY();
+                    WheelView.this.postDelayed(scrollerTask, newCheck);
+                }
+            }
+        };
     }
 
     private OnWheelViewListener onWheelViewListener;

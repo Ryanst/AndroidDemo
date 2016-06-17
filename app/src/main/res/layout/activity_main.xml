@@ -12,7 +12,8 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:scrollbars="none">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -23,6 +24,7 @@
                 android:id="@+id/btn_to_wheel_view"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/main_button_height"
+                android:layout_marginTop="10dp"
                 android:onClick="onClick"
                 android:text="WheelView" />
 
@@ -30,6 +32,7 @@
                 android:id="@+id/btn_to_custom_view"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/main_button_height"
+                android:layout_marginTop="10dp"
                 android:onClick="onClick"
                 android:text="自定义View" />
 
@@ -37,6 +40,7 @@
                 android:id="@+id/btn_textview_spacing"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/main_button_height"
+                android:layout_marginTop="10dp"
                 android:onClick="onClick"
                 android:text="TextView Spacing" />
 
@@ -44,6 +48,7 @@
                 android:id="@+id/btn_schedule_task"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/main_button_height"
+                android:layout_marginTop="10dp"
                 android:onClick="onClick"
                 android:text="定时任务与线程同步" />
 
@@ -51,6 +56,7 @@
                 android:id="@+id/btn_net_change"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/main_button_height"
+                android:layout_marginTop="10dp"
                 android:onClick="onClick"
                 android:text="检测网络变化广播" />
 
@@ -58,6 +64,7 @@
                 android:id="@+id/btn_navigation_drawer"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/main_button_height"
+                android:layout_marginTop="10dp"
                 android:onClick="onClick"
                 android:text="NavigationDrawerActivity Test" />
 
@@ -65,6 +72,7 @@
                 android:id="@+id/btn_spinner_test"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/main_button_height"
+                android:layout_marginTop="10dp"
                 android:onClick="onClick"
                 android:text="Spinner 下拉框" />
 
@@ -72,6 +80,7 @@
                 android:id="@+id/btn_tab_fragment"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/main_button_height"
+                android:layout_marginTop="10dp"
                 android:onClick="onClick"
                 android:text="Tab Fragment" />
 
@@ -79,6 +88,7 @@
                 android:id="@+id/btn_photo_test"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/main_button_height"
+                android:layout_marginTop="10dp"
                 android:onClick="onClick"
                 android:text="相机相册" />
 
@@ -86,6 +96,7 @@
                 android:id="@+id/login"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/main_button_height"
+                android:layout_marginTop="10dp"
                 android:onClick="onClick"
                 android:text="登录页面" />
 
@@ -93,6 +104,7 @@
                 android:id="@+id/glide"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/main_button_height"
+                android:layout_marginTop="10dp"
                 android:onClick="onClick"
                 android:text="Glide Test" />
 
@@ -101,6 +113,7 @@
                 android:id="@+id/permission"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/main_button_height"
+                android:layout_marginTop="10dp"
                 android:onClick="onClick"
                 android:text="权限Test" />
 
@@ -108,6 +121,7 @@
                 android:id="@+id/webview_error"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/main_button_height"
+                android:layout_marginTop="10dp"
                 android:onClick="onClick"
                 android:text="WebView进度条" />
 
@@ -115,6 +129,7 @@
                 android:id="@+id/test_map_to_list"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/main_button_height"
+                android:layout_marginTop="10dp"
                 android:onClick="onClick"
                 android:text="MapTiList" />
 
@@ -122,6 +137,7 @@
                 android:id="@+id/test_handler"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/main_button_height"
+                android:layout_marginTop="10dp"
                 android:onClick="onClick"
                 android:text="Handler Test" />
 
@@ -129,6 +145,7 @@
                 android:id="@+id/test_data_binding"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/main_button_height"
+                android:layout_marginTop="10dp"
                 android:onClick="onClick"
                 android:text="DataBinding Test" />
 
@@ -136,6 +153,7 @@
                 android:id="@+id/test_handlerthread"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/main_button_height"
+                android:layout_marginTop="10dp"
                 android:onClick="onClick"
                 android:text="HandlerThread Test" />
 
@@ -143,6 +161,7 @@
                 android:id="@+id/test_tablayout_viewpager"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/main_button_height"
+                android:layout_marginTop="10dp"
                 android:onClick="onClick"
                 android:text="TabLayout ViewPager Test" />
 
