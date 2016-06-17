@@ -56,8 +56,8 @@ public class WheelViewActivity extends BaseActivity {
                 .setFlingSpeed(3)
                 .setOffset(3)
                 .setTextPadding(10)
-                .setSelectTextColor(R.color.red_text_color)
-                .setTextColor(R.color.dark_gray)
+                .setSelectTextColor(getResources().getColor(R.color.red_text_color))
+                .setTextColor(getResources().getColor(R.color.dark_gray))
                 .setTextSize(13)
                 .setWheelViewListener(wheelViewListener)
                 .create();
