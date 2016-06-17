@@ -178,4 +178,8 @@
     <color name="shit_new_wine">#ff0060</color>
     <color name="shit_split_gray">#f1f1f1</color>
 
+    <color name="light_gray">#f6f6f6</color>
+    <color name="view_gray">#afafaf</color>
+    <color name="finish_blue_color">#12b7f5</color>
+
 </resources>

@@ -12,8 +12,6 @@ import android.widget.TextView;
 
 import com.ryanst.app.R;
 
-import butterknife.BindView;
-
 /**
  * Created by zhengjuntong on 16/5/24.
  */

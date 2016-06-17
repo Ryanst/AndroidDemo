@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/light_gray"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/view_gray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="37dp">
+
+            <TextView
+                android:id="@+id/tv_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="取消"
+                android:textColor="@color/Black"
+                android:textSize="13sp" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/tv_positive"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="完成"
+                android:textColor="@color/finish_blue_color"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/view_gray" />
+
+        <com.ryanst.app.view.WheelView
+            android:id="@+id/wheelView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:default_index="2"
+            app:fling_speed="10"
+            app:offset="3"
+            app:select_color="@color/Blue"
+            app:text_size="18sp"
+            app:un_select_color="@color/Green" />
+
+    </LinearLayout>
+
+
+</layout>

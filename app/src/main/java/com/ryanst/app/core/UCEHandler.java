@@ -8,10 +8,6 @@ import android.os.Looper;
 import android.widget.Toast;
 
 import com.orhanobut.logger.Logger;
-import com.ryanst.app.R;
-import com.tal.app.seaside.activity.SplashActivity;
-import com.tal.app.seaside.util.LogUtil;
-import com.tal.app.seaside.util.ToastUtil;
 
 /**
  * Created by kevin on 15/11/19.

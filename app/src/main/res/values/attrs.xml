@@ -19,4 +19,14 @@
         <attr name="ivBg" format="reference"></attr>
         <attr name="text" format="string"></attr>
     </declare-styleable>
+
+    <declare-styleable name="wheel_view">
+        <attr name="text_size" format="dimension"></attr>
+        <attr name="text_padding" format="dimension"></attr>
+        <attr name="select_color" format="color"></attr>
+        <attr name="un_select_color" format="color"></attr>
+        <attr name="offset" format="integer"></attr>
+        <attr name="fling_speed" format="integer"></attr>
+        <attr name="default_index" format="integer"></attr>
+    </declare-styleable>
 </resources>
