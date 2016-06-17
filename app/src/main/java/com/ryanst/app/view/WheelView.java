@@ -33,6 +33,7 @@ public class WheelView extends ScrollView {
     public static final int DEFAULT_TEXT_PADDING = 12;
     public static final int DEFAULT_FLING_SPEED = 3;
     public static final int DEFAULT_INDEX = 0;
+    public static final int DEFAULT_OFF_SET = 1;
 
     private int selectedTextSize = DEFAULT_TEXT_SIZE;
     private int textSize = DEFAULT_TEXT_SIZE;
@@ -43,25 +44,15 @@ public class WheelView extends ScrollView {
     private int flingSpeed = DEFAULT_FLING_SPEED;
     private int defaultIndex = DEFAULT_INDEX;
 
-
     private int initialY;
     private Runnable scrollerTask;
     private int newCheck = 50;
     private int itemHeight = 0;
     private int selectedIndex = 1; //index+offset
-    private int displayItemCount; // 每页显示的数量
-
-
-    public static final int DEFAULT_OFF_SET = 1;
 
     private Context context;
     private LinearLayout rootView;
     private List<String> items;
-
-    public static class OnWheelViewListener {
-        public void onSelected(int selectedIndex, String item) {
-        }
-    }
 
     public WheelView(Context context) {
         this(context, null);
@@ -82,6 +73,7 @@ public class WheelView extends ScrollView {
         offset = typedArray.getInteger(R.styleable.wheel_view_offset, DEFAULT_OFF_SET);
         defaultIndex = typedArray.getInteger(R.styleable.wheel_view_default_index, DEFAULT_INDEX);
         flingSpeed = typedArray.getInteger(R.styleable.wheel_view_fling_speed, DEFAULT_FLING_SPEED);
+        selectedIndex = defaultIndex + offset;
         typedArray.recycle();
         init(context);
     }
@@ -92,7 +84,10 @@ public class WheelView extends ScrollView {
         rootView = new LinearLayout(context);
         rootView.setOrientation(LinearLayout.VERTICAL);
         this.addView(rootView);
+        initScrollTask();
+    }
 
+    private void initScrollTask() {
         scrollerTask = new Runnable() {
             public void run() {
                 int newY = getScrollY();
@@ -130,10 +125,9 @@ public class WheelView extends ScrollView {
         };
     }
 
-    private List<String> getItems() {
+    public List<String> getItems() {
         return items;
     }
-
 
     public void setItems(List<String> list) {
         if (null == items) {
@@ -158,13 +152,7 @@ public class WheelView extends ScrollView {
         this.offset = offset;
     }
 
-    public void startScrollerTask() {
-        initialY = getScrollY();
-        this.postDelayed(scrollerTask, newCheck);
-    }
-
     private void initData() {
-        displayItemCount = offset * 2 + 1;
         for (String item : items) {
             rootView.addView(createTextView(item));
         }
@@ -182,6 +170,7 @@ public class WheelView extends ScrollView {
         textView.setPadding(padding, padding, padding, padding);
         if (itemHeight == 0) {
             itemHeight = getViewMeasuredHeight(textView);
+            int displayItemCount = offset * 2 + 1;
             rootView.setLayoutParams(new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, itemHeight * displayItemCount));
             LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) this.getLayoutParams();
             this.setLayoutParams(new LinearLayout.LayoutParams(lp.width, itemHeight * displayItemCount));
@@ -224,6 +213,80 @@ public class WheelView extends ScrollView {
             }
         }
     }
+
+    /**
+     * 选中回调
+     */
+    private void onSeletedCallBack() {
+        if (null != onWheelViewListener) {
+            onWheelViewListener.onSelected(selectedIndex, items.get(selectedIndex));
+        }
+    }
+
+    //这里的index是真正数据list的index
+    public void setSeletion(final int index) {
+        selectedIndex = index + offset;
+        this.post(new Runnable() {
+            @Override
+            public void run() {
+                WheelView.this.smoothScrollTo(0, index * itemHeight);
+            }
+        });
+    }
+
+    public String getSeletedItem() {
+        return items.get(selectedIndex);
+    }
+
+    public int getSeletedIndex() {
+        return selectedIndex - offset;
+    }
+
+    @Override
+    public void fling(int velocityY) {
+        super.fling((int) ((float) velocityY * flingSpeed / 10));//使fling操作的时候scrollview滚动的速度减慢到原来的1/3
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent ev) {
+        if (ev.getAction() == MotionEvent.ACTION_UP) {
+            startScrollerTask();
+        }
+        return super.onTouchEvent(ev);
+    }
+
+    public void startScrollerTask() {
+        initialY = getScrollY();
+        this.postDelayed(scrollerTask, newCheck);
+    }
+
+    public static class OnWheelViewListener {
+        public void onSelected(int selectedIndex, String item) {
+        }
+    }
+
+    private OnWheelViewListener onWheelViewListener;
+
+    public OnWheelViewListener getOnWheelViewListener() {
+        return onWheelViewListener;
+    }
+
+    public void setOnWheelViewListener(OnWheelViewListener onWheelViewListener) {
+        this.onWheelViewListener = onWheelViewListener;
+    }
+
+    private int dip2px(float dpValue) {
+        final float scale = context.getResources().getDisplayMetrics().density;
+        return (int) (dpValue * scale + 0.5f);
+    }
+
+    private int getViewMeasuredHeight(View view) {
+        int width = MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED);
+        int expandSpec = MeasureSpec.makeMeasureSpec(Integer.MAX_VALUE >> 2, MeasureSpec.AT_MOST);
+        view.measure(width, expandSpec);
+        return view.getMeasuredHeight();
+    }
+
 
     /**
      * 获取选中区域的边界
@@ -293,68 +356,5 @@ public class WheelView extends ScrollView {
         super.onSizeChanged(w, h, oldw, oldh);
         viewWidth = w;
         setBackgroundDrawable(null);
-    }
-
-    /**
-     * 选中回调
-     */
-    private void onSeletedCallBack() {
-        if (null != onWheelViewListener) {
-            onWheelViewListener.onSelected(selectedIndex, items.get(selectedIndex));
-        }
-    }
-
-    //这里的index是真正数据list的index
-    public void setSeletion(final int index) {
-        selectedIndex = index + offset;
-        this.post(new Runnable() {
-            @Override
-            public void run() {
-                WheelView.this.smoothScrollTo(0, index * itemHeight);
-            }
-        });
-    }
-
-    public String getSeletedItem() {
-        return items.get(selectedIndex);
-    }
-
-    public int getSeletedIndex() {
-        return selectedIndex - offset;
-    }
-
-    @Override
-    public void fling(int velocityY) {
-        super.fling((int) ((float) velocityY * flingSpeed / 10));//使fling操作的时候scrollview滚动的速度减慢到原来的1/3
-    }
-
-    @Override
-    public boolean onTouchEvent(MotionEvent ev) {
-        if (ev.getAction() == MotionEvent.ACTION_UP) {
-            startScrollerTask();
-        }
-        return super.onTouchEvent(ev);
-    }
-
-    private OnWheelViewListener onWheelViewListener;
-
-    public OnWheelViewListener getOnWheelViewListener() {
-        return onWheelViewListener;
-    }
-
-    public void setOnWheelViewListener(OnWheelViewListener onWheelViewListener) {
-        this.onWheelViewListener = onWheelViewListener;
-    }
-
-    private int dip2px(float dpValue) {
-        final float scale = context.getResources().getDisplayMetrics().density;
-        return (int) (dpValue * scale + 0.5f);
-    }
-
-    private int getViewMeasuredHeight(View view) {
-        int width = MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED);
-        int expandSpec = MeasureSpec.makeMeasureSpec(Integer.MAX_VALUE >> 2, MeasureSpec.AT_MOST);
-        view.measure(width, expandSpec);
-        return view.getMeasuredHeight();
     }
 }

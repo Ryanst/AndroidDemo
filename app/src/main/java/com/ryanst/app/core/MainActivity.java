@@ -25,6 +25,7 @@ import com.ryanst.app.activity.TabFragmentActivity;
 import com.ryanst.app.activity.TabLayoutViewPagerActivity;
 import com.ryanst.app.activity.TextViewLetterSpacingActivity;
 import com.ryanst.app.activity.WebviewErrorActivity;
+import com.ryanst.app.activity.WheelViewActivity;
 import com.ryanst.app.core.BaseActivity;
 
 import java.util.ArrayList;
@@ -49,6 +50,9 @@ public class MainActivity extends BaseActivity {
     @DebugLog
     public void onClick(View view) {
         switch (view.getId()) {
+            case R.id.btn_to_wheel_view:
+                startActivity(new Intent(this, WheelViewActivity.class));
+                break;
             case R.id.btn_to_custom_view:
                 startActivity(new Intent(this, CustomViewActivity.class));
                 break;

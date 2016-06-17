@@ -103,6 +103,11 @@
             android:label="@string/title_activity_navigation_drawer"
             android:theme="@style/AppTheme"></activity>
 
+        <activity
+            android:name=".activity.WheelViewActivity"
+            android:label="@string/title_activity_navigation_drawer"
+            android:theme="@style/AppTheme"></activity>
+
     </application>
 
 </manifest>
