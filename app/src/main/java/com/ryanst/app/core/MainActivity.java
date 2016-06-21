@@ -19,6 +19,7 @@ import com.ryanst.app.activity.NavigationDrawerActivity;
 import com.ryanst.app.activity.NetChangeBroadcastReceiverActivity;
 import com.ryanst.app.activity.PermissionActivity;
 import com.ryanst.app.activity.PhotoCameraActivity;
+import com.ryanst.app.activity.RxJavaTestActivity;
 import com.ryanst.app.activity.ScheduleTaskActivity;
 import com.ryanst.app.activity.SpinnerActivity;
 import com.ryanst.app.activity.TabFragmentActivity;
@@ -50,6 +51,9 @@ public class MainActivity extends BaseActivity {
     @DebugLog
     public void onClick(View view) {
         switch (view.getId()) {
+            case R.id.btn_to_rxjava_test:
+                startActivity(new Intent(this, RxJavaTestActivity.class));
+                break;
             case R.id.btn_to_wheel_view:
                 startActivity(new Intent(this, WheelViewActivity.class));
                 break;

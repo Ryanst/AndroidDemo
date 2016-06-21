@@ -108,6 +108,12 @@
             android:label="@string/title_activity_navigation_drawer"
             android:theme="@style/AppTheme.Translucent"></activity>
 
+        <activity
+            android:name=".activity.RxJavaTestActivity"
+            android:label="@string/title_activity_navigation_drawer"
+            android:theme="@style/AppTheme.Translucent"></activity>
+
+
     </application>
 
 </manifest>

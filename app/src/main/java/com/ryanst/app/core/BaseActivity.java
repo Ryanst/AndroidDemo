@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.Gravity;
 
 import com.github.johnpersano.supertoasts.SuperToast;
+import com.orhanobut.logger.Logger;
 import com.ryanst.app.widget.CloseAllActivityEvent;
 import com.umeng.analytics.MobclickAgent;
 
@@ -61,5 +62,13 @@ public class BaseActivity extends AppCompatActivity {
         }
         toast.setText(message);
         toast.show();
+    }
+
+    public void logger(String message) {
+        Logger.d(getClass().getName(), message);
+    }
+
+    public void log(String message) {
+        Log.d(getClass().getName(), message);
     }
 }
