@@ -114,6 +114,10 @@ dependencies {
     debugCompile 'com.squareup.leakcanary:leakcanary-android:1.4-beta2'
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2'
     testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2'
+
+    //blockcanary
+    debugCompile 'com.github.moduth:blockcanary-android:1.2.1'
+    releaseCompile 'com.github.moduth:blockcanary-no-op:1.2.1'
     //eventbus
     compile 'org.greenrobot:eventbus:3.0.0'
     //友盟统计

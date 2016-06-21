@@ -3,6 +3,7 @@ package com.ryanst.app.core;
 import android.app.Application;
 import android.content.Context;
 
+import com.github.moduth.blockcanary.BlockCanary;
 import com.ryanst.app.BuildConfig;
 import com.squareup.leakcanary.LeakCanary;
 
@@ -22,6 +23,7 @@ public class RyanstApp extends Application {
         application = this;
         ButterKnife.setDebug(BuildConfig.DEBUG);
         LeakCanary.install(this);
+        BlockCanary.install(this, new AppBlockCanaryContext()).start();
         initUncaughtException();
     }
 

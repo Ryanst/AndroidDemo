@@ -10,7 +10,7 @@ import android.view.View;
 
 import com.ryanst.app.R;
 import com.ryanst.app.core.BaseSlideActivity;
-import com.ryanst.app.util.NetUtil;
+import com.ryanst.app.util.NetWorkUtil;
 
 /**
  * Created by zhengjuntong on 16/5/21.
@@ -31,7 +31,7 @@ public class NetChangeBroadcastReceiverActivity extends BaseSlideActivity {
     private BroadcastReceiver receiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            NetUtil.NetType networkType = new NetUtil(context).getNetType();
+            NetWorkUtil.NetType networkType = NetWorkUtil.getNetType(context);
             switch (networkType) {
                 case NO_NETWORK_CONNECTED:
                     toast("NO_NETWORK_CONNECTED");
