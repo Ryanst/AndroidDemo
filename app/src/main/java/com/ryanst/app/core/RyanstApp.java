@@ -2,12 +2,16 @@ package com.ryanst.app.core;
 
 import android.app.Application;
 import android.content.Context;
+import android.os.Build;
 
 import com.github.moduth.blockcanary.BlockCanary;
+import com.orhanobut.logger.LogLevel;
+import com.orhanobut.logger.Logger;
 import com.ryanst.app.BuildConfig;
 import com.squareup.leakcanary.LeakCanary;
 
 import butterknife.ButterKnife;
+import hugo.weaving.internal.Hugo;
 
 /**
  * Created by kevin on 16/5/9.
@@ -16,6 +20,7 @@ import butterknife.ButterKnife;
 public class RyanstApp extends Application {
 
     private static Context application;
+    public static final String RYANST_LOG = "Juntong";
 
     @Override
     public void onCreate() {
@@ -24,6 +29,7 @@ public class RyanstApp extends Application {
         ButterKnife.setDebug(BuildConfig.DEBUG);
         LeakCanary.install(this);
         BlockCanary.install(this, new AppBlockCanaryContext()).start();
+        Logger.init(RYANST_LOG).logLevel(LogLevel.FULL);
         initUncaughtException();
     }
 

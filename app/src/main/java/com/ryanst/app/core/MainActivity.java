@@ -2,7 +2,6 @@ package com.ryanst.app.core;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
@@ -27,7 +26,6 @@ import com.ryanst.app.activity.TabLayoutViewPagerActivity;
 import com.ryanst.app.activity.TextViewLetterSpacingActivity;
 import com.ryanst.app.activity.WebviewErrorActivity;
 import com.ryanst.app.activity.WheelViewActivity;
-import com.ryanst.app.core.BaseActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -39,13 +37,10 @@ import hugo.weaving.DebugLog;
 
 public class MainActivity extends BaseActivity {
 
-    public static final String RYANST_LOG = "Juntong";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Logger.init(RYANST_LOG).logLevel(LogLevel.FULL);
     }
 
     @DebugLog

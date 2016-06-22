@@ -31,6 +31,7 @@ public class RxJavaTestActivity extends BaseActivity {
                 .subscribe(new Action1<Integer>() {
                     @Override
                     public void call(Integer number) {
+                        log("number:" + number);
                         logger("number:" + number);
                     }
                 });

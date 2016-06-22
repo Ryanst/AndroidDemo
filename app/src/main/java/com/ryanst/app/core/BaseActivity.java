@@ -65,7 +65,11 @@ public class BaseActivity extends AppCompatActivity {
     }
 
     public void logger(String message) {
-        Logger.d(getClass().getName(), message);
+        Logger.d(message);
+    }
+
+    public void logger(String tag, String message) {
+        Logger.t(tag).d(message);
     }
 
     public void log(String message) {
