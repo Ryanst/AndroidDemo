@@ -38,6 +38,9 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".activity.NavigationBarTestActivity"
+            android:theme="@style/AppTheme.Translucent"></activity>
+        <activity
             android:name=".activity.LoginActivity"
             android:theme="@style/AppTheme.Translucent"></activity>
         <activity

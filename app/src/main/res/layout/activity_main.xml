@@ -20,6 +20,14 @@
             android:orientation="vertical">
 
             <Button
+                android:id="@+id/btn_to_toolbar_test"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/main_button_height"
+                android:layout_marginTop="10dp"
+                android:onClick="onClick"
+                android:text="ToolBar" />
+
+            <Button
                 android:id="@+id/btn_to_rxjava_test"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/main_button_height"

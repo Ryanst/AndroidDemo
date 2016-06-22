@@ -50,7 +50,10 @@ public class NetChangeBroadcastReceiverActivity extends BaseSlideActivity {
 
     @Override
     protected void onDestroy() {
-        unregisterReceiver(receiver);
+        if (receiver != null) {
+            unregisterReceiver(receiver);
+            receiver = null;
+        }
         super.onDestroy();
     }
 }

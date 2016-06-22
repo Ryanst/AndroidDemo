@@ -29,4 +29,10 @@
         <attr name="fling_speed" format="integer"></attr>
         <attr name="default_index" format="integer"></attr>
     </declare-styleable>
+
+    <declare-styleable name="tool_bar">
+        <attr name="title_text" format="string" />
+        <attr name="subtitle_text" format="string" />
+        <attr name="back" format="boolean" />
+    </declare-styleable>
 </resources>

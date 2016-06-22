@@ -11,10 +11,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.ryanst.app.core;
+package com.ryanst.app.widget;
 
 import com.github.moduth.blockcanary.BlockCanaryContext;
 import com.ryanst.app.BuildConfig;
+import com.ryanst.app.core.RyanstApp;
 import com.ryanst.app.util.ChannelUtil;
 import com.ryanst.app.util.NetWorkUtil;
 import com.ryanst.app.util.VersionUtil;

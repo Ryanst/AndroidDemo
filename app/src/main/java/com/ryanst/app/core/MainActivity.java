@@ -14,6 +14,7 @@ import com.ryanst.app.activity.GlideActivity;
 import com.ryanst.app.activity.HandlerTestActivity;
 import com.ryanst.app.activity.HandlerThreadActivity;
 import com.ryanst.app.activity.LoginActivity;
+import com.ryanst.app.activity.NavigationBarTestActivity;
 import com.ryanst.app.activity.NavigationDrawerActivity;
 import com.ryanst.app.activity.NetChangeBroadcastReceiverActivity;
 import com.ryanst.app.activity.PermissionActivity;
@@ -41,11 +42,14 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Logger.init("Juntong").logLevel(LogLevel.FULL);
     }
 
-    @DebugLog
     public void onClick(View view) {
         switch (view.getId()) {
+            case R.id.btn_to_toolbar_test:
+                startActivity(new Intent(this, NavigationBarTestActivity.class));
+                break;
             case R.id.btn_to_rxjava_test:
                 startActivity(new Intent(this, RxJavaTestActivity.class));
                 break;

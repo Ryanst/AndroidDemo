@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Ryanst.Widget.ToolBar" parent="@style/Widget.AppCompat.ActionBar">
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:minHeight">?attr/actionBarSize</item>
+        <item name="popupTheme">@style/Ryanst.Widget.Menu</item>
+        <item name="android:fitsSystemWindows">true</item>
+        <item name="actionButtonStyle">@style/Ryanst.Widget.ActionButton</item>
+    </style>
+
+
+    <style name="Ryanst.Widget.Menu" parent="@style/Widget.AppCompat.Light.PopupMenu">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textSize">@dimen/font_normal</item>
+    </style>
+
+
+    <style name="Ryanst.Widget.ActionButton" parent="@style/Widget.AppCompat.ActionButton">
+        <item name="android:textSize">@dimen/font_normal</item>
+    </style>
+</resources>

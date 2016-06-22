@@ -1,4 +1,4 @@
-package com.ryanst.app.core;
+package com.ryanst.app.view;
 
 import android.content.Context;
 import android.support.v4.view.MotionEventCompat;

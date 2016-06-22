@@ -7,7 +7,6 @@ import android.view.View;
 import com.ryanst.app.R;
 import com.ryanst.app.core.BaseActivity;
 
-import hugo.weaving.DebugLog;
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
@@ -23,7 +22,6 @@ public class RxJavaTestActivity extends BaseActivity {
         setContentView(R.layout.activity_single_button);
     }
 
-    @DebugLog
     public void onClick(View view) {
         Observable.just(1, 2, 3, 4)
                 .subscribeOn(Schedulers.io()) // 指定 subscribe() 发生在 IO 线程
@@ -32,7 +30,6 @@ public class RxJavaTestActivity extends BaseActivity {
                     @Override
                     public void call(Integer number) {
                         log("number:" + number);
-                        logger("number:" + number);
                     }
                 });
     }

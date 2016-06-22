@@ -1,4 +1,4 @@
-package com.ryanst.app.core;
+package com.ryanst.app.widget;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
@@ -8,6 +8,8 @@ import android.os.Looper;
 import android.widget.Toast;
 
 import com.orhanobut.logger.Logger;
+import com.ryanst.app.core.MainActivity;
+import com.ryanst.app.core.RyanstApp;
 
 /**
  * Created by kevin on 15/11/19.
@@ -30,7 +32,7 @@ public class UCEHandler implements Thread.UncaughtExceptionHandler {
             mDefaultHandler.uncaughtException(thread, ex);
         } else {
             try {
-                Thread.sleep(1000);
+                Thread.sleep(500);
             } catch (InterruptedException e) {
                 Logger.e(TAG + "error : " + e);
             }
@@ -40,7 +42,7 @@ public class UCEHandler implements Thread.UncaughtExceptionHandler {
                     intent, Intent.FLAG_ACTIVITY_NEW_TASK);
             //退出程序
             AlarmManager mgr = (AlarmManager) application.getSystemService(Context.ALARM_SERVICE);
-            mgr.set(AlarmManager.RTC, System.currentTimeMillis() + 1000,
+            mgr.set(AlarmManager.RTC, System.currentTimeMillis() + 500,
                     restartIntent); // 1秒钟后重启应用
             System.exit(0);
         }
