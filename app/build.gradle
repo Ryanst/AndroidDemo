@@ -73,7 +73,7 @@ android {
 
 buildscript {
     repositories {
-        mavenCentral()
+        maven { url "http://repo1.maven.org/maven2" }
     }
     dependencies {
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
@@ -87,7 +87,6 @@ apply plugin: 'com.neenbedankt.android-apt'
 apply plugin: 'com.jakewharton.hugo'
 
 repositories {
-    mavenCentral()
     maven { url "https://jitpack.io" }
     maven { url "http://repo1.maven.org/maven2" }
 }

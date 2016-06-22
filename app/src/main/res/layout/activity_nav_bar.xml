@@ -13,13 +13,13 @@
         android:background="@color/white"
         android:orientation="vertical">
 
-        <com.ryanst.app.widget.NavigationBar
+        <com.ryanst.app.view.NavigationBar
             android:id="@+id/navBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:title_text="原始标题">
 
-        </com.ryanst.app.widget.NavigationBar>
+        </com.ryanst.app.view.NavigationBar>
 
         <Button
             android:layout_width="match_parent"
