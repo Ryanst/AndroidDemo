@@ -2,11 +2,11 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    style="@style/textInputColor"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="@dimen/activity_horizontal_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
     tools:context=".core.MainActivity">
 
     <ScrollView
@@ -18,6 +18,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_to_navbar_test"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/main_button_height"
+                android:layout_marginTop="10dp"
+                android:onClick="onClick"
+                android:text="测试底部导航栏" />
 
             <Button
                 android:id="@+id/btn_to_toolbar_test"

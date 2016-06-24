@@ -14,6 +14,7 @@ import com.ryanst.app.activity.GlideActivity;
 import com.ryanst.app.activity.HandlerTestActivity;
 import com.ryanst.app.activity.HandlerThreadActivity;
 import com.ryanst.app.activity.LoginActivity;
+import com.ryanst.app.activity.NavBarTestActivity;
 import com.ryanst.app.activity.NavigationBarTestActivity;
 import com.ryanst.app.activity.NavigationDrawerActivity;
 import com.ryanst.app.activity.NetChangeBroadcastReceiverActivity;
@@ -33,8 +34,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import hugo.weaving.DebugLog;
-
 
 public class MainActivity extends BaseActivity {
 
@@ -47,6 +46,9 @@ public class MainActivity extends BaseActivity {
 
     public void onClick(View view) {
         switch (view.getId()) {
+            case R.id.btn_to_navbar_test:
+                startActivity(new Intent(this, NavBarTestActivity.class));
+                break;
             case R.id.btn_to_toolbar_test:
                 startActivity(new Intent(this, NavigationBarTestActivity.class));
                 break;

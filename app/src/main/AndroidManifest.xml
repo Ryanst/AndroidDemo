@@ -85,37 +85,33 @@
             android:theme="@style/AppTheme.Translucent"></activity>
         <activity
             android:name=".activity.NavigationDrawerActivity"
-            android:label="@string/title_activity_navigation_drawer"
             android:theme="@style/AppTheme.Translucent"></activity>
 
         <activity
             android:name=".activity.NetChangeBroadcastReceiverActivity"
-            android:label="@string/title_activity_navigation_drawer"
             android:theme="@style/AppTheme.Translucent"></activity>
         <activity
             android:name=".activity.ScheduleTaskActivity"
-            android:label="@string/title_activity_navigation_drawer"
             android:theme="@style/AppTheme.Translucent"></activity>
         <activity
             android:name=".activity.TextViewLetterSpacingActivity"
-            android:label="@string/title_activity_navigation_drawer"
             android:theme="@style/AppTheme.Translucent"></activity>
 
         <activity
             android:name=".activity.CustomViewActivity"
-            android:label="@string/title_activity_navigation_drawer"
             android:theme="@style/AppTheme.Translucent"></activity>
 
         <activity
             android:name=".activity.WheelViewActivity"
-            android:label="@string/title_activity_navigation_drawer"
             android:theme="@style/AppTheme.Translucent"></activity>
 
         <activity
             android:name=".activity.RxJavaTestActivity"
-            android:label="@string/title_activity_navigation_drawer"
             android:theme="@style/AppTheme.Translucent"></activity>
 
+        <activity
+            android:name=".widget.GistActivity"
+            android:theme="@style/AppTheme.Translucent"></activity>
 
     </application>
 
