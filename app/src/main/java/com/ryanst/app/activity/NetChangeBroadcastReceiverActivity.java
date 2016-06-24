@@ -16,6 +16,9 @@ import com.ryanst.app.util.NetWorkUtil;
  * Created by zhengjuntong on 16/5/21.
  */
 public class NetChangeBroadcastReceiverActivity extends BaseSlideActivity {
+
+    private BroadcastReceiver receiver;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,30 +26,32 @@ public class NetChangeBroadcastReceiverActivity extends BaseSlideActivity {
     }
 
     public void onClick(View view) {
+
+        receiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                NetWorkUtil.NetType networkType = NetWorkUtil.getNetType(context);
+                switch (networkType) {
+                    case NO_NETWORK_CONNECTED:
+                        toast("NO_NETWORK_CONNECTED");
+                        break;
+                    case WIFI_CONNECTED:
+                        toast("WIFI_CONNECTED");
+                        break;
+                    case OTHER_NETWORK_CONNECTED:
+                        toast("OTHER_NETWORK_CONNECTED");
+                        break;
+                    default:
+                        break;
+                }
+            }
+        };
+
         IntentFilter filter = new IntentFilter();
         filter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
         registerReceiver(receiver, filter);
     }
 
-    private BroadcastReceiver receiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            NetWorkUtil.NetType networkType = NetWorkUtil.getNetType(context);
-            switch (networkType) {
-                case NO_NETWORK_CONNECTED:
-                    toast("NO_NETWORK_CONNECTED");
-                    break;
-                case WIFI_CONNECTED:
-                    toast("WIFI_CONNECTED");
-                    break;
-                case OTHER_NETWORK_CONNECTED:
-                    toast("OTHER_NETWORK_CONNECTED");
-                    break;
-                default:
-                    break;
-            }
-        }
-    };
 
     @Override
     protected void onDestroy() {
