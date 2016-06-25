@@ -6,7 +6,7 @@ import android.content.pm.PackageManager;
 import android.telephony.TelephonyManager;
 
 /**
- * Created by kevin on 16/3/22.
+ * Created by zhengjuntong on 16/3/22.
  */
 public class ChannelUtil {
 

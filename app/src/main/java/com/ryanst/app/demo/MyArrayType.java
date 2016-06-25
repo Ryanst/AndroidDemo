@@ -3,7 +3,7 @@ package com.ryanst.app.demo;
 import java.util.ArrayList;
 
 /**
- * Created by kevin on 16/5/5.
+ * Created by zhengjuntong on 16/5/5.
  */
 public class MyArrayType<T> extends ArrayList<String> {
     ArrayList<T> list;

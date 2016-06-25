@@ -15,7 +15,7 @@ import com.ryanst.app.core.BaseSlideActivity;
 import com.ryanst.app.view.MyWebView;
 
 /**
- * Created by kevin on 16/4/28.
+ * Created by zhengjuntong on 16/4/28.
  */
 public class WebviewErrorActivity extends BaseSlideActivity {
 

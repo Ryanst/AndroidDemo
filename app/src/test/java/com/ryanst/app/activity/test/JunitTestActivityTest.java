@@ -5,7 +5,7 @@ import android.test.ActivityInstrumentationTestCase2;
 import com.ryanst.app.activity.JunitTestActivity;
 
 /**
- * Created by kevin on 16/5/5.
+ * Created by zhengjuntong on 16/5/5.
  */
 public class JunitTestActivityTest extends ActivityInstrumentationTestCase2<JunitTestActivity> {
 

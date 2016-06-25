@@ -25,7 +25,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by kevin on 16/5/9.
+ * Created by zhengjuntong on 16/5/9.
  */
 public class PhotoCameraActivity extends BaseSlideActivity {
 

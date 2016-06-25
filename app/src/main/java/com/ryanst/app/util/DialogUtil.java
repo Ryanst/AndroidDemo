@@ -10,7 +10,7 @@ import com.ryanst.app.R;
 import com.ryanst.app.core.RyanstApp;
 
 /**
- * Created by kevin on 16/5/9.
+ * Created by zhengjuntong on 16/5/9.
  */
 public class DialogUtil {
 

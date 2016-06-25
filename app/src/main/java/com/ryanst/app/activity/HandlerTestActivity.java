@@ -13,7 +13,7 @@ import com.ryanst.app.core.BaseSlideActivity;
 import hugo.weaving.DebugLog;
 
 /**
- * Created by kevin on 16/5/4.
+ * Created by zhengjuntong on 16/5/4.
  */
 public class HandlerTestActivity extends BaseSlideActivity {
 

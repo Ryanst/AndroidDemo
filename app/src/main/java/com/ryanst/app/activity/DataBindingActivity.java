@@ -6,12 +6,12 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.ryanst.app.R;
+import com.ryanst.app.bean.DataBindingBean;
 import com.ryanst.app.core.BaseSlideActivity;
 import com.ryanst.app.databinding.ActivityDataBindingBinding;
-import com.ryanst.app.bean.DataBindingBean;
 
 /**
- * Created by kevin on 16/5/4.
+ * Created by zhengjuntong on 16/5/4.
  */
 public class DataBindingActivity extends BaseSlideActivity {
 

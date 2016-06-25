@@ -6,7 +6,7 @@ import android.databinding.Bindable;
 import com.ryanst.app.BR;
 
 /**
- * Created by kevin on 16/5/4.
+ * Created by zhengjuntong on 16/5/4.
  */
 public class DataBindingBean extends BaseObservable {
 

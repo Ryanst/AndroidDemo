@@ -20,7 +20,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by kevin on 16/5/10.
+ * Created by zhengjuntong on 16/5/10.
  */
 public class TabFragmentActivity extends BaseSlideActivity {
 

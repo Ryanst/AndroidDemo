@@ -27,7 +27,7 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
 /**
- * Created by kevin on 16/4/27.
+ * Created by zhengjuntong on 16/4/27.
  */
 public class PermissionActivity extends BaseSlideActivity {
 

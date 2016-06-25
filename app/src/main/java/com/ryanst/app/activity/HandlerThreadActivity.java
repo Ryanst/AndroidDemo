@@ -13,7 +13,7 @@ import com.ryanst.app.core.BaseSlideActivity;
 import com.ryanst.app.util.Utils;
 
 /**
- * Created by kevin on 16/5/5.
+ * Created by zhengjuntong on 16/5/5.
  */
 
 public class HandlerThreadActivity extends BaseSlideActivity {

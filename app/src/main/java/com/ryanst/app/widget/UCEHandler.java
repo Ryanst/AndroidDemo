@@ -12,7 +12,7 @@ import com.ryanst.app.core.MainActivity;
 import com.ryanst.app.core.RyanstApp;
 
 /**
- * Created by kevin on 15/11/19.
+ * Created by zhengjuntong on 15/11/19.
  */
 public class UCEHandler implements Thread.UncaughtExceptionHandler {
     private Thread.UncaughtExceptionHandler mDefaultHandler;

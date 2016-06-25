@@ -6,7 +6,7 @@ import android.support.annotation.Nullable;
 import com.ryanst.app.core.BaseSlideActivity;
 
 /**
- * Created by kevin on 16/5/5.
+ * Created by zhengjuntong on 16/5/5.
  */
 public class JunitTestActivity extends BaseSlideActivity {
     @Override

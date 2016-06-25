@@ -14,7 +14,7 @@ import com.ryanst.app.R;
 import com.ryanst.app.core.BaseSlideActivity;
 
 /**
- * Created by kevin on 16/4/27.
+ * Created by zhengjuntong on 16/4/27.
  */
 public class ManufacturerJudgementActivity extends BaseSlideActivity {
     @Override

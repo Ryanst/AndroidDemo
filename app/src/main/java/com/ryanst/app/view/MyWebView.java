@@ -6,7 +6,7 @@ import android.webkit.WebView;
 import android.widget.ProgressBar;
 
 /**
- * Created by kevin on 16/4/28.
+ * Created by zhengjuntong on 16/4/28.
  */
 public class MyWebView extends WebView {
 

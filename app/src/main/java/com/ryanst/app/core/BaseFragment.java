@@ -1,6 +1,5 @@
 package com.ryanst.app.core;
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -15,7 +14,7 @@ import com.github.johnpersano.supertoasts.SuperToast;
 import com.umeng.analytics.MobclickAgent;
 
 /**
- * Created by kevin on 16/5/6.
+ * Created by zhengjuntong on 16/5/6.
  */
 public class BaseFragment extends Fragment {
 

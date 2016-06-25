@@ -10,7 +10,6 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 
@@ -35,7 +34,7 @@ import java.io.InputStream;
 import java.util.Locale;
 
 /**
- * Created by kevin on 16/4/26.
+ * Created by zhengjuntong on 16/4/26.
  */
 public class GlideActivity extends BaseSlideActivity {
 

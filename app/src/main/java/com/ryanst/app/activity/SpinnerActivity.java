@@ -12,8 +12,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.ryanst.app.bean.PersonBean;
 import com.ryanst.app.R;
+import com.ryanst.app.bean.PersonBean;
 import com.ryanst.app.core.BaseSlideActivity;
 
 import java.util.ArrayList;
@@ -23,7 +23,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by kevin on 16/5/11.
+ * Created by zhengjuntong on 16/5/11.
  */
 public class SpinnerActivity extends BaseSlideActivity {
     @BindView(R.id.sp_spinner)

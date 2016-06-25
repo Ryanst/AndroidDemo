@@ -1,7 +1,7 @@
 package com.ryanst.app.util;
 
 /**
- * Created by kevin on 16/5/5.
+ * Created by zhengjuntong on 16/5/5.
  */
 public class Utils {
     public static String getCurrentThreadId() {

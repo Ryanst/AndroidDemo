@@ -2,13 +2,12 @@ package com.ryanst.app.net;
 
 import android.widget.Toast;
 
+import com.rlib.util.AndroidNetworkUtil;
 import com.ryanst.app.core.RyanstApp;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
-
-import com.rlib.util.AndroidNetworkUtil;
 
 import okhttp3.Cache;
 import okhttp3.CacheControl;
@@ -21,7 +20,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
- * Created by kevin on 16/5/7.
+ * Created by zhengjuntong on 16/5/7.
  */
 public class NetClientAPI {
     public static final int OUT_TIME = 60;

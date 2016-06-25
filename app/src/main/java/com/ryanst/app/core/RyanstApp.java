@@ -4,8 +4,6 @@ import android.app.Application;
 import android.content.Context;
 
 import com.github.moduth.blockcanary.BlockCanary;
-import com.orhanobut.logger.LogLevel;
-import com.orhanobut.logger.Logger;
 import com.ryanst.app.BuildConfig;
 import com.ryanst.app.widget.AppBlockCanaryContext;
 import com.ryanst.app.widget.UCEHandler;
@@ -14,7 +12,7 @@ import com.squareup.leakcanary.LeakCanary;
 import butterknife.ButterKnife;
 
 /**
- * Created by kevin on 16/5/9.
+ * Created by zhengjuntong on 16/5/9.
  */
 
 public class RyanstApp extends Application {

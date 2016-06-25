@@ -17,6 +17,18 @@ allprojects {
         jcenter { url "http://jcenter.bintray.com/" }
         maven { url "http://repo1.maven.org/maven2" }
     }
+
+    apply plugin: 'checkstyle'
+    task checkstyle(type: Checkstyle) {
+        source 'src'
+        include '**/*.java'
+        exclude '**/gen/**'
+        exclude '**/R.java'
+        exclude '**/BuildConfig.java'
+        configFile new File(rootDir, "checkstyle.xml")
+        // empty classpath
+        classpath = files()
+    }
 }
 
 task clean(type: Delete) {

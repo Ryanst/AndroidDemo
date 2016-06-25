@@ -16,7 +16,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by kevin on 16/5/6.
+ * Created by zhengjuntong on 16/5/6.
  */
 public class PagerFragment extends BaseFragment {
 
