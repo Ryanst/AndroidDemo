@@ -67,7 +67,6 @@ public class WheelView extends ScrollView {
 
     public void setDefaultIndex(int defaultIndex) {
         this.defaultIndex = defaultIndex;
-        selectedIndex = defaultIndex + offset;
     }
 
     private int initialY;
@@ -147,6 +146,7 @@ public class WheelView extends ScrollView {
             rootView.addView(createTextView(item));
         }
         refreshItemTextView(0);
+        setSeletion(defaultIndex);
     }
 
     private TextView createTextView(String item) {
