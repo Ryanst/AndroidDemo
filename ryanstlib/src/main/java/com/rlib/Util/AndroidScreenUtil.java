@@ -9,7 +9,7 @@ import android.util.DisplayMetrics;
 import android.view.Window;
 
 /**
- * Created by kevin on 16/3/11.
+ * Created by zhengjuntong on 16/3/11.
  */
 public class AndroidScreenUtil {
     /**
@@ -83,10 +83,10 @@ public class AndroidScreenUtil {
      * @return
      */
     public static float getScreenRate(Context context) {
-        Point P = getScreenMetrics(context);
-        float H = P.y;
-        float W = P.x;
-        return (H / W);
+        Point point = getScreenMetrics(context);
+        float height = point.y;
+        float width = point.x;
+        return (height / width);
     }
 
     /**
@@ -97,9 +97,9 @@ public class AndroidScreenUtil {
      */
     public static Point getScreenMetrics(Context context) {
         DisplayMetrics dm = context.getResources().getDisplayMetrics();
-        int w_screen = dm.widthPixels;
-        int h_screen = dm.heightPixels;
-        return new Point(w_screen, h_screen);
+        int screenWidth = dm.widthPixels;
+        int screenHeight = dm.heightPixels;
+        return new Point(screenWidth, screenHeight);
 
     }
 
