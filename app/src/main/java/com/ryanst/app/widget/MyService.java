@@ -59,7 +59,7 @@ public class MyService extends Service {
                 Log.d("MyService", "task finish");
             }
         }).start();
-
+//        stopSelf();这里如果调用stopSelf,效果和IntentService类似,都是执行完耗时任务之后结束自己的服务
         Log.d(TAG, "onStartCommand() executed");
         return super.onStartCommand(intent, flags, startId);
     }

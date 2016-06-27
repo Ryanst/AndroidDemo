@@ -46,4 +46,9 @@ public class CustomView extends View implements View.OnClickListener {
         canvas.drawText(text, getWidth() / 2 - textWidth / 2, getHeight() / 2
                 + textHeight / 2, mPaint);
     }
+
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+    }
 }

@@ -17,7 +17,8 @@ public class MyIntentService extends IntentService {
         super(name);
     }
 
-    //onHandleIntent在子线程执行,执行完后IntentServive自动停止
+    //onHandleIntent在子线程执行,操作结束后IntentService自动停止，调用服务的onDestory
+    //可以使用线程完成IntentService完成的任务，在服务的onBind方法中return null，然后在startCommand中开启线程，当子线程代码最后调用stopSelf()
     @Override
     protected void onHandleIntent(Intent intent) {
         try {
