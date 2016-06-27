@@ -1,0 +1,85 @@
+package com.ryanst.app.widget;
+
+import android.app.Notification;
+import android.app.PendingIntent;
+import android.app.Service;
+import android.content.Intent;
+import android.os.Binder;
+import android.os.IBinder;
+import android.util.Log;
+
+import com.ryanst.app.R;
+import com.ryanst.app.core.MainActivity;
+
+/**
+ * Created by zhengjuntong on 16/6/27.
+ */
+
+public class MyService extends Service {
+
+    public static final String TAG = "MyService";
+
+    private MyBinder mBinder = new MyBinder();
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        Log.d(TAG, "onCreate() executed");
+//        startForeService();
+    }
+
+    private void startForeService() {
+        Intent notificationIntent = new Intent(this, MainActivity.class);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, notificationIntent, 0);
+
+        Notification.Builder builder = new Notification.Builder(this);
+        builder.setContentIntent(pendingIntent);
+        builder.setSmallIcon(R.mipmap.ic_launcher);
+        //Ticker:statusBar的提示
+        builder.setTicker("Foreground Service Start");
+        builder.setContentTitle("Foreground Service");
+        builder.setContentText("Make this service run in the foreground.");
+        Notification notification = builder.build();
+
+        int serviceId = 1;
+        startForeground(serviceId, notification);
+        Log.d(TAG, "onCreate() executed");
+    }
+
+    @Override
+    public int onStartCommand(Intent intent, int flags, int startId) {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(10000L);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                Log.d("MyService", "task finish");
+            }
+        }).start();
+
+        Log.d(TAG, "onStartCommand() executed");
+        return super.onStartCommand(intent, flags, startId);
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        Log.d(TAG, "onDestroy() executed");
+    }
+
+    @Override
+    public IBinder onBind(Intent intent) {
+        return mBinder;
+    }
+
+    public class MyBinder extends Binder {
+
+        public void startDownload() {
+            Log.d("TAG", "startDownload() executed");
+            // 执行具体的下载任务
+        }
+    }
+}

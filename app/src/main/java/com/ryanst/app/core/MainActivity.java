@@ -13,6 +13,7 @@ import com.ryanst.app.activity.DataBindingActivity;
 import com.ryanst.app.activity.GlideActivity;
 import com.ryanst.app.activity.HandlerTestActivity;
 import com.ryanst.app.activity.HandlerThreadActivity;
+import com.ryanst.app.activity.LeakTestActivity;
 import com.ryanst.app.activity.LoginActivity;
 import com.ryanst.app.activity.NavBarTestActivity;
 import com.ryanst.app.activity.NavigationBarTestActivity;
@@ -22,6 +23,7 @@ import com.ryanst.app.activity.PermissionActivity;
 import com.ryanst.app.activity.PhotoCameraActivity;
 import com.ryanst.app.activity.RxJavaTestActivity;
 import com.ryanst.app.activity.ScheduleTaskActivity;
+import com.ryanst.app.activity.ServiceTestActivity;
 import com.ryanst.app.activity.SpinnerActivity;
 import com.ryanst.app.activity.TabFragmentActivity;
 import com.ryanst.app.activity.TabLayoutViewPagerActivity;
@@ -46,6 +48,12 @@ public class MainActivity extends BaseActivity {
 
     public void onClick(View view) {
         switch (view.getId()) {
+            case R.id.btn_to_service_test:
+                startActivity(new Intent(this, ServiceTestActivity.class));
+                break;
+            case R.id.btn_to_leak_test:
+                startActivity(new Intent(this, LeakTestActivity.class));
+                break;
             case R.id.btn_to_navbar_test:
                 startActivity(new Intent(this, NavBarTestActivity.class));
                 break;

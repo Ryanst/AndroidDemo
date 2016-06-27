@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.2"
     defaultConfig {
         applicationId 'com.ryanst.app'
-        minSdkVersion 15
+        minSdkVersion 17
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -13,31 +13,34 @@ android {
 
     signingConfigs {
         ryanstConfig {
-            storeFile file("ryanst-release.jks")
-            storePassword "buaa123"
-            keyAlias "ryanst"
-            keyPassword "buaa321"
+            storeFile file(RELEASE_STOREFILE)
+            storePassword RELEASE_STORE_PASSWORD
+            keyAlias RELEASE_KEY_ALIAS
+            keyPassword RELEASE_KEY_PASSWORD
         }
     }
 
     buildTypes {
+
         release {
             signingConfig signingConfigs.ryanstConfig
+            minifyEnabled false
             zipAlignEnabled true
             shrinkResources true
-            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             applicationVariants.all { variant ->
                 variant.outputs.each { output ->
-                    def outputFile = output.outputFile
-                    if (outputFile != null && outputFile.name.endsWith('.apk')) {
-                        // 输出apk名称为ryanst_v1.0_2016-05-10_wandoujia.apk
-                        def fileName = "ryanst_v${defaultConfig.versionName}_${variant.productFlavors[0].name}.apk"
-                        output.outputFile = new File(outputFile.parent, fileName)
+                    if (output.outputFile != null && output.outputFile.name.endsWith('.apk')
+                            && 'release'.equals(variant.buildType.name)) {
+                        def apkFile = new File(
+                                output.outputFile.getParent(),
+                                "ryanst${variant.flavorName}_v${variant.versionName}_${buildTime()}.apk")
+                        output.outputFile = apkFile
                     }
                 }
             }
         }
+
         debug {
             zipAlignEnabled false
             shrinkResources false
@@ -48,22 +51,27 @@ android {
         }
     }
 
-    dataBinding {
-        enabled = true
+    //输入参数中包含 -Pmc 时才进行多渠道构建
+    if (project.hasProperty('mc')) {
+        def path = "./build-types/type.txt"
+        //多渠道构建
+        println "multi channel"
+        file(path).eachLine { line ->
+            println "channel name : " + line
+            android.productFlavors.create(line, {
+                manifestPlaceholders = [CHANNEL_VALUE: "" + line]
+            })
+        }
+    } else {
+        buildTypes.release.manifestPlaceholders = [CHANNEL_VALUE: "999"]
+        buildTypes.debug.manifestPlaceholders = [CHANNEL_VALUE: "999"]
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
     }
 
-    productFlavors {
-        wandoujia {}
-        baidu {}
-        _360 {}
-        uc {}
-        xiaomi {}
-        tencent {}
-
-        productFlavors.all { flavor ->
-            flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
-
-        }
+    dataBinding {
+        enabled = true
     }
 
     testOptions {
@@ -141,6 +149,6 @@ dependencies {
     compile 'com.jakewharton.rxbinding:rxbinding-recyclerview-v7:0.4.0'
 }
 
-def releaseTime() {
+def buildTime() {
     return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC"))
 }
