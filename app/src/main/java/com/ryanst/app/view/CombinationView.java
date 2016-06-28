@@ -34,9 +34,9 @@ public class CombinationView extends FrameLayout {
         btnColor = array.getColor(R.styleable.CombinationViewStyleable_btnColor, 0);
         ivBg = array.getResourceId(R.styleable.CombinationViewStyleable_ivBg, R.drawable.ic_explore);
         text = array.getString(R.styleable.CombinationViewStyleable_text);
+
         tvText1 = (TextView) findViewById(R.id.tv_text1);
         btnChangeColor = (Button) findViewById(R.id.btn_change_color);
-        llMain = (LinearLayout) findViewById(R.id.ll_main);
         llMain = (LinearLayout) findViewById(R.id.ll_main);
     }
 

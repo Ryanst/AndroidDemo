@@ -33,6 +33,11 @@ public class CustomView extends View implements View.OnClickListener {
     }
 
     @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+    }
+
+    @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         mPaint.setColor(Color.BLUE);
@@ -45,10 +50,5 @@ public class CustomView extends View implements View.OnClickListener {
         float textHeight = mBounds.height();
         canvas.drawText(text, getWidth() / 2 - textWidth / 2, getHeight() / 2
                 + textHeight / 2, mPaint);
-    }
-
-    @Override
-    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
 }
