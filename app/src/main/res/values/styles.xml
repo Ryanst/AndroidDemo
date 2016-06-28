@@ -68,4 +68,12 @@
         <item name="android:gravity">center</item>
     </style>
 
+    <style name="Seaside.Widget.ListView" parent="android:Widget.ListView">
+        <item name="android:scrollbars">none</item>
+        <item name="android:layoutAnimation">@anim/list_anim_layout</item>
+        <item name="android:fadingEdge">none</item>
+        <item name="android:overScrollMode">never</item>
+        <item name="android:listSelector">@drawable/white_list_view_selector</item>
+    </style>
+
 </resources>
