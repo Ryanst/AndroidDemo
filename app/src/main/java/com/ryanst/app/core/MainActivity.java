@@ -23,6 +23,7 @@ import com.ryanst.app.activity.PermissionActivity;
 import com.ryanst.app.activity.PhotoCameraActivity;
 import com.ryanst.app.activity.RxJavaTestActivity;
 import com.ryanst.app.activity.ScheduleTaskActivity;
+import com.ryanst.app.activity.ScrollViewListViewActivity;
 import com.ryanst.app.activity.ServiceTestActivity;
 import com.ryanst.app.activity.SpinnerActivity;
 import com.ryanst.app.activity.TabFragmentActivity;
@@ -48,6 +49,9 @@ public class MainActivity extends BaseActivity {
 
     public void onClick(View view) {
         switch (view.getId()) {
+            case R.id.btn_to_scroll_test:
+                startActivity(new Intent(this, ScrollViewListViewActivity.class));
+                break;
             case R.id.btn_to_service_test:
                 startActivity(new Intent(this, ServiceTestActivity.class));
                 break;

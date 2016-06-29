@@ -38,6 +38,9 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".activity.ScrollViewListViewActivity"
+            android:theme="@style/AppTheme.Translucent"></activity>
+        <activity
             android:name=".activity.ServiceTestActivity"
             android:theme="@style/AppTheme.Translucent"></activity>
         <activity

@@ -1,14 +1,8 @@
 package com.ryanst.app.activity;
 
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
-import android.view.Window;
-import android.webkit.WebResourceError;
-import android.webkit.WebResourceRequest;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 
 import com.ryanst.app.R;
 import com.ryanst.app.core.BaseSlideActivity;
@@ -24,16 +18,15 @@ public class WebviewErrorActivity extends BaseSlideActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.getWindow().requestFeature(Window.FEATURE_PROGRESS);
+//        this.getWindow().requestFeature(Window.FEATURE_PROGRESS);
         setContentView(R.layout.webview_error);
-        getWindow().setFeatureInt(Window.FEATURE_PROGRESS, Window.PROGRESS_VISIBILITY_ON);
+//        getWindow().setFeatureInt(Window.FEATURE_PROGRESS, Window.PROGRESS_VISIBILITY_ON);
         dealWebView();
     }
 
     private void dealWebView() {
         wb = (MyWebView) findViewById(R.id.wb_test_error);
-        wb.setWebViewClient(new MyWebViewClient());
-        wb.getSettings().setJavaScriptEnabled(true);
+        wb.setWebViewClient(new MyWebView.MyWebViewClient());
     }
 
     public void onClick(View view) {
@@ -41,34 +34,4 @@ public class WebviewErrorActivity extends BaseSlideActivity {
         wb.loadUrl(url);
     }
 
-    public class MyWebViewClient extends WebViewClient {
-
-        public static final String errorHtml = "<html><body><h1>Page not find！</h1></body></html>";
-
-        @Override
-        public boolean shouldOverrideUrlLoading(WebView view, String url) {
-            view.loadUrl(url);
-            return true;
-        }
-
-        @Override
-        public void onPageStarted(WebView view, String url, Bitmap favicon) {
-            super.onPageStarted(view, url, favicon);
-        }
-
-        @Override
-        public void onPageFinished(WebView view, String url) {
-            super.onPageFinished(view, url);
-        }
-
-        @Override
-        public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
-            view.loadData(errorHtml, "text/html", "UTF-8");
-        }
-
-        @Override
-        public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
-            view.loadData(errorHtml, "text/html", "UTF-8");
-        }
-    }
 }
