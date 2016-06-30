@@ -23,6 +23,7 @@ public class CustomViewActivity extends BaseSlideActivity {
         setContentView(R.layout.activity_custom_view);
         ButterKnife.bind(this);
 
+        
         combinationView.initView();
     }
 }
