@@ -39,7 +39,7 @@ public class WheelView extends ScrollView {
     private int textSize = DEFAULT_TEXT_SIZE;
     private int textPadding = DEFAULT_TEXT_PADDING;
     private int textColor = DEFAULT_UN_SELECT_TEXT_COLOR;
-    private int offset = DEFAULT_OFF_SET; // 偏移量（需要在最前面和最后面补全）
+    private int offset = DEFAULT_OFF_SET;
     private int selectTextColor = DEFAULT_SELECT_TEXT_COLOR;
     private int flingSpeed = DEFAULT_FLING_SPEED;
     private int defaultIndex = DEFAULT_INDEX;
@@ -125,7 +125,6 @@ public class WheelView extends ScrollView {
         items.clear();
         items.addAll(list);
 
-        // 前面和后面补全
         for (int i = 0; i < offset; i++) {
             items.add(0, "");
             items.add("");
@@ -315,10 +314,6 @@ public class WheelView extends ScrollView {
         return view.getMeasuredHeight();
     }
 
-
-    /**
-     * 获取选中区域的边界
-     */
     int[] selectedAreaBorder;
 
     private int[] obtainSelectedAreaBorder() {

@@ -127,6 +127,7 @@ dependencies {
     releaseCompile 'com.github.moduth:blockcanary-no-op:1.2.1'
     //eventbus
     compile 'org.greenrobot:eventbus:3.0.0'
+
     //友盟统计
     compile 'com.umeng.analytics:analytics:latest.integration'
 
