@@ -25,6 +25,10 @@
             android:name="UMENG_CHANNEL"
             android:value="${CHANNEL_VALUE}" />
 
+        <meta-data
+            android:name="com.tal.app.seaside.MyGlideModule"
+            android:value="GlideModule" />
+
         <activity
             android:name=".core.MainActivity"
             android:configChanges="orientation|keyboardHidden"
