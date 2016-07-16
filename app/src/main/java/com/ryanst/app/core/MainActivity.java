@@ -16,7 +16,7 @@ import com.ryanst.app.activity.HandlerThreadActivity;
 import com.ryanst.app.activity.LeakTestActivity;
 import com.ryanst.app.activity.LoginActivity;
 import com.ryanst.app.activity.NavBarTestActivity;
-import com.ryanst.app.activity.NavigationBarTestActivity;
+import com.ryanst.app.activity.ToolBarTestActivity;
 import com.ryanst.app.activity.NavigationDrawerActivity;
 import com.ryanst.app.activity.NetChangeBroadcastReceiverActivity;
 import com.ryanst.app.activity.PermissionActivity;
@@ -38,7 +38,7 @@ import java.util.List;
 import java.util.Map;
 
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends BaseSlideActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +62,7 @@ public class MainActivity extends BaseActivity {
                 startActivity(new Intent(this, NavBarTestActivity.class));
                 break;
             case R.id.btn_to_toolbar_test:
-                startActivity(new Intent(this, NavigationBarTestActivity.class));
+                startActivity(new Intent(this, ToolBarTestActivity.class));
                 break;
             case R.id.btn_to_rxjava_test:
                 startActivity(new Intent(this, RxJavaTestActivity.class));

@@ -16,7 +16,7 @@
         <com.ryanst.app.view.NavigationBar
             android:id="@+id/navBar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="56dp"
             app:title_text="原始标题">
 
         </com.ryanst.app.view.NavigationBar>

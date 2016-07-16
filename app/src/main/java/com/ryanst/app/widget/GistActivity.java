@@ -10,7 +10,7 @@ import com.ryanst.app.core.BaseActivity;
 /**
  * Created by zhengjuntong on 16/6/24.
  */
-public class GistActivity extends BaseActivity {
+public class GistActivity extends BaseSlideActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

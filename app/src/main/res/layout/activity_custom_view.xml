@@ -15,6 +15,7 @@
         android:id="@+id/combinationView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         app:btnColor="@color/Green"
         app:ivBg="@drawable/bg_home"
         app:size="30dp"

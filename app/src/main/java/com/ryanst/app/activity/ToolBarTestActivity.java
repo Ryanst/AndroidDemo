@@ -6,13 +6,12 @@ import android.support.annotation.Nullable;
 import android.view.View;
 
 import com.ryanst.app.R;
-import com.ryanst.app.core.BaseActivity;
 import com.ryanst.app.databinding.ActivityNavBarBinding;
 
 /**
  * Created by zhengjuntong on 16/6/22.
  */
-public class NavigationBarTestActivity extends BaseActivity {
+public class ToolBarTestActivity extends BaseSlideActivity {
 
     ActivityNavBarBinding binding;
 

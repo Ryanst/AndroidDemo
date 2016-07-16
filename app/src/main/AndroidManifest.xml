@@ -26,7 +26,7 @@
             android:value="${CHANNEL_VALUE}" />
 
         <meta-data
-            android:name="com.tal.app.seaside.MyGlideModule"
+            android:name="com.ryanst.app.widget.MyGlideModule"
             android:value="GlideModule" />
 
         <activity
@@ -42,6 +42,9 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".activity.NavBarTestActivity"
+            android:theme="@style/AppTheme.Translucent"></activity>
+        <activity
             android:name=".activity.ScrollViewListViewActivity"
             android:theme="@style/AppTheme.Translucent"></activity>
         <activity
@@ -51,7 +54,7 @@
             android:name=".activity.LeakTestActivity"
             android:theme="@style/AppTheme.Translucent"></activity>
         <activity
-            android:name=".activity.NavigationBarTestActivity"
+            android:name=".activity.ToolBarTestActivity"
             android:theme="@style/AppTheme.Translucent"></activity>
         <activity
             android:name=".activity.LoginActivity"

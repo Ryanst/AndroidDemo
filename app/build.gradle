@@ -21,7 +21,6 @@ android {
     }
 
     buildTypes {
-
         release {
             signingConfig signingConfigs.ryanstConfig
             minifyEnabled false
@@ -49,6 +48,14 @@ android {
             debuggable true
             signingConfig signingConfigs.ryanstConfig
         }
+    }
+
+    lintOptions {
+        abortOnError false        // true by default
+        checkAllWarnings false
+        checkReleaseBuilds false
+        ignoreWarnings true       // false by default
+        quiet true                // false by default
     }
 
     //输入参数中包含 -Pmc 时才进行多渠道构建

@@ -8,8 +8,11 @@ import android.os.Binder;
 import android.os.IBinder;
 import android.util.Log;
 
+import com.orhanobut.logger.Logger;
 import com.ryanst.app.R;
 import com.ryanst.app.core.MainActivity;
+
+import hugo.weaving.DebugLog;
 
 /**
  * Created by zhengjuntong on 16/6/27.
@@ -24,7 +27,7 @@ public class MyService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        Log.d(TAG, "onCreate() executed");
+        Logger.d("onCreate:" + Thread.currentThread().getId() + "");//thread:1
 //        startForeService();
     }
 
@@ -46,12 +49,15 @@ public class MyService extends Service {
         Log.d(TAG, "onCreate() executed");
     }
 
+    @DebugLog
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+        Logger.d("onStartCommand:" + Thread.currentThread().getId() + "");//thread:1
         new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
+                    Logger.d("run:" + Thread.currentThread().getId() + "");
                     Thread.sleep(10000L);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
@@ -78,7 +84,7 @@ public class MyService extends Service {
     public class MyBinder extends Binder {
 
         public void startDownload() {
-            Log.d("TAG", "startDownload() executed");
+            Logger.d("Binder startDownload:" + Thread.currentThread().getId() + "");//thread:1
             // 执行具体的下载任务
         }
     }

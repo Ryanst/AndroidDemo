@@ -8,14 +8,13 @@ import android.os.IBinder;
 import android.view.View;
 
 import com.ryanst.app.R;
-import com.ryanst.app.core.BaseActivity;
 import com.ryanst.app.widget.MyIntentService;
 import com.ryanst.app.widget.MyService;
 
 /**
  * Created by zhengjuntong on 16/6/27.
  */
-public class ServiceTestActivity extends BaseActivity {
+public class ServiceTestActivity extends BaseSlideActivity {
 
     private MyService.MyBinder myBinder;
 

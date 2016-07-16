@@ -5,7 +5,6 @@ import android.support.annotation.Nullable;
 import android.view.View;
 
 import com.ryanst.app.R;
-import com.ryanst.app.core.BaseActivity;
 
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
@@ -15,7 +14,7 @@ import rx.schedulers.Schedulers;
 /**
  * Created by zhengjuntong on 16/6/21.
  */
-public class RxJavaTestActivity extends BaseActivity {
+public class RxJavaTestActivity extends BaseSlideActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -7,13 +7,13 @@ import android.util.Log;
 import android.view.View;
 
 import com.ryanst.app.R;
-import com.ryanst.app.core.BaseActivity;
 import com.ryanst.app.core.BaseHandler;
+import com.ryanst.app.core.BaseSlideActivity;
 
 /**
  * Created by zhengjuntong on 16/6/27.
  */
-public class LeakTestActivity extends BaseActivity {
+public class LeakTestActivity extends BaseSlideActivity {
 
 //    StaticHandler handler = new StaticHandler(this);
 
@@ -43,7 +43,6 @@ public class LeakTestActivity extends BaseActivity {
     protected void onResume() {
         super.onResume();
         log("onResume:" + LeakTestActivity.this.toString());
-        finish();
     }
 
     @Override

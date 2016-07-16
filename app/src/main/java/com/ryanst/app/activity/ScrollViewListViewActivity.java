@@ -13,7 +13,6 @@ import android.widget.ScrollView;
 import android.widget.SimpleAdapter;
 
 import com.ryanst.app.R;
-import com.ryanst.app.core.BaseActivity;
 import com.ryanst.app.util.WebViewUtil;
 import com.ryanst.app.view.MyWebView;
 
@@ -27,7 +26,7 @@ import butterknife.ButterKnife;
 /**
  * Created by zhengjuntong on 16/6/24.
  */
-public class ScrollViewListViewActivity extends BaseActivity {
+public class ScrollViewListViewActivity extends BaseSlideActivity {
     @BindView(R.id.webview)
     MyWebView webview;
     @BindView(R.id.fl_content)

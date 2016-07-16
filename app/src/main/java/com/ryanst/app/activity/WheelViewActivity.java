@@ -5,7 +5,6 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.ryanst.app.R;
-import com.ryanst.app.core.BaseActivity;
 import com.ryanst.app.view.WheelView;
 import com.ryanst.app.view.WheelViewDialog;
 
@@ -17,7 +16,7 @@ import butterknife.ButterKnife;
 /**
  * Created by zhengjuntong on 16/6/17.
  */
-public class WheelViewActivity extends BaseActivity {
+public class WheelViewActivity extends BaseSlideActivity {
 
     private WheelView.OnWheelViewListener wheelViewListener;
     private String result;

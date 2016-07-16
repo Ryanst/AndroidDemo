@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.View;
 
 import com.github.johnpersano.supertoasts.SuperToast;
 import com.orhanobut.logger.Logger;
@@ -74,6 +75,10 @@ public class BaseActivity extends AppCompatActivity {
 
     public void log(String message) {
         Log.d(getClass().getName(), message);
+    }
+
+    public void onClick(View view) {
+
     }
 
 }
