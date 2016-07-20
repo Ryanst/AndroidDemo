@@ -15,6 +15,7 @@ import com.ryanst.app.activity.HandlerTestActivity;
 import com.ryanst.app.activity.HandlerThreadActivity;
 import com.ryanst.app.activity.LeakTestActivity;
 import com.ryanst.app.activity.LoginActivity;
+import com.ryanst.app.activity.MenuTestActivity;
 import com.ryanst.app.activity.NavBarTestActivity;
 import com.ryanst.app.activity.ToolBarTestActivity;
 import com.ryanst.app.activity.NavigationDrawerActivity;
@@ -49,6 +50,9 @@ public class MainActivity extends BaseSlideActivity {
 
     public void onClick(View view) {
         switch (view.getId()) {
+            case R.id.btn_to_menu_test:
+                startActivity(new Intent(this, MenuTestActivity.class));
+                break;
             case R.id.btn_to_scroll_test:
                 startActivity(new Intent(this, ScrollViewListViewActivity.class));
                 break;

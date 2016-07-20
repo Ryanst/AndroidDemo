@@ -13,6 +13,7 @@ import android.widget.ScrollView;
 import android.widget.SimpleAdapter;
 
 import com.ryanst.app.R;
+import com.ryanst.app.core.BaseSlideActivity;
 import com.ryanst.app.util.WebViewUtil;
 import com.ryanst.app.view.MyWebView;
 

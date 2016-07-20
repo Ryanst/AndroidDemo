@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.view.View;
 
 import com.ryanst.app.R;
+import com.ryanst.app.core.BaseSlideActivity;
 
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;

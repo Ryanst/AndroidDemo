@@ -8,6 +8,7 @@ import android.os.IBinder;
 import android.view.View;
 
 import com.ryanst.app.R;
+import com.ryanst.app.core.BaseSlideActivity;
 import com.ryanst.app.widget.MyIntentService;
 import com.ryanst.app.widget.MyService;
 

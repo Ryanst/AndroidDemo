@@ -20,6 +20,14 @@
             android:orientation="vertical">
 
             <Button
+                android:id="@+id/btn_to_menu_test"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/main_button_height"
+                android:layout_marginTop="10dp"
+                android:onClick="onClick"
+                android:text="Menu Test" />
+
+            <Button
                 android:id="@+id/btn_to_scroll_test"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/main_button_height"

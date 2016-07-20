@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 
 import com.ryanst.app.R;
+import com.ryanst.app.core.BaseSlideActivity;
 
 /**
  * Created by zhengjuntong on 16/6/24.

@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.ryanst.app.R;
+import com.ryanst.app.core.BaseSlideActivity;
 import com.ryanst.app.view.WheelView;
 import com.ryanst.app.view.WheelViewDialog;
 

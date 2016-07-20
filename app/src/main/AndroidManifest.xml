@@ -41,6 +41,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".activity.MenuTestActivity"
+            android:theme="@style/AppTheme.ActionBar"></activity>
         <activity
             android:name=".activity.NavBarTestActivity"
             android:theme="@style/AppTheme.Translucent"></activity>
