@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/media_voice_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp">
+
+            <com.tal.app.seaside.widget.RoundProgressView xmlns:android_custom="http://schemas.android.com/apk/res/com.tal.app.seaside"
+                android:id="@+id/load_progress"
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:layout_below="@id/coastTime"
+                android:layout_gravity="center"
+                android_custom:roundWidth="2dp"
+                android_custom:textIsDisplayable="false" />
+
+            <ImageView
+                android:id="@+id/play"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="center"
+                android:src="@drawable/media_play" />
+        </FrameLayout>
+
+
+        <TextView
+            android:id="@+id/cost_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/media_text"
+            android:textSize="10dp" />
+
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:max="100"
+            android:maxHeight="4dp"
+            android:progress="0"
+            android:progressDrawable="@drawable/media_seekbar_selector"
+            android:thumb="@drawable/seek_thumb" />
+
+        <TextView
+            android:id="@+id/total_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:textColor="@color/media_text"
+            android:textSize="10dp" />
+    </LinearLayout>
+</layout>

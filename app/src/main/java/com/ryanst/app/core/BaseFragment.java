@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.github.johnpersano.supertoasts.SuperToast;
+import com.orhanobut.logger.Logger;
 import com.umeng.analytics.MobclickAgent;
 
 /**
@@ -18,7 +19,7 @@ import com.umeng.analytics.MobclickAgent;
  */
 public class BaseFragment extends Fragment {
 
-    private SuperToast superToast;
+    private SuperToast toast;
 
     protected Context context;
 
@@ -26,15 +27,6 @@ public class BaseFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return super.onCreateView(inflater, container, savedInstanceState);
-    }
-
-    protected void toast(String message) {
-        if (superToast == null) {
-            superToast = SuperToast.create(getActivity(), message, 1000);
-            superToast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
-        }
-        superToast.setText(message);
-        superToast.show();
     }
 
     @Override
@@ -54,5 +46,30 @@ public class BaseFragment extends Fragment {
     public void onPause() {
         super.onPause();
         MobclickAgent.onPageEnd(this.getClass().getSimpleName());
+    }
+
+    protected void toast(String message) {
+        if (toast == null) {
+            toast = SuperToast.create(getActivity(), message, 1000);
+            toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+        }
+        toast.setText(message);
+        toast.show();
+    }
+
+    public void logger(String message) {
+        Logger.d(message);
+    }
+
+    public void logger(String tag, String message) {
+        Logger.t(tag).d(message);
+    }
+
+    public void log(String message) {
+        Log.d(getClass().getName(), message);
+    }
+
+    public void onClick(View view) {
+
     }
 }
