@@ -182,4 +182,8 @@
     <color name="view_gray">#afafaf</color>
     <color name="finish_blue_color">#12b7f5</color>
 
+    <color name="media_text">#828587</color>
+    <color name="media_black">#363636</color>
+    <color name="seek_bar_bg">#c6cacd</color>
+
 </resources>
