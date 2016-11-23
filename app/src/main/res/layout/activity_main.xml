@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     android:orientation="vertical"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -18,6 +19,22 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_test_anotation"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/main_button_height"
+                android:layout_marginTop="10dp"
+                android:onClick="onClick"
+                android:text="注解@" />
+
+            <Button
+                android:id="@+id/btn_touch_event_test"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/main_button_height"
+                android:layout_marginTop="10dp"
+                android:onClick="onClick"
+                android:text="View点击事件" />
 
             <Button
                 android:id="@+id/btn_to_menu_test"
@@ -42,6 +59,7 @@
                 android:layout_marginTop="10dp"
                 android:onClick="onClick"
                 android:text="ServiceTestActivity" />
+
             <Button
                 android:id="@+id/btn_to_leak_test"
                 android:layout_width="match_parent"
@@ -49,6 +67,7 @@
                 android:layout_marginTop="10dp"
                 android:onClick="onClick"
                 android:text="内部类内存测试" />
+
             <Button
                 android:id="@+id/btn_to_navbar_test"
                 android:layout_width="match_parent"

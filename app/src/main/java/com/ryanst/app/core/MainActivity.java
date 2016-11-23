@@ -8,6 +8,7 @@ import android.view.View;
 import com.orhanobut.logger.LogLevel;
 import com.orhanobut.logger.Logger;
 import com.ryanst.app.R;
+import com.ryanst.app.activity.AnotationActivity;
 import com.ryanst.app.activity.CustomViewActivity;
 import com.ryanst.app.activity.DataBindingActivity;
 import com.ryanst.app.activity.GlideActivity;
@@ -30,6 +31,7 @@ import com.ryanst.app.activity.SpinnerActivity;
 import com.ryanst.app.activity.TabFragmentActivity;
 import com.ryanst.app.activity.TabLayoutViewPagerActivity;
 import com.ryanst.app.activity.TextViewLetterSpacingActivity;
+import com.ryanst.app.activity.TouchEventTestActivity;
 import com.ryanst.app.activity.WebviewErrorActivity;
 import com.ryanst.app.activity.WheelViewActivity;
 
@@ -50,6 +52,12 @@ public class MainActivity extends BaseSlideActivity {
 
     public void onClick(View view) {
         switch (view.getId()) {
+            case R.id.btn_test_anotation:
+                startActivity(new Intent(this, AnotationActivity.class));
+                break;
+            case R.id.btn_touch_event_test:
+                startActivity(new Intent(this, TouchEventTestActivity.class));
+                break;
             case R.id.btn_to_menu_test:
                 startActivity(new Intent(this, MenuTestActivity.class));
                 break;

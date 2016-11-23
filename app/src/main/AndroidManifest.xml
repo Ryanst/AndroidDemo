@@ -41,7 +41,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity
+            android:name=".activity.TouchEventTestActivity"
+            android:theme="@style/AppTheme.ActionBar"></activity>
         <activity
             android:name=".activity.MenuTestActivity"
             android:theme="@style/AppTheme.ActionBar"></activity>
@@ -131,6 +133,10 @@
 
         <activity
             android:name=".widget.GistActivity"
+            android:theme="@style/AppTheme.Translucent"></activity>
+
+        <activity
+            android:name=".activity.AnotationActivity"
             android:theme="@style/AppTheme.Translucent"></activity>
 
         <service android:name="com.ryanst.app.widget.MyService"></service>
