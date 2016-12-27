@@ -41,6 +41,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".activity.BallActivity"
+            android:theme="@style/AppTheme.ActionBar"></activity>
+
         <activity
             android:name=".activity.TouchEventTestActivity"
             android:theme="@style/AppTheme.ActionBar"></activity>
@@ -64,7 +69,8 @@
             android:theme="@style/AppTheme.Translucent"></activity>
         <activity
             android:name=".activity.LoginActivity"
-            android:theme="@style/AppTheme.Translucent"></activity>
+            android:theme="@style/AppTheme.Translucent"
+            android:windowSoftInputMode="adjustResize"></activity>
         <activity
             android:name=".activity.GlideActivity"
             android:configChanges="orientation|keyboardHidden"

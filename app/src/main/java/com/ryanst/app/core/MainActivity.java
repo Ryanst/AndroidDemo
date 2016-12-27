@@ -9,6 +9,7 @@ import com.orhanobut.logger.LogLevel;
 import com.orhanobut.logger.Logger;
 import com.ryanst.app.R;
 import com.ryanst.app.activity.AnotationActivity;
+import com.ryanst.app.activity.BallActivity;
 import com.ryanst.app.activity.CustomViewActivity;
 import com.ryanst.app.activity.DataBindingActivity;
 import com.ryanst.app.activity.GlideActivity;
@@ -52,6 +53,9 @@ public class MainActivity extends BaseSlideActivity {
 
     public void onClick(View view) {
         switch (view.getId()) {
+            case R.id.btn_test_ball:
+                startActivity(new Intent(this, BallActivity.class));
+                break;
             case R.id.btn_test_anotation:
                 startActivity(new Intent(this, AnotationActivity.class));
                 break;
