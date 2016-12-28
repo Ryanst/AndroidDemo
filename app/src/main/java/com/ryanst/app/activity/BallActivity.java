@@ -1,7 +1,6 @@
 package com.ryanst.app.activity;
 
 import android.os.Bundle;
-import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
@@ -12,8 +11,6 @@ import com.rlib.util.AndroidScreenUtil;
 import com.ryanst.app.R;
 import com.ryanst.app.core.BaseActivity;
 
-import android.view.GestureDetector.SimpleOnGestureListener;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -22,8 +19,6 @@ import butterknife.ButterKnife;
  */
 
 public class BallActivity extends BaseActivity implements View.OnTouchListener {
-    @BindView(R.id.btn_test)
-    Button btnTest;
     @BindView(R.id.activities)
     Button ivBall;
     @BindView(R.id.root)
@@ -59,13 +54,6 @@ public class BallActivity extends BaseActivity implements View.OnTouchListener {
 
         ivBall.setLayoutParams(layoutParams);
         ivBall.setOnTouchListener(this);
-
-        btnTest.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(BallActivity.this, "Hello", Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 
     public boolean onTouch(View view, MotionEvent event) {
