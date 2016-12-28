@@ -43,6 +43,10 @@
         </activity>
 
         <activity
+            android:name=".activity.WidgetBallActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+
+        <activity
             android:name=".activity.BallActivity"
             android:theme="@style/AppTheme.NoActionBar"></activity>
 

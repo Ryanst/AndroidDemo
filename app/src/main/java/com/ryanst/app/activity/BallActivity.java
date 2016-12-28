@@ -23,8 +23,9 @@ public class BallActivity extends BaseActivity implements View.OnTouchListener {
     Button ivBall;
     @BindView(R.id.root)
     FrameLayout flRoot;
-    private int _xDelta;
-    private int _yDelta;
+
+    private int xDelta;
+    private int yDelta;
     private int screenWidth;
     private int screenHeight;
     private int maxMarginLeft;
@@ -70,8 +71,8 @@ public class BallActivity extends BaseActivity implements View.OnTouchListener {
                 downY = touchY;
                 FrameLayout.LayoutParams lParams = (FrameLayout.LayoutParams) view
                         .getLayoutParams();
-                _xDelta = touchX - lParams.leftMargin;
-                _yDelta = touchY - lParams.topMargin;
+                xDelta = touchX - lParams.leftMargin;
+                yDelta = touchY - lParams.topMargin;
                 break;
             case MotionEvent.ACTION_UP:
                 if (downX == touchX && downY == touchY) {
@@ -88,10 +89,10 @@ public class BallActivity extends BaseActivity implements View.OnTouchListener {
 
                 int leftMargin;
 
-                if (touchX - _xDelta <= 0) {
+                if (touchX - xDelta <= 0) {
                     leftMargin = 0;
-                } else if (touchX - _xDelta < maxMarginLeft) {
-                    leftMargin = touchX - _xDelta;
+                } else if (touchX - xDelta < maxMarginLeft) {
+                    leftMargin = touchX - xDelta;
                 } else {
                     leftMargin = maxMarginLeft;
                 }
@@ -100,10 +101,10 @@ public class BallActivity extends BaseActivity implements View.OnTouchListener {
 
                 int topMargin;
 
-                if (touchY - _yDelta <= 0) {
+                if (touchY - yDelta <= 0) {
                     topMargin = 0;
-                } else if (touchY - _yDelta < maxMarginTop) {
-                    topMargin = touchY - _yDelta;
+                } else if (touchY - yDelta < maxMarginTop) {
+                    topMargin = touchY - yDelta;
                 } else {
                     topMargin = maxMarginTop;
                 }

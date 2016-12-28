@@ -35,6 +35,7 @@ import com.ryanst.app.activity.TextViewLetterSpacingActivity;
 import com.ryanst.app.activity.TouchEventTestActivity;
 import com.ryanst.app.activity.WebviewErrorActivity;
 import com.ryanst.app.activity.WheelViewActivity;
+import com.ryanst.app.activity.WidgetBallActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -53,6 +54,9 @@ public class MainActivity extends BaseSlideActivity {
 
     public void onClick(View view) {
         switch (view.getId()) {
+            case R.id.btn_test_widget_ball:
+                startActivity(new Intent(this, WidgetBallActivity.class));
+                break;
             case R.id.btn_test_ball:
                 startActivity(new Intent(this, BallActivity.class));
                 break;
