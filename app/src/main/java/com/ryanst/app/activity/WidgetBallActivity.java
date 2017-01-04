@@ -5,15 +5,18 @@ import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.rlib.util.AndroidScreenUtil;
 import com.ryanst.app.R;
 import com.ryanst.app.core.BaseActivity;
-import com.ryanst.app.widget.FloatBall;
+import com.zhengjt.floatingball.FloatBall;
+
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+
 
 /**
  * Created by zhengjuntong on 12/28/16.
@@ -45,8 +48,8 @@ public class WidgetBallActivity extends BaseActivity {
                 .setRightMargin(AndroidScreenUtil.dip2px(this, 30))
                 .setHeight(AndroidScreenUtil.dip2px(this, 70))
                 .setWidth(AndroidScreenUtil.dip2px(this, 70))
+                .setBall(new ImageView(this))
                 .setRes(R.drawable.qipao)
-                .setRootView(flContent)
                 .build();
 
         floatBall.setOnClickListener(new View.OnClickListener() {

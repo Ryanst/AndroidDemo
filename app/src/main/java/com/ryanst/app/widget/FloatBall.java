@@ -1,11 +1,10 @@
 package com.ryanst.app.widget;
 
 import android.content.Context;
-import android.support.annotation.DrawableRes;
+import android.support.v4.view.ViewCompat;
 import android.util.DisplayMetrics;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Button;
 import android.widget.FrameLayout;
 
 /**
@@ -18,17 +17,14 @@ public class FloatBall implements View.OnTouchListener {
     private Params params;
 
     private Context context;
-    private int xDelta;
-    private int yDelta;
-    private int screenWidth;
-    private int screenHeight;
+    private View ball;
+    private View.OnClickListener onClickListener;
     private int maxMarginLeft;
     private int maxMarginTop;
     private int downX;
     private int downY;
-
-    private Button ball;
-    private View.OnClickListener onClickListener;
+    private int xDelta;
+    private int yDelta;
 
     private FloatBall(Context context) {
         this.context = context;
@@ -38,7 +34,7 @@ public class FloatBall implements View.OnTouchListener {
         this.params = params;
     }
 
-    public Button getBall() {
+    public View getBall() {
         return ball;
     }
 
@@ -52,9 +48,8 @@ public class FloatBall implements View.OnTouchListener {
                 params.width, params.height);
 
         DisplayMetrics dm = context.getResources().getDisplayMetrics();
-
-        screenWidth = dm.widthPixels;
-        screenHeight = dm.heightPixels;
+        int screenWidth = dm.widthPixels;
+        int screenHeight = dm.heightPixels;
 
         maxMarginLeft = screenWidth - params.width;
         layoutParams.width = params.width;
@@ -65,11 +60,19 @@ public class FloatBall implements View.OnTouchListener {
         layoutParams.bottomMargin = 0;
         layoutParams.rightMargin = 0;
 
-        ball = new Button(context);
-        ball.setBackgroundResource(params.resId);
+        if (params.ball == null) {
+            ball = new View(context);
+        } else {
+            ball = params.ball;
+        }
+
+        if (params.resId != 0) {
+            ball.setBackgroundResource(params.resId);
+        }
 
         ball.setLayoutParams(layoutParams);
         ball.setOnTouchListener(this);
+        ViewCompat.setElevation(ball, 64);
     }
 
     @Override
@@ -128,7 +131,8 @@ public class FloatBall implements View.OnTouchListener {
                 ball.setLayoutParams(layoutParams);
                 break;
         }
-        params.rootView.invalidate();
+
+        ball.getRootView().invalidate();
         return true;
     }
 
@@ -137,11 +141,6 @@ public class FloatBall implements View.OnTouchListener {
 
         public Builder(Context context) {
             P = new Params(context);
-        }
-
-        public Builder setRootView(View rootView) {
-            P.rootView = rootView;
-            return this;
         }
 
         public Builder setRightMargin(int rightMargin) {
@@ -164,8 +163,13 @@ public class FloatBall implements View.OnTouchListener {
             return this;
         }
 
-        public Builder setRes(@DrawableRes int resId) {
+        public Builder setRes(int resId) {
             P.resId = resId;
+            return this;
+        }
+
+        public Builder setBall(View view) {
+            P.ball = view;
             return this;
         }
 
@@ -178,14 +182,15 @@ public class FloatBall implements View.OnTouchListener {
     }
 
     private static class Params {
+        public static final int DEFAULT_BALL_WIDTH = 180;
+        public static final int DEFAULT_BALL_HEIGHT = 180;
         private Context context;
-        private View rootView;
         private int rightMargin;
         private int bottomMargin;
-        @DrawableRes
         private int resId;
-        private int width;
-        private int height;
+        private int width = DEFAULT_BALL_WIDTH;
+        private int height = DEFAULT_BALL_HEIGHT;
+        private View ball;
 
         public Params(Context context) {
             this.context = context;
