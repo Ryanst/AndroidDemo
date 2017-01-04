@@ -1,5 +1,4 @@
 *.apk
-*.ap_
 *.dex
 *.class
 bin/
@@ -17,3 +16,10 @@ captures/
 .DS_Store
 .idea
 .svn
+gradle.properties
+gradlew
+gradlew.bat
+*.iml
+freeline/
+freeline.py
+freeline_project_description.json
