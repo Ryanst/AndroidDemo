@@ -21,6 +21,47 @@
             android:orientation="vertical">
 
             <Button
+                android:id="@+id/btn_container"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/main_button_height"
+                android:layout_marginTop="10dp"
+                android:onClick="onClick"
+                android:text="测试Tag View" />
+
+            <Button
+                android:id="@+id/btn_test"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/main_button_height"
+                android:layout_marginTop="10dp"
+                android:onClick="onClick"
+                android:text="测试" />
+
+            <Button
+                android:id="@+id/btn_mat"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/main_button_height"
+                android:layout_marginTop="10dp"
+                android:onClick="onClick"
+                android:text="测试内存泄露MAT" />
+
+
+            <Button
+                android:id="@+id/btn_test_scroller_layout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/main_button_height"
+                android:layout_marginTop="10dp"
+                android:onClick="onClick"
+                android:text="ScrollerLayout 测试" />
+
+            <Button
+                android:id="@+id/btn_test_launch_mode"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/main_button_height"
+                android:layout_marginTop="10dp"
+                android:onClick="onClick"
+                android:text="LauhchMode 测试" />
+
+            <Button
                 android:id="@+id/btn_test_widget_ball"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/main_button_height"

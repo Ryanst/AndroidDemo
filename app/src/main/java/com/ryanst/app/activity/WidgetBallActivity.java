@@ -27,6 +27,7 @@ public class WidgetBallActivity extends BaseActivity {
     Button btnTest;
     @BindView(R.id.fl_content)
     FrameLayout flContent;
+    private FloatBall floatBall;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -43,7 +44,7 @@ public class WidgetBallActivity extends BaseActivity {
     }
 
     private void initBall() {
-        FloatBall floatBall = new FloatBall.Builder(this)
+        floatBall = new FloatBall.Builder(this)
                 .setBottomMargin(AndroidScreenUtil.dip2px(this, 30))
                 .setRightMargin(AndroidScreenUtil.dip2px(this, 30))
                 .setHeight(AndroidScreenUtil.dip2px(this, 70))
@@ -56,6 +57,7 @@ public class WidgetBallActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(WidgetBallActivity.this, v.getId() + "", Toast.LENGTH_SHORT).show();
+                log("" + floatBall.getBall().getLeft() + floatBall.getBall().getX() + floatBall.getBall().getTranslationX());
             }
         });
 

@@ -186,4 +186,6 @@
     <color name="media_black">#363636</color>
     <color name="seek_bar_bg">#c6cacd</color>
 
+    <color name="top_blue">#349afe</color>
+
 </resources>

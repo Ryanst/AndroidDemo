@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
+    <ProgressBar
+        android:id="@+id/webProgress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:max="100" />
 
-    <com.ryanst.app.view.MyWebView
+    <com.tencent.smtt.sdk.WebView
         android:id="@+id/wb_test_error"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></com.ryanst.app.view.MyWebView>
+        android:layout_height="match_parent">
 
+    </com.tencent.smtt.sdk.WebView>
 
     <Button
         android:id="@+id/load_url"
@@ -18,5 +24,4 @@
         android:layout_gravity="bottom"
         android:onClick="onClick"
         android:text="载入网页" />
-
 </FrameLayout>

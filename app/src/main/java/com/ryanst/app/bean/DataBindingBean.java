@@ -35,6 +35,6 @@ public class DataBindingBean extends BaseObservable {
 
     public void setData2(String data2) {
         this.data2 = data2;
-        notifyPropertyChanged(BR.data2);
+//        notifyPropertyChanged(BR.data2);
     }
 }

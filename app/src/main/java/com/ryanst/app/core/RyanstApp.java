@@ -2,6 +2,7 @@ package com.ryanst.app.core;
 
 import android.app.Application;
 import android.content.Context;
+import android.support.multidex.MultiDex;
 
 import com.github.moduth.blockcanary.BlockCanary;
 import com.ryanst.app.BuildConfig;
@@ -28,6 +29,11 @@ public class RyanstApp extends Application {
         LeakCanary.install(this);
         BlockCanary.install(this, new AppBlockCanaryContext()).start();
 //        initUncaughtException();
+    }
+
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(this);
     }
 
     public static Context getApplication() {

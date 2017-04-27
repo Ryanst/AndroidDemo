@@ -44,7 +44,7 @@ public class WebViewUtil {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             webView.setTransitionGroup(true);
         }
-        
+
         webView.addJavascriptInterface(new JsClient(listener), "js");
         webView.setWebChromeClient(new WebChromeClient() {
             @Override
@@ -57,6 +57,9 @@ public class WebViewUtil {
         });
     }
 
+    public interface LoadWebViewProgressListener {
+        void onLoadFinish();
+    }
 
     public static class MyWebViewClient extends WebViewClient {
         private ProgressBarListener progressBarListener;

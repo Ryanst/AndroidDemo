@@ -6,6 +6,10 @@
         <variable
             name="dataObject"
             type="com.ryanst.app.bean.DataBindingBean" />
+
+        <variable
+            name="plainObject"
+            type="com.ryanst.app.bean.PlainObject"></variable>
     </data>
 
     <LinearLayout
@@ -41,6 +45,26 @@
             android:layout_height="@dimen/detail_button_height"
             android:gravity="center_horizontal"
             android:text="@{dataObject.data2}"
+            android:textSize="@dimen/font_large" />
+
+        <Button
+            android:id="@+id/test_field"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/detail_button_height"
+            android:text="测试ObservableField" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/detail_button_height"
+            android:gravity="center_horizontal"
+            android:text="@{plainObject.content}"
+            android:textSize="@dimen/font_large" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/detail_button_height"
+            android:gravity="center_horizontal"
+            android:text="@{plainObject.plainText}"
             android:textSize="@dimen/font_large" />
     </LinearLayout>
 </layout>
