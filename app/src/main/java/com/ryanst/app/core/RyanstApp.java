@@ -9,6 +9,8 @@ import com.ryanst.app.BuildConfig;
 import com.ryanst.app.widget.AppBlockCanaryContext;
 import com.ryanst.app.widget.UCEHandler;
 import com.squareup.leakcanary.LeakCanary;
+import com.zxy.recovery.callback.RecoveryCallback;
+import com.zxy.recovery.core.Recovery;
 
 import butterknife.ButterKnife;
 
@@ -28,7 +30,40 @@ public class RyanstApp extends Application {
         ButterKnife.setDebug(BuildConfig.DEBUG);
         LeakCanary.install(this);
         BlockCanary.install(this, new AppBlockCanaryContext()).start();
+        initRecovery();
 //        initUncaughtException();
+    }
+
+    private void initRecovery() {
+        Recovery.getInstance()
+                .debug(BuildConfig.DEBUG)
+                .recoverInBackground(false)
+                .recoverStack(true)
+                .mainPage(MainActivity.class)
+                .recoverEnabled(false)
+                .callback(new RecoveryCallback() {
+                    @Override
+                    public void stackTrace(String s) {
+
+                    }
+
+                    @Override
+                    public void cause(String s) {
+
+                    }
+
+                    @Override
+                    public void exception(String s, String s1, String s2, int i) {
+
+                    }
+
+                    @Override
+                    public void throwable(Throwable throwable) {
+
+                    }
+                })
+                .silent(false, Recovery.SilentMode.RECOVER_ACTIVITY_STACK)
+                .init(this);
     }
 
     protected void attachBaseContext(Context base) {

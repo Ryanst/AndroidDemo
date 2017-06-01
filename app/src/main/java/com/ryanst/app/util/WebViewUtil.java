@@ -1,6 +1,8 @@
 package com.ryanst.app.util;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Build;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebChromeClient;
@@ -55,6 +57,8 @@ public class WebViewUtil {
                 }
             }
         });
+
+        webView.setWebViewClient(new MyWebViewClient(null));
     }
 
     public interface LoadWebViewProgressListener {
@@ -70,6 +74,9 @@ public class WebViewUtil {
 
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
+            if (url.contains("eduuforumnew")) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+            }
             view.loadUrl(url);
             return true;
         }

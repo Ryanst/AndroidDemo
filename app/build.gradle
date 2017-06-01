@@ -153,6 +153,7 @@ dependencies {
     compile 'com.jakewharton.rxbinding:rxbinding-recyclerview-v7:0.4.0'
     compile 'com.android.support:support-annotations:25.0.1'
     compile 'com.zhengjt:floatingball:1.0.1'
+    compile 'com.zxy.android:recovery:0.1.4'
 }
 
 def buildTime() {

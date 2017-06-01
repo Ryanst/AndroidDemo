@@ -35,6 +35,7 @@ import com.ryanst.app.activity.TabFragmentActivity;
 import com.ryanst.app.activity.TabLayoutViewPagerActivity;
 import com.ryanst.app.activity.TagViewContainerActivity;
 import com.ryanst.app.activity.TestActivity;
+import com.ryanst.app.activity.TestCrashActivity;
 import com.ryanst.app.activity.TestMatActivity;
 import com.ryanst.app.activity.TextViewLetterSpacingActivity;
 import com.ryanst.app.activity.ToolBarTestActivity;
@@ -62,7 +63,7 @@ public class MainActivity extends BaseSlideActivity {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_test:
-                startActivity(new Intent(this, CaptchaActivity.class));
+                startActivity(new Intent(this, TestCrashActivity.class));
                 break;
             case R.id.btn_container:
                 startActivity(new Intent(this, TagViewContainerActivity.class));

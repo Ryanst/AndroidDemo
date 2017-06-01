@@ -1,9 +1,16 @@
 package com.ryanst.app.activity;
 
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebResourceError;
+import android.webkit.WebResourceRequest;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
@@ -79,9 +86,50 @@ public class ScrollViewListViewActivity extends BaseSlideActivity {
     }
 
     public void onClick(View view) {
-        String url = "http://www.baidu.com";
+        String url = "http://jzb.com/z2017/jzzk11/index.html?utm_source=push_jzb&utm_campaign=20170408";
         WebViewUtil.setWebViewSettings(webview, null, null);
+        webview.setWebViewClient(new MyWebViewClient(null));
         webview.loadUrl(url);
+    }
+
+    public class MyWebViewClient extends WebViewClient {
+        private WebViewUtil.ProgressBarListener progressBarListener;
+
+        public MyWebViewClient(WebViewUtil.ProgressBarListener progressBarListener) {
+            this.progressBarListener = progressBarListener;
+        }
+
+        @Override
+        public boolean shouldOverrideUrlLoading(WebView view, String url) {
+            if (url.contains("https://api.jzb.com/webapp/app/index?url=")) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                startActivity(intent);
+                return false;
+            } else {
+                view.loadUrl(url);
+                return true;
+            }
+        }
+
+        @Override
+        public void onPageStarted(WebView view, String url, Bitmap favicon) {
+            super.onPageStarted(view, url, favicon);
+        }
+
+        @Override
+        public void onPageFinished(WebView view, String url) {
+            super.onPageFinished(view, url);
+        }
+
+        @Override
+        public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
+            view.loadUrl("file:///android_asset/error_page.html");
+        }
+
+        @Override
+        public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
+            view.loadUrl("file:///android_asset/error_page.html");
+        }
     }
 
     public static void setTotalHeightofListView(ListView listView) {
