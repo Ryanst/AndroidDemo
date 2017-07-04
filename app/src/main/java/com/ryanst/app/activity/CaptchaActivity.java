@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import com.rlib.util.AndroidScreenUtil;
 import com.ryanst.app.R;
 import com.ryanst.app.core.BaseActivity;
+import com.ryanst.app.core.RyanstApp;
 import com.ryanst.app.util.Captcha;
 
 import butterknife.BindView;
@@ -23,7 +24,6 @@ import butterknife.ButterKnife;
 public class CaptchaActivity extends BaseActivity {
     public static final int CAPTCHA_WIDTH = 131;
     public static final int CAPTCHA_HEIGHT = 53;
-    public static final int FONT_SIZE = 120;
 
     @BindView(R.id.iv_captcha)
     ImageView ivCaptcha;
@@ -34,6 +34,12 @@ public class CaptchaActivity extends BaseActivity {
     @BindView(R.id.btn_check)
     Button btnCheck;
     private Captcha captcha;
+
+    public static int FONT_SIZE = AndroidScreenUtil.dip2px(RyanstApp.getApplication(), 40);
+    public static int BASE_PADDING_LEFT = AndroidScreenUtil.dip2px(RyanstApp.getApplication(), 24);
+    public static int RANGE_PADDING_LEFT = AndroidScreenUtil.dip2px(RyanstApp.getApplication(), 8);
+    public static int BASE_PADDING_TOP = AndroidScreenUtil.dip2px(RyanstApp.getApplication(), 40);
+    public static int RANGE_PADDING_TOP = AndroidScreenUtil.dip2px(RyanstApp.getApplication(), 8);
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -66,12 +72,12 @@ public class CaptchaActivity extends BaseActivity {
     private void createCaptcha() {
         captcha = new Captcha.Builder()
                 .setCodeLength(4)
-                .setFontSize(120)
+                .setFontSize(FONT_SIZE)
                 .setLineNumber(3)
-                .setBasePaddingLeft(70)
-                .setRangePaddingLeft(30)
-                .setBasePaddingTop(100)
-                .setRangePaddingTop(40)
+                .setBasePaddingLeft(BASE_PADDING_LEFT)
+                .setRangePaddingLeft(RANGE_PADDING_LEFT)
+                .setBasePaddingTop(BASE_PADDING_TOP)
+                .setRangePaddingTop(RANGE_PADDING_TOP)
                 .setWidth(AndroidScreenUtil.dip2px(this, CAPTCHA_WIDTH))
                 .setHeight(AndroidScreenUtil.dip2px(this, CAPTCHA_HEIGHT))
                 .build();

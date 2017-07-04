@@ -1,25 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
+<layout>
 
-    <TextView
-        android:id="@+id/tv_title"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="@dimen/global_margin"
-        android:text="标题"
-        android:textSize="@dimen/font_large" />
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tv_sub_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="@dimen/global_margin"
-        android:text="副标题"
-        android:textSize="@dimen/font_normal" />
-</LinearLayout>
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/global_margin"
+            android:text="标题"
+            android:textSize="@dimen/font_large" />
+
+        <TextView
+            android:id="@+id/tv_sub_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/global_margin"
+            android:text="副标题"
+            android:textSize="@dimen/font_normal" />
+    </LinearLayout>
+
+</layout>

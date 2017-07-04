@@ -9,9 +9,7 @@ import com.orhanobut.logger.LogLevel;
 import com.orhanobut.logger.Logger;
 import com.ryanst.app.R;
 import com.ryanst.app.activity.AnotationActivity;
-import com.ryanst.app.activity.AudioRecordActivity;
 import com.ryanst.app.activity.BallActivity;
-import com.ryanst.app.activity.CaptchaActivity;
 import com.ryanst.app.activity.CustomViewActivity;
 import com.ryanst.app.activity.DataBindingActivity;
 import com.ryanst.app.activity.GlideActivity;
@@ -30,11 +28,11 @@ import com.ryanst.app.activity.ScheduleTaskActivity;
 import com.ryanst.app.activity.ScrollViewListViewActivity;
 import com.ryanst.app.activity.ScrollerLayoutActivity;
 import com.ryanst.app.activity.ServiceTestActivity;
+import com.ryanst.app.activity.SimpleRecyclerActivity;
 import com.ryanst.app.activity.SpinnerActivity;
 import com.ryanst.app.activity.TabFragmentActivity;
 import com.ryanst.app.activity.TabLayoutViewPagerActivity;
 import com.ryanst.app.activity.TagViewContainerActivity;
-import com.ryanst.app.activity.TestActivity;
 import com.ryanst.app.activity.TestCrashActivity;
 import com.ryanst.app.activity.TestMatActivity;
 import com.ryanst.app.activity.TextViewLetterSpacingActivity;
@@ -64,6 +62,9 @@ public class MainActivity extends BaseSlideActivity {
         switch (view.getId()) {
             case R.id.btn_test:
                 startActivity(new Intent(this, TestCrashActivity.class));
+                break;
+            case R.id.btn_test1:
+                startActivity(new Intent(this, SimpleRecyclerActivity.class));
                 break;
             case R.id.btn_container:
                 startActivity(new Intent(this, TagViewContainerActivity.class));

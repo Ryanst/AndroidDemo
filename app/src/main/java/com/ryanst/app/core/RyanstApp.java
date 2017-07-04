@@ -62,7 +62,7 @@ public class RyanstApp extends Application {
 
                     }
                 })
-                .silent(false, Recovery.SilentMode.RECOVER_ACTIVITY_STACK)
+                .silent(true, Recovery.SilentMode.RECOVER_ACTIVITY_STACK)
                 .init(this);
     }
 
