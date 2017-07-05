@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.support.multidex.MultiDex;
 
+import com.facebook.stetho.Stetho;
 import com.github.moduth.blockcanary.BlockCanary;
 import com.ryanst.app.BuildConfig;
 import com.ryanst.app.widget.AppBlockCanaryContext;
@@ -32,6 +33,10 @@ public class RyanstApp extends Application {
         BlockCanary.install(this, new AppBlockCanaryContext()).start();
         initRecovery();
 //        initUncaughtException();
+
+        if (BuildConfig.DEBUG) {
+            Stetho.initializeWithDefaults(application);
+        }
     }
 
     private void initRecovery() {
