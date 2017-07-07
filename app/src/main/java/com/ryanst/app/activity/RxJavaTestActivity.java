@@ -1,21 +1,21 @@
 package com.ryanst.app.activity;
 
 import android.databinding.DataBindingUtil;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.widget.Toast;
+import android.util.Log;
 
 import com.jakewharton.rxbinding.view.RxView;
 import com.ryanst.app.R;
 import com.ryanst.app.core.BaseSlideActivity;
 import com.ryanst.app.databinding.ActivitySingleButtonBinding;
 
-import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 import rx.Observable;
+import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Action0;
 import rx.functions.Action1;
 import rx.functions.Func1;
 import rx.schedulers.Schedulers;
@@ -25,6 +25,7 @@ import rx.schedulers.Schedulers;
  */
 public class RxJavaTestActivity extends BaseSlideActivity {
 
+    public static final String TAG = "RxJavaTestActivity";
     ActivitySingleButtonBinding binding;
 
     @Override
@@ -35,17 +36,26 @@ public class RxJavaTestActivity extends BaseSlideActivity {
     }
 
     private void initView() {
-        RxView.clicks(binding.btnSimple)
+        RxView.clicks(binding.btnTestOrder)
                 .throttleFirst(1000, TimeUnit.MILLISECONDS)
                 .subscribe(new Action1<Void>() {
                     @Override
                     public void call(Void aVoid) {
-                        RxonClick();
+                        testOrder();
+                    }
+                });
+
+        RxView.clicks(binding.btnTestThread)
+                .throttleFirst(1000, TimeUnit.MILLISECONDS)
+                .subscribe(new Action1<Void>() {
+                    @Override
+                    public void call(Void aVoid) {
+                        testThread();
                     }
                 });
     }
 
-    public void RxonClick() {
+    public void testThread() {
 //        Observable.just(1, 2, 3, 4)
 //                .subscribeOn(Schedulers.io()) // 指定 subscribe() 发生在 IO 线程
 //                .observeOn(AndroidSchedulers.mainThread()) // 指定 Subscriber 的回调发生在主线程
@@ -56,54 +66,141 @@ public class RxJavaTestActivity extends BaseSlideActivity {
 //                    }
 //                });
 
-        Observable.just(1, 2, 3, 4) // IO 线程，由 subscribeOn() 指定
-//                .observeOn(Schedulers.newThread())
-//                .subscribeOn(Schedulers.newThread())
-//                .doOnSubscribe(new Action0() { //doOnSubscribe 中 call 执行的线程取决于它后面第一个subscribeOn的线程
-//                    @Override
-//                    public void call() {
-//                        logger(Thread.currentThread().getId() + ": doOnSubscribe");
-//                    }
-//                })
-//                .subscribeOn(Schedulers.newThread())
-//                .doOnNext(new Action1<Integer>() { //doOnSubscribe 中 call 执行的线程取决于它上面的observeOn的线程
-//                    @Override
-//                    public void call(Integer integer) {
-//                        logger(Thread.currentThread().getId() + ": doOnNext");
-//                    }
-//                })
-//                .subscribeOn(AndroidSchedulers.mainThread())
-//                .subscribeOn(Schedulers.io())
+        Observable.create(new Observable.OnSubscribe<Integer>() {
+            @Override
+            public void call(Subscriber<? super Integer> subscriber) {
+                log("OnSubscribe start\t" + Thread.currentThread().getId());
+                subscriber.onStart();//thread 2
+                log("OnSubscribe onNext1\t" + Thread.currentThread().getId());
+                subscriber.onNext(1);//thread 2
+                log("OnSubscribe onNext2\t" + Thread.currentThread().getId());
+                subscriber.onCompleted();//thread 2
+                log("OnSubscribe onCompleted\t" + Thread.currentThread().getId());//thread 1
+            }
+        })
+                .map(new Func1<Integer, Integer>() {
+                    @Override
+                    public Integer call(Integer integer) {
+                        log("map1\t" + Thread.currentThread().getId());
+                        return integer + 10;//thread 2
+                    }
+                })
                 .subscribeOn(Schedulers.newThread())
                 .map(new Func1<Integer, String>() {
                     @Override
                     public String call(Integer integer) {
-                        return String.valueOf(integer);
+                        log("map2\t" + Thread.currentThread().getId());
+                        return String.valueOf(integer);//thread 2
                     }
-                }) // 新线程，由 observeOn() 指定
-                .observeOn(Schedulers.io())
+                })
+                .doOnSubscribe(new Action0() {
+                    @Override
+                    public void call() {
+                        log("doOnSubscribe\t" + Thread.currentThread().getId());//thread 3由下一个subscribeOn决定
+                    }
+                })
+                .doOnNext(new Action1<String>() {
+                    @Override
+                    public void call(String s) {
+                        log("doOnNext\t" + Thread.currentThread().getId());//thread 3由下一个subscribeOn决定
+                    }
+                })
                 .subscribeOn(Schedulers.newThread())
+                // 新线程，由 observeOn() 指定
+                .observeOn(Schedulers.io())
                 .map(new Func1<String, String>() {
                     @Override
                     public String call(String str) {
-                        return str + "plus1 ";
+                        log("map3\t" + Thread.currentThread().getId());
+                        return str + "plus1 ";//thread 4
                     }
-                }) // IO 线程，由 observeOn() 指定
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribeOn(Schedulers.io())
+                })
+                // IO 线程，由 observeOn() 指定
+                .observeOn(Schedulers.newThread())
                 .map(new Func1<String, String>() {
                     @Override
                     public String call(String str) {
-                        return str + "plus2 ";
+                        log("map4\t" + Thread.currentThread().getId());
+                        return str + "plus2 ";//thread 5
                     }
                 })
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Action1<String>() {
+                .subscribe(new Subscriber<String>() {
                     @Override
-                    public void call(String s) {
-                        Toast.makeText(RxJavaTestActivity.this, "subscribe", Toast.LENGTH_SHORT).show();
-                        logger("subscribe");
+                    public void onStart() {
+                        super.onStart();
+                        log("Subscriber.onStart\t" + Thread.currentThread().getId());//thread 1
                     }
-                });  // Android 主线程，由 observeOn() 指定
+
+                    @Override
+                    public void onCompleted() {
+                        log("Subscriber.onCompleted\t" + Thread.currentThread().getId());//thread 1
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onNext(String s) {
+                        log("Subscriber.onNext\t" + Thread.currentThread().getId());//thread 1
+                    }
+                });
+
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        log("\n--------------------------------");
+    }
+
+    private void testOrder() {
+        Observable.create(new Observable.OnSubscribe<String>() {
+            @Override
+            public void call(Subscriber<? super String> subscriber) {
+                subscriber.onNext("1");
+                subscriber.onNext("2");
+                subscriber.onNext("3");
+                subscriber.onCompleted();
+            }
+        })
+                .map(new Func1<String, Integer>() {
+                    @Override
+                    public Integer call(String s) {
+                        if ("1".equals(s)) {
+                            return 1;
+                        } else {
+                            return 0;
+                        }
+                    }
+                })
+                .flatMap(new Func1<Integer, Observable<Double>>() {
+                    @Override
+                    public Observable<Double> call(Integer integer) {
+                        if (integer == 1) {
+                            return Observable.just(1.00);
+                        } else {
+                            return Observable.just(2.00);
+                        }
+                    }
+                })
+                .subscribe(new Subscriber<Double>() {
+                    @Override
+                    public void onCompleted() {
+                        Log.d(TAG, "onCompleted: ");
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        Log.d(TAG, "onError: ");
+                    }
+
+                    @Override
+                    public void onNext(Double aDouble) {
+                        Log.d(TAG, "onNext: " + aDouble);
+                    }
+                });
     }
 }

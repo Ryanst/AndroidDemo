@@ -211,6 +211,10 @@
             android:theme="@style/AppTheme.Translucent"></activity>
 
         <activity
+            android:name=".activity.WebActivity"
+            android:theme="@style/AppTheme.Translucent"></activity>
+
+        <activity
             android:name=".activity.launchMode.LaunchModeActivity"
             android:launchMode="standard"
             android:theme="@style/AppTheme.Translucent"></activity>
