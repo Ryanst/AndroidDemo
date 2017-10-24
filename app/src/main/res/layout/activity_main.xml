@@ -21,6 +21,30 @@
             android:orientation="vertical">
 
             <Button
+                android:id="@+id/btn_process"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/main_button_height"
+                android:layout_marginTop="10dp"
+                android:onClick="onClick"
+                android:text="多进程" />
+
+            <Button
+                android:id="@+id/btn_view_draw_order"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/main_button_height"
+                android:layout_marginTop="10dp"
+                android:onClick="onClick"
+                android:text="View绘制流程" />
+
+            <Button
+                android:id="@+id/btn_canvas"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/main_button_height"
+                android:layout_marginTop="10dp"
+                android:onClick="onClick"
+                android:text="Canvas" />
+
+            <Button
                 android:id="@+id/btn_test"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/main_button_height"

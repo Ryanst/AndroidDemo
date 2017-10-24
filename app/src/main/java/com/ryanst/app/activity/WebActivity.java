@@ -10,7 +10,7 @@ import com.ryanst.app.util.WebViewUtil;
 
 
 public class WebActivity extends Activity {
-    private String mCurrentUrl = "http://10.4.18.3:8020/plan_float/answerDetail.html?id=1ff9fe53bbb70f2dadb41b468f9f4b25&claId=40288b155c3e0dec015c3e16cb5b0015&cityCode=010&stuId=0000000049a958eb0149ac7263df018a&cOrder=5";
+    private String mCurrentUrl = "";
     private WebView mWeContent;
 
     @Override

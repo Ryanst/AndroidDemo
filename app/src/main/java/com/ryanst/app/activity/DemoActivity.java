@@ -30,7 +30,7 @@ public class DemoActivity extends BaseActivity {
         editText = (EditText) findViewById(R.id.et_url);
         btn1 = (Button) findViewById(R.id.btn_clear);
         btn2 = (Button) findViewById(R.id.btn_url);
-        editText.setText("http://10.4.18.3:8020/plan_float/answerDetail.html?id=1ff9fe53bbb70f2dadb41b468f9f4b25&claId=40288b155c3e0dec015c3e16cb5b0015&cityCode=010&stuId=0000000049a958eb0149ac7263df018a&cOrder=5");
+        editText.setText("http://planner.speiyou.com/plan_report/templates/parent_briefReport.html?id=1e228af4a4ba27c5c2afa5885da3c7cd&cityCode=0532&stuId=ff808081508bc7b601508ddb40d014ff&uname=%E5%BC%A0%E9%A6%A8%E4%BA%881");
         init();
     }
 

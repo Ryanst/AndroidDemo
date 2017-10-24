@@ -22,7 +22,7 @@ import butterknife.ButterKnife;
 public class RyanstApp extends Application {
 
     private static Context application;
-    public static final String RYANST_LOG = "Juntong";
+    public static String RYANST_LOG = "Juntong";
 
     @Override
     public void onCreate() {

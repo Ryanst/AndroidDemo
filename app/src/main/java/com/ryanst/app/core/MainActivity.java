@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.orhanobut.logger.LogLevel;
 import com.orhanobut.logger.Logger;
@@ -18,6 +19,7 @@ import com.ryanst.app.activity.HandlerThreadActivity;
 import com.ryanst.app.activity.LeakTestActivity;
 import com.ryanst.app.activity.LoginActivity;
 import com.ryanst.app.activity.MenuTestActivity;
+import com.ryanst.app.activity.MyProcessActivity;
 import com.ryanst.app.activity.NavBarTestActivity;
 import com.ryanst.app.activity.NavigationDrawerActivity;
 import com.ryanst.app.activity.NetChangeBroadcastReceiverActivity;
@@ -42,6 +44,8 @@ import com.ryanst.app.activity.WebviewErrorActivity;
 import com.ryanst.app.activity.WheelViewActivity;
 import com.ryanst.app.activity.WidgetBallActivity;
 import com.ryanst.app.activity.launchMode.LaunchModeActivity;
+import com.ryanst.app.activity.rwx.CanvasActivity;
+import com.ryanst.app.module.ui.ViewDrawOrderActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -56,10 +60,23 @@ public class MainActivity extends BaseSlideActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Logger.init("Juntong").logLevel(LogLevel.FULL);
+
+        RyanstApp.RYANST_LOG = "zhengjt";
+        Logger.i("XXXXXXXX", RyanstApp.RYANST_LOG);
+        Toast.makeText(this, RyanstApp.RYANST_LOG, Toast.LENGTH_SHORT).show();
     }
 
     public void onClick(View view) {
         switch (view.getId()) {
+            case R.id.btn_process:
+                startActivity(new Intent(this, MyProcessActivity.class));
+                break;
+            case R.id.btn_view_draw_order:
+                startActivity(new Intent(this, ViewDrawOrderActivity.class));
+                break;
+            case R.id.btn_canvas:
+                startActivity(new Intent(this, CanvasActivity.class));
+                break;
             case R.id.btn_test:
                 startActivity(new Intent(this, TestCrashActivity.class));
                 break;
