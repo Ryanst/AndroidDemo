@@ -8,7 +8,7 @@ import android.util.Log;
 import com.jakewharton.rxbinding.view.RxView;
 import com.ryanst.app.R;
 import com.ryanst.app.core.BaseSlideActivity;
-import com.ryanst.app.databinding.ActivitySingleButtonBinding;
+import com.ryanst.app.databinding.ActivityTwoButtonBinding;
 
 import java.util.concurrent.TimeUnit;
 
@@ -26,12 +26,12 @@ import rx.schedulers.Schedulers;
 public class RxJavaTestActivity extends BaseSlideActivity {
 
     public static final String TAG = "RxJavaTestActivity";
-    ActivitySingleButtonBinding binding;
+    ActivityTwoButtonBinding binding;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_single_button);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_two_button);
         initView();
     }
 

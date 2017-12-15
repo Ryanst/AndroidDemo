@@ -5,11 +5,8 @@ import android.content.Context;
 import android.support.multidex.MultiDex;
 
 import com.facebook.stetho.Stetho;
-import com.github.moduth.blockcanary.BlockCanary;
 import com.ryanst.app.BuildConfig;
-import com.ryanst.app.widget.AppBlockCanaryContext;
 import com.ryanst.app.widget.UCEHandler;
-import com.squareup.leakcanary.LeakCanary;
 import com.zxy.recovery.callback.RecoveryCallback;
 import com.zxy.recovery.core.Recovery;
 
@@ -29,8 +26,6 @@ public class RyanstApp extends Application {
         super.onCreate();
         application = this;
         ButterKnife.setDebug(BuildConfig.DEBUG);
-        LeakCanary.install(this);
-        BlockCanary.install(this, new AppBlockCanaryContext()).start();
         initRecovery();
 //        initUncaughtException();
 

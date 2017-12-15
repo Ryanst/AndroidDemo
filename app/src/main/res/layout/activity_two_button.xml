@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_test_order"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/detail_button_height"
+            android:text="测试执行顺序"
+            android:textSize="@dimen/font_large" />
+
+        <Button
+            android:id="@+id/btn_test_thread"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/detail_button_height"
+            android:text="测试执行线程"
+            android:textSize="@dimen/font_large" />
+    </LinearLayout>
+</layout>
